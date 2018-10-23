@@ -1,6 +1,7 @@
 import React from "react";
 import Section from "./sections/section";
 import SectionLeftRight from "./sections/sectionLeftRight";
+import CarouselSection from "./sections/carouselSection";
 import FancyCard from "../components/fancyCard";
 import StandardCard from "../components/standardCard";
 import MemberPanel from "../components/memberPanel";
@@ -10,6 +11,9 @@ import CustomButton from "../components/buttons/customButton";
 import CustomButtonIcon from "../components/buttons/customButtonIcon";
 import ContentSectionRL from "../components/labels/contentSectionRL";
 import { Grid } from "@material-ui/core";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Carousel } from "react-responsive-carousel";
+import CustomCarousel from "../components/carousel/customCarousel";
 import {
   SupervisedUserCircle,
   FavoriteBorder,
@@ -117,7 +121,28 @@ const Content = () => (
       </Description>
       <Image src="../../img/steemplus.png" />
     </SectionLeftRight>
-    <Section title="Screenshots">Content</Section>
+    <CarouselSection title="Screenshots">
+      <CustomCarousel>
+        <div className="test">
+          <img src="../../img/screenshots/intro.jpg" alt="Intro" />
+        </div>
+        <div className="test">
+          <img src="../../img/screenshots/feedplus.jpg" alt="Feed +" />
+        </div>
+        <div className="test">
+          <img src="../../img/screenshots/ranks.jpg" alt="Ranks" />
+        </div>
+        <div className="test">
+          <img
+            src="../../img/screenshots/valueDelegation.jpg"
+            alt="Value and Delegations"
+          />
+        </div>
+        <div className="test">
+          <img src="../../img/screenshots/shortcuts.jpg" alt="ShortCuts" />
+        </div>
+      </CustomCarousel>
+    </CarouselSection>
     <Section title="Our Team">
       <MemberPanel name="Quentin" position="CEO-Founder" />
       <MemberPanel name="Cedric" position="Developer" />
@@ -129,7 +154,7 @@ const Content = () => (
           text="Contact Us"
           color="blue"
           marginTop={"1rem"}
-          href={"https://discord.gg/GbtHVsx"}
+          href={"https://discord.gg/hhBw3mv"}
         />
       </Description>
       <Image src="../../img/steemplus.png" />
