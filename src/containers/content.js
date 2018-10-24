@@ -12,14 +12,16 @@ import CustomButtonIcon from "../components/buttons/customButtonIcon";
 import ContentSectionRL from "../components/labels/contentSectionRL";
 import { Grid } from "@material-ui/core";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from "react-responsive-carousel";
 import CustomCarousel from "../components/carousel/customCarousel";
 import {
   SupervisedUserCircle,
   FavoriteBorder,
   ImportantDevices,
-  SaveAlt
+  SaveAlt,
+  FormatQuote
 } from "@material-ui/icons";
+
+const reviewDivStyle = { backgroundColor: "white", color: "black" };
 
 const Content = () => (
   <div>
@@ -122,17 +124,17 @@ const Content = () => (
       <Image src="../../img/steemplus.png" />
     </SectionLeftRight>
     <CarouselSection title="Screenshots">
-      <CustomCarousel>
-        <div className="test">
+      <CustomCarousel autoPlay={true} showArrows={false}>
+        <div>
           <img src="../../img/screenshots/intro.jpg" alt="Intro" />
         </div>
-        <div className="test">
+        <div>
           <img src="../../img/screenshots/feedplus.jpg" alt="Feed +" />
         </div>
-        <div className="test">
+        <div>
           <img src="../../img/screenshots/ranks.jpg" alt="Ranks" />
         </div>
-        <div className="test">
+        <div>
           <img
             src="../../img/screenshots/valueDelegation.jpg"
             alt="Value and Delegations"
@@ -143,9 +145,49 @@ const Content = () => (
         </div>
       </CustomCarousel>
     </CarouselSection>
+    <CarouselSection title="Reviews">
+      <CustomCarousel
+        type="presentation-mode"
+        autoPlay={false}
+        showArrows={true}
+      >
+        <div>
+          <blockquote style={reviewDivStyle}>
+            <FormatQuote fontSize="large" />
+            <h3>Awesome APP</h3>
+            <h4>Someone</h4>
+          </blockquote>
+        </div>
+        <div>
+          <blockquote style={reviewDivStyle}>
+            <FormatQuote fontSize="large" />
+            <h3>Awesome APP 2 </h3>
+            <h4>Someone 2 </h4>
+          </blockquote>
+        </div>
+        <div>
+          <blockquote style={reviewDivStyle}>
+            <FormatQuote fontSize="large" />
+            <h3>Awesome APP 3 </h3>
+            <h4>Someone 3 </h4>
+          </blockquote>
+        </div>
+        <div>
+          <blockquote style={reviewDivStyle}>
+            <FormatQuote fontSize="large" />
+            <h3>Awesome APP4</h3>
+            <h4>Someone 4 </h4>
+          </blockquote>
+        </div>
+      </CustomCarousel>
+    </CarouselSection>
     <Section title="Our Team">
-      <MemberPanel name="Quentin" position="CEO-Founder" />
-      <MemberPanel name="Cedric" position="Developer" />
+      <MemberPanel name="Quentin" position="CEO-Founder" username="stoodkev" />
+      <MemberPanel
+        name="Cedric"
+        position="Developer"
+        username="cedricguillas"
+      />
     </Section>
     <SectionLeftRight direction="row" gradient={true}>
       <Description title="Contact Us">
