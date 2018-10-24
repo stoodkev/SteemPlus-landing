@@ -5,6 +5,7 @@ import CarouselSection from "./sections/carouselSection";
 import FancyCard from "../components/fancyCard";
 import StandardCard from "../components/standardCard";
 import MemberPanel from "../components/memberPanel";
+import ReviewPanel from "../components/reviews/reviewPanel";
 import Description from "../components/form/description";
 import Image from "../components/image";
 import CustomButton from "../components/buttons/customButton";
@@ -13,118 +14,48 @@ import ContentSectionRL from "../components/labels/contentSectionRL";
 import { Grid } from "@material-ui/core";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import CustomCarousel from "../components/carousel/customCarousel";
-import {
-  SupervisedUserCircle,
-  FavoriteBorder,
-  ImportantDevices,
-  SaveAlt,
-  FormatQuote
-} from "@material-ui/icons";
-
-const reviewDivStyle = { backgroundColor: "white", color: "black" };
+import { SupervisedUserCircle, SaveAlt } from "@material-ui/icons";
+import * as Data from "../jsons/data.json";
 
 const Content = () => (
   <div>
     <Section title="Why SteemPlus ?">
-      <FancyCard
-        title="Easy To Use"
-        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt leo ut nisl aliquam fringilla. Mauris ultrices justo sit amet velit semper commodo. Donec molestie odio nec felis lobortis, vitae malesuada erat cursus. Duis mollis urna eu metus pulvinar convallis."
-      >
-        <SupervisedUserCircle className="fancy-card-icon" fontSize="large" />
-      </FancyCard>
-      <FancyCard
-        title="Easy To Use"
-        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt leo ut nisl aliquam fringilla. Mauris ultrices justo sit amet velit semper commodo. Donec molestie odio nec felis lobortis, vitae malesuada erat cursus. Duis mollis urna eu metus pulvinar convallis."
-      >
-        <FavoriteBorder className="fancy-card-icon" fontSize="large" />
-      </FancyCard>
-      <FancyCard
-        title="Easy To Use"
-        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt leo ut nisl aliquam fringilla. Mauris ultrices justo sit amet velit semper commodo. Donec molestie odio nec felis lobortis, vitae malesuada erat cursus. Duis mollis urna eu metus pulvinar convallis."
-      >
-        <ImportantDevices className="fancy-card-icon" fontSize="large" />
-      </FancyCard>
+      {Data.whySteemPlus.map((why, i) => (
+        <FancyCard title={why.title} content={why.content} key={i}>
+          <SupervisedUserCircle className="fancy-card-icon" fontSize="large" />
+        </FancyCard>
+      ))}
     </Section>
     <Section title="Awesome Features">
-      <StandardCard
-        title="test"
-        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt leo ut nisl aliquam fringilla. Mauris ultrices justo sit amet velit semper commodo. Donec molestie odio nec felis lobortis, vitae malesuada erat cursus. Duis mollis urna eu metus pulvinar convallis."
-      >
-        <SupervisedUserCircle className="fancy-card-icon" fontSize="large" />
-      </StandardCard>
-      <StandardCard
-        title="test"
-        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt leo ut nisl aliquam fringilla. Mauris ultrices justo sit amet velit semper commodo. Donec molestie odio nec felis lobortis, vitae malesuada erat cursus. Duis mollis urna eu metus pulvinar convallis."
-      >
-        <SupervisedUserCircle className="fancy-card-icon" fontSize="large" />
-      </StandardCard>
-      <StandardCard
-        title="test"
-        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt leo ut nisl aliquam fringilla. Mauris ultrices justo sit amet velit semper commodo. Donec molestie odio nec felis lobortis, vitae malesuada erat cursus. Duis mollis urna eu metus pulvinar convallis."
-      >
-        <SupervisedUserCircle className="fancy-card-icon" fontSize="large" />
-      </StandardCard>
-      <StandardCard
-        title="test"
-        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt leo ut nisl aliquam fringilla. Mauris ultrices justo sit amet velit semper commodo. Donec molestie odio nec felis lobortis, vitae malesuada erat cursus. Duis mollis urna eu metus pulvinar convallis."
-      >
-        <SupervisedUserCircle className="fancy-card-icon" fontSize="large" />
-      </StandardCard>
-      <StandardCard
-        title="test"
-        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt leo ut nisl aliquam fringilla. Mauris ultrices justo sit amet velit semper commodo. Donec molestie odio nec felis lobortis, vitae malesuada erat cursus. Duis mollis urna eu metus pulvinar convallis."
-      >
-        <SupervisedUserCircle className="fancy-card-icon" fontSize="large" />
-      </StandardCard>
-      <StandardCard
-        title="test"
-        content="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt leo ut nisl aliquam fringilla. Mauris ultrices justo sit amet velit semper commodo. Donec molestie odio nec felis lobortis, vitae malesuada erat cursus. Duis mollis urna eu metus pulvinar convallis."
-      >
-        <SupervisedUserCircle className="fancy-card-icon" fontSize="large" />
-      </StandardCard>
+      {Data.features.map((feature, i) => (
+        <StandardCard title={feature.title} content={feature.content} key={i}>
+          <SupervisedUserCircle className="fancy-card-icon" fontSize="large" />
+        </StandardCard>
+      ))}
     </Section>
     <SectionLeftRight direction="row-reverse" gradient={true}>
       <Description title="Where is it available ?">
         <ContentSectionRL textAlign="left">
-          {
-            "SteemPlus is available on several browser : Chrome, Opera and Firefox"
-          }
+          {Data.where.description}
         </ContentSectionRL>
         <Grid container direction="row">
-          <CustomButtonIcon
-            text={"Chrome"}
-            color="black"
-            margin={"1rem"}
-            href={
-              "https://chrome.google.com/webstore/detail/steemplus/mjbkjgcplmaneajhcbegoffkedeankaj"
-            }
-          >
-            <SaveAlt className="button-icon" fontSize="small" />
-          </CustomButtonIcon>
-          <CustomButtonIcon
-            text={"Opera"}
-            color="black"
-            margin={"1rem"}
-            href={
-              "https://github.com/stoodkev/SteemPlus/blob/master/README.md#on-opera"
-            }
-          >
-            <SaveAlt className="button-icon" fontSize="small" />
-          </CustomButtonIcon>
-          <CustomButtonIcon
-            text={"Firefox"}
-            color="black"
-            margin={"1rem"}
-            href={"https://addons.mozilla.org/en-US/firefox/addon/steem-plus/"}
-          >
-            <SaveAlt className="button-icon" fontSize="small" />
-          </CustomButtonIcon>
+          {Data.where.browsers.map((browser, i) => (
+            <CustomButtonIcon
+              text={browser.name}
+              href={browser.url}
+              color="black"
+              margin={"1rem"}
+              key={i}
+            >
+              <SaveAlt className="button-icon" fontSize="small" />
+            </CustomButtonIcon>
+          ))}
         </Grid>
       </Description>
       <Image src="../../img/steemplus.png" />
     </SectionLeftRight>
     <CarouselSection title="Screenshots">
-      <CustomCarousel autoPlay={true} showArrows={false}>
+      <CustomCarousel autoPlay={true} showArrows={false} axis="horizontal">
         <div>
           <img src="../../img/screenshots/intro.jpg" alt="Intro" />
         </div>
@@ -145,58 +76,34 @@ const Content = () => (
         </div>
       </CustomCarousel>
     </CarouselSection>
-    <CarouselSection title="Reviews">
-      <CustomCarousel
-        type="presentation-mode"
-        autoPlay={false}
-        showArrows={true}
-      >
-        <div>
-          <blockquote style={reviewDivStyle}>
-            <FormatQuote fontSize="large" />
-            <h3>Awesome APP</h3>
-            <h4>Someone</h4>
-          </blockquote>
-        </div>
-        <div>
-          <blockquote style={reviewDivStyle}>
-            <FormatQuote fontSize="large" />
-            <h3>Awesome APP 2 </h3>
-            <h4>Someone 2 </h4>
-          </blockquote>
-        </div>
-        <div>
-          <blockquote style={reviewDivStyle}>
-            <FormatQuote fontSize="large" />
-            <h3>Awesome APP 3 </h3>
-            <h4>Someone 3 </h4>
-          </blockquote>
-        </div>
-        <div>
-          <blockquote style={reviewDivStyle}>
-            <FormatQuote fontSize="large" />
-            <h3>Awesome APP4</h3>
-            <h4>Someone 4 </h4>
-          </blockquote>
-        </div>
-      </CustomCarousel>
-    </CarouselSection>
+    <Section title="Reviews">
+      {Data.reviews.map((review, i) => (
+        <ReviewPanel
+          title={review.title}
+          review={review.review}
+          username={review.username}
+          key={i}
+        />
+      ))}
+    </Section>
     <Section title="Our Team">
-      <MemberPanel name="Quentin" position="CEO-Founder" username="stoodkev" />
-      <MemberPanel
-        name="Cedric"
-        position="Developer"
-        username="cedricguillas"
-      />
+      {Data.members.map((members, i) => (
+        <MemberPanel
+          name={members.name}
+          position={members.position}
+          username={members.username}
+          key={i}
+        />
+      ))}
     </Section>
     <SectionLeftRight direction="row" gradient={true}>
       <Description title="Contact Us">
-        {"Description de ce qu'il y a de l'autre cote"}
+        {Data.contactUs.description}
         <CustomButton
-          text="Contact Us"
+          text={Data.contactUs.textButton}
           color="blue"
           marginTop={"1rem"}
-          href={"https://discord.gg/hhBw3mv"}
+          href={Data.contactUs.url}
         />
       </Description>
       <Image src="../../img/steemplus.png" />
