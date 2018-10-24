@@ -3,7 +3,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import { Grid } from "@material-ui/core";
 
-const CustomCarousel = ({ type, showArrows, autoPlay, children }) => (
+const CustomCarousel = ({ type, showArrows, autoPlay, axis, children }) => (
   <Grid item xs={6}>
     <Carousel
       emulateTouch
@@ -14,6 +14,7 @@ const CustomCarousel = ({ type, showArrows, autoPlay, children }) => (
       showStatus={false}
       showArrows={showArrows}
       showThumbs={false}
+      axis={axis}
       useKeyboardArrows={false}
       className={type}
     >

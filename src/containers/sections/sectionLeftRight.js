@@ -17,7 +17,6 @@ const SectionLeftRight = ({ children, direction }) => (
       direction={direction}
       justify="space-evenly"
       alignItems="flex-start"
-      spacing={24}
     >
       {children}
     </Grid>
