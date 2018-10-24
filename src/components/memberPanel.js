@@ -11,13 +11,19 @@ const nameStyle = {
   fontWeight: "600",
   color: "#3c4a97"
 };
+const usernameStyle = {
+  fontSize: "1.25rem",
+  fontWeight: "600",
+  color: "#3c4a97",
+  textDecoration: "none"
+};
 const positionStyle = {
   fontSize: "1rem",
   fontWeight: "600",
   color: "grey"
 };
 
-const MemberPanel = ({ name, position }) => (
+const MemberPanel = ({ name, position, username }) => (
   <Grid
     style={style}
     className="memberPanel"
@@ -37,7 +43,18 @@ const MemberPanel = ({ name, position }) => (
       src={`../../img/teamMembers/${name.toLowerCase()}.png`}
       alt={name}
     />
-    <span style={nameStyle}>{name}</span>
+
+    <span style={nameStyle}>
+      {name} -{" "}
+      <a
+        rel="noopener noreferrer"
+        target="_blank"
+        href={`https://steemit.com/@${username}`}
+        style={usernameStyle}
+      >
+        @{username}
+      </a>
+    </span>
     <span style={positionStyle}>{position}</span>
   </Grid>
 );
