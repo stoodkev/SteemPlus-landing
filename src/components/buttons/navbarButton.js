@@ -2,13 +2,13 @@ import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import { Button } from "@material-ui/core/";
 
-const CustomButton = ({ text, color1, color2, marginTop, href }) => {
+const NavbarButton = ({ text, color1, color2, href, float }) => {
   const buttonStyle = {
     root: {
-      marginTop: marginTop,
+      float: float,
+      border: "none",
       backgroundColor: color1,
       color: color2,
-      borderRadius: "0 10px 10px 10px",
       "&:hover": {
         backgroundColor: color2,
         color: color1
@@ -16,11 +16,7 @@ const CustomButton = ({ text, color1, color2, marginTop, href }) => {
     }
   };
   const CustomizedButton = withStyles(buttonStyle)(Button);
-  return (
-    <CustomizedButton variant="contained" href={href} target="_blank">
-      {text}
-    </CustomizedButton>
-  );
+  return <CustomizedButton href={href}>{text}</CustomizedButton>;
 };
 
-export default CustomButton;
+export default NavbarButton;

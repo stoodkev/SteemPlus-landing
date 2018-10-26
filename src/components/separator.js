@@ -1,10 +1,17 @@
 import React from "react";
 import { Grid } from "@material-ui/core/";
-import "../css/components/separator.css";
+import * as Const from "../utils/const";
+
+const style = {
+  borderBottom: "solid 3px",
+  borderBottomColor: Const.SEPARATOR_COLOR,
+  marginBottom: "2rem",
+  width: "5rem"
+};
 
 const Separator = ({ position }) => (
   <Grid container direction="row" justify={position} alignItems="center">
-    <div className="separator" />
+    <div className="separator" style={style} />
   </Grid>
 );
 

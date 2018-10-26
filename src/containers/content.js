@@ -16,25 +16,40 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import CustomCarousel from "../components/carousel/customCarousel";
 import { SupervisedUserCircle, SaveAlt } from "@material-ui/icons";
 import * as Data from "../jsons/data.json";
+import * as Formatter from "../utils/formatter";
+import * as Const from "../utils/const";
 
 const Content = () => (
   <div>
-    <Section title="Why SteemPlus ?">
-      {Data.whySteemPlus.map((why, i) => (
+    <Section
+      title={Data.whySteemPlus.sectionTitle}
+      tag={Formatter.tagFromTitle(Data.whySteemPlus.sectionTitle)}
+    >
+      {Data.whySteemPlus.data.map((why, i) => (
         <FancyCard title={why.title} content={why.content} key={i}>
           <SupervisedUserCircle className="fancy-card-icon" fontSize="large" />
         </FancyCard>
       ))}
     </Section>
-    <Section title="Awesome Features">
-      {Data.features.map((feature, i) => (
+    <Section
+      title={Data.features.sectionTitle}
+      tag={Formatter.tagFromTitle(Data.features.sectionTitle)}
+    >
+      {Data.features.data.map((feature, i) => (
         <StandardCard title={feature.title} content={feature.content} key={i}>
           <SupervisedUserCircle className="fancy-card-icon" fontSize="large" />
         </StandardCard>
       ))}
     </Section>
-    <SectionLeftRight direction="row-reverse" gradient={true}>
-      <Description title="Where is it available ?">
+    <SectionLeftRight
+      direction="row-reverse"
+      background1={Const.BACKGROUND_SECTION}
+      background2={Const.BACKGROUND_SECTION2}
+    >
+      <Description
+        title={Data.where.sectionTitle}
+        tag={Formatter.tagFromTitle(Data.where.sectionTitle)}
+      >
         <ContentSectionRL textAlign="left">
           {Data.where.description}
         </ContentSectionRL>
@@ -43,7 +58,8 @@ const Content = () => (
             <CustomButtonIcon
               text={browser.name}
               href={browser.url}
-              color="black"
+              color1="black"
+              color2="white"
               margin={"1rem"}
               key={i}
             >
@@ -54,7 +70,10 @@ const Content = () => (
       </Description>
       <Image src="../../img/steemplus.png" />
     </SectionLeftRight>
-    <CarouselSection title="Screenshots">
+    <CarouselSection
+      title={Data.screenshots.sectionTitle}
+      tag={Formatter.tagFromTitle(Data.screenshots.sectionTitle)}
+    >
       <CustomCarousel autoPlay={true} showArrows={false} axis="horizontal">
         <div>
           <img src="../../img/screenshots/intro.jpg" alt="Intro" />
@@ -76,8 +95,11 @@ const Content = () => (
         </div>
       </CustomCarousel>
     </CarouselSection>
-    <Section title="Reviews">
-      {Data.reviews.map((review, i) => (
+    <Section
+      title={Data.reviews.sectionTitle}
+      tag={Formatter.tagFromTitle(Data.reviews.sectionTitle)}
+    >
+      {Data.reviews.data.map((review, i) => (
         <ReviewPanel
           title={review.title}
           review={review.review}
@@ -86,8 +108,11 @@ const Content = () => (
         />
       ))}
     </Section>
-    <Section title="Our Team">
-      {Data.members.map((members, i) => (
+    <Section
+      title={Data.members.sectionTitle}
+      tag={Formatter.tagFromTitle(Data.members.sectionTitle)}
+    >
+      {Data.members.data.map((members, i) => (
         <MemberPanel
           name={members.name}
           position={members.position}
@@ -96,14 +121,22 @@ const Content = () => (
         />
       ))}
     </Section>
-    <SectionLeftRight direction="row" gradient={true}>
-      <Description title="Contact Us">
-        {Data.contactUs.description}
+    <SectionLeftRight
+      direction="row"
+      background1={Const.BACKGROUND_SECTION2}
+      background2={Const.BACKGROUND_SECTION}
+    >
+      <Description
+        title={Data.contactUs.sectionTitle}
+        tag={Formatter.tagFromTitle(Data.contactUs.sectionTitle)}
+      >
+        {Data.contactUs.data.description}
         <CustomButton
-          text={Data.contactUs.textButton}
-          color="blue"
+          text={Data.contactUs.data.textButton}
+          color1={Const.TITLE_COLOR}
+          color2="white"
           marginTop={"1rem"}
-          href={Data.contactUs.url}
+          href={Data.contactUs.data.url}
         />
       </Description>
       <Image src="../../img/steemplus.png" />

@@ -1,45 +1,52 @@
 {
-  "whySteemPlus": [
-    {
-      "title": "SteemPlus Points",
-      "content": "SteemPlus point are , consectetur adipiscing elit. Mauris tincidunt leo ut nisl aliquam fringilla. Mauris ultrices justo sit amet velit semper commodo. Donec molestie odio nec felis lobortis, really useful and allows you to get upvotes!"
-    },
-    {
-      "title": "Why 2",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt leo ut nisl aliquam fringilla. Mauris ultrices justo sit amet velit semper commodo. Donec molestie odio nec felis lobortis, vitae malesuada erat cursus. Duis mollis urna eu metus pulvinar convallis."
-    },
-    {
-      "title": "Why 3",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt leo ut nisl aliquam fringilla. Mauris ultrices justo sit amet velit semper commodo. Donec molestie odio nec felis lobortis, vitae malesuada erat cursus. Duis mollis urna eu metus pulvinar convallis."
-    }
-  ],
-  "features": [
-    {
-      "title": "Feature 1",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt leo ut nisl aliquam fringilla. Mauris ultrices justo sit amet velit semper commodo. Donec molestie odio nec felis lobortis, vitae malesuada erat cursus. Duis mollis urna eu metus pulvinar convallis."
-    },
-    {
-      "title": "Feature 2",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt leo ut nisl aliquam fringilla. Mauris ultrices justo sit amet velit semper commodo. Donec molestie odio nec felis lobortis, vitae malesuada erat cursus. Duis mollis urna eu metus pulvinar convallis."
-    },
-    {
-      "title": "Feature 3",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt leo ut nisl aliquam fringilla. Mauris ultrices justo sit amet velit semper commodo. Donec molestie odio nec felis lobortis, vitae malesuada erat cursus. Duis mollis urna eu metus pulvinar convallis."
-    },
-    {
-      "title": "Feature 4",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt leo ut nisl aliquam fringilla. Mauris ultrices justo sit amet velit semper commodo. Donec molestie odio nec felis lobortis, vitae malesuada erat cursus. Duis mollis urna eu metus pulvinar convallis."
-    },
-    {
-      "title": "Feature 5",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt leo ut nisl aliquam fringilla. Mauris ultrices justo sit amet velit semper commodo. Donec molestie odio nec felis lobortis, vitae malesuada erat cursus. Duis mollis urna eu metus pulvinar convallis."
-    },
-    {
-      "title": "Feature 6",
-      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt leo ut nisl aliquam fringilla. Mauris ultrices justo sit amet velit semper commodo. Donec molestie odio nec felis lobortis, vitae malesuada erat cursus. Duis mollis urna eu metus pulvinar convallis."
-    }
-  ],
+  "whySteemPlus": {
+    "sectionTitle": "Why SteemPlus ?",
+    "data": [
+      {
+        "title": "SteemPlus Points",
+        "content": "SteemPlus point are , consectetur adipiscing elit. Mauris tincidunt leo ut nisl aliquam fringilla. Mauris ultrices justo sit amet velit semper commodo. Donec molestie odio nec felis lobortis, really useful and allows you to get upvotes!"
+      },
+      {
+        "title": "Why 2",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt leo ut nisl aliquam fringilla. Mauris ultrices justo sit amet velit semper commodo. Donec molestie odio nec felis lobortis, vitae malesuada erat cursus. Duis mollis urna eu metus pulvinar convallis."
+      },
+      {
+        "title": "Why 3",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt leo ut nisl aliquam fringilla. Mauris ultrices justo sit amet velit semper commodo. Donec molestie odio nec felis lobortis, vitae malesuada erat cursus. Duis mollis urna eu metus pulvinar convallis."
+      }
+    ]
+  },
+  "features": {
+    "sectionTitle": "Awesome Features",
+    "data": [
+      {
+        "title": "Feature 1",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt leo ut nisl aliquam fringilla. Mauris ultrices justo sit amet velit semper commodo. Donec molestie odio nec felis lobortis, vitae malesuada erat cursus. Duis mollis urna eu metus pulvinar convallis."
+      },
+      {
+        "title": "Feature 2",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt leo ut nisl aliquam fringilla. Mauris ultrices justo sit amet velit semper commodo. Donec molestie odio nec felis lobortis, vitae malesuada erat cursus. Duis mollis urna eu metus pulvinar convallis."
+      },
+      {
+        "title": "Feature 3",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt leo ut nisl aliquam fringilla. Mauris ultrices justo sit amet velit semper commodo. Donec molestie odio nec felis lobortis, vitae malesuada erat cursus. Duis mollis urna eu metus pulvinar convallis."
+      },
+      {
+        "title": "Feature 4",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt leo ut nisl aliquam fringilla. Mauris ultrices justo sit amet velit semper commodo. Donec molestie odio nec felis lobortis, vitae malesuada erat cursus. Duis mollis urna eu metus pulvinar convallis."
+      },
+      {
+        "title": "Feature 5",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt leo ut nisl aliquam fringilla. Mauris ultrices justo sit amet velit semper commodo. Donec molestie odio nec felis lobortis, vitae malesuada erat cursus. Duis mollis urna eu metus pulvinar convallis."
+      },
+      {
+        "title": "Feature 6",
+        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt leo ut nisl aliquam fringilla. Mauris ultrices justo sit amet velit semper commodo. Donec molestie odio nec felis lobortis, vitae malesuada erat cursus. Duis mollis urna eu metus pulvinar convallis."
+      }
+    ]
+  },
   "where": {
+    "sectionTitle": "Where is it available ?",
     "description": "SteemPlus is available on several browser : Chrome, Opera and Firefox",
     "browsers": [
       {
@@ -56,38 +63,50 @@
       }
     ]
   },
-  "reviews": [
-    {
-      "title": "Awesome",
-      "review": "This is a fucking awesome app! Thank you!",
-      "username": "stoodkev"
-    },
-    {
-      "title": "Awesome",
-      "review": "This is a fucking awesome app! Thank you!",
-      "username": "stoodkev"
-    },
-    {
-      "title": "Awesome",
-      "review": "This is a fucking awesome app! Thank you!",
-      "username": "stoodkev"
-    }
-  ],
-  "members": [
-    {
-      "name": "Quentin",
-      "position": "CEO-Founder",
-      "username": "stoodkev"
-    },
-    {
-      "name": "Cedric",
-      "position": "Developer",
-      "username": "cedricguillas"
-    }
-  ],
+  "reviews": {
+    "sectionTitle": "Reviews",
+    "data": [
+      {
+        "title": "Awesome",
+        "review": "This is a fucking awesome app! Thank you!",
+        "username": "stoodkev"
+      },
+      {
+        "title": "Awesome",
+        "review": "This is a fucking awesome app! Thank you!",
+        "username": "stoodkev"
+      },
+      {
+        "title": "Awesome",
+        "review": "This is a fucking awesome app! Thank you!",
+        "username": "stoodkev"
+      }
+    ]
+  },
+  "screenshots": {
+    "sectionTitle": "Screenshots"
+  },
+  "members": {
+    "sectionTitle": "Our Team",
+    "data": [
+      {
+        "name": "Quentin",
+        "position": "CEO-Founder",
+        "username": "stoodkev"
+      },
+      {
+        "name": "Cedric",
+        "position": "Developer",
+        "username": "cedricguillas"
+      }
+    ]
+  },
   "contactUs": {
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a sapien at purus pulvinar ultrices at vel urna. Nulla vel pulvinar nibh. Vivamus consequat consequat purus, ac consectetur nisi tempor lobortis. Maecenas eget elit ut orci semper pharetra eu sed ligula. Donec non augue mauris. Mauris quis euismod nunc. Quisque metus erat, hendrerit eget consequat non, lobortis a massa. Sed felis leo, tempor eget ultricies eget, iaculis quis dolor. Integer ullamcorper velit ut ante pretium maximus. Pellentesque ligula est, commodo ac justo vitae, mollis aliquam urna.",
-    "textButton": "Contact Us",
-    "url": "https://discord.gg/hhBw3mv"
+    "sectionTitle": "Contact Us",
+    "data": {
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a sapien at purus pulvinar ultrices at vel urna. Nulla vel pulvinar nibh. Vivamus consequat consequat purus, ac consectetur nisi tempor lobortis. Maecenas eget elit ut orci semper pharetra eu sed ligula. Donec non augue mauris. Mauris quis euismod nunc. Quisque metus erat, hendrerit eget consequat non, lobortis a massa. Sed felis leo, tempor eget ultricies eget, iaculis quis dolor. Integer ullamcorper velit ut ante pretium maximus. Pellentesque ligula est, commodo ac justo vitae, mollis aliquam urna.",
+      "textButton": "Contact Us",
+      "url": "https://discord.gg/hhBw3mv"
+    }
   }
 }

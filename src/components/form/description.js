@@ -1,6 +1,5 @@
 import React from "react";
 import { Grid } from "@material-ui/core/";
-import CustomButton from "../buttons/customButton";
 import Separator from "../../components/separator";
 
 const styleTitle = {
@@ -10,7 +9,7 @@ const styleTitle = {
   color: "#3c4a97"
 };
 
-const Description = ({ children, title }) => (
+const Description = ({ children, title, tag }) => (
   <Grid
     item
     xs={12}
@@ -23,7 +22,9 @@ const Description = ({ children, title }) => (
     alignItems="flex-start"
     className="description"
   >
-    <span style={styleTitle}>{title}</span>
+    <span id={tag} style={styleTitle}>
+      {title}
+    </span>
     <Separator position="flex-start" />
     {children}
   </Grid>

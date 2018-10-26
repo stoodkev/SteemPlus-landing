@@ -7,9 +7,9 @@ const style = {
   marginBottom: "3rem"
 };
 
-const CarouselSection = ({ title, children }) => (
+const CarouselSection = ({ title, tag, children }) => (
   <div className="section" style={style}>
-    <h1>{title}</h1>
+    <h1 id={tag}>{title}</h1>
     <Separator position="center" />
     <Grid container direction="row" justify="center" alignItems="center">
       {children}

@@ -2,17 +2,17 @@ import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import { Button } from "@material-ui/core/";
 
-const CustomButtonIcon = ({ text, color, margin, children, href }) => {
+const CustomButtonIcon = ({ text, color1, color2, margin, children, href }) => {
   if (margin === undefined) margin = "0";
   const buttonStyle = {
     root: {
       margin: margin,
-      backgroundColor: color,
-      color: "white",
+      backgroundColor: color1,
+      color: color2,
       borderRadius: "0 10px 10px 10px",
       "&:hover": {
-        backgroundColor: "white",
-        color: color
+        backgroundColor: color2,
+        color: color1
       },
       "&:first-child": {
         marginLeft: 0
