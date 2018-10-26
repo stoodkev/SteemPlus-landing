@@ -18,6 +18,7 @@ import { SupervisedUserCircle, SaveAlt } from "@material-ui/icons";
 import * as Data from "../jsons/data.json";
 import * as Formatter from "../utils/formatter";
 import * as Const from "../utils/const";
+import Parser from "html-react-parser";
 
 const Content = () => (
   <div>
@@ -26,7 +27,7 @@ const Content = () => (
       tag={Formatter.tagFromTitle(Data.whySteemPlus.sectionTitle)}
     >
       {Data.whySteemPlus.data.map((why, i) => (
-        <FancyCard title={why.title} content={why.content} key={i}>
+        <FancyCard title={why.title} content={Parser(why.content)} key={i}>
           <SupervisedUserCircle className="fancy-card-icon" fontSize="large" />
         </FancyCard>
       ))}
@@ -36,7 +37,11 @@ const Content = () => (
       tag={Formatter.tagFromTitle(Data.features.sectionTitle)}
     >
       {Data.features.data.map((feature, i) => (
-        <StandardCard title={feature.title} content={feature.content} key={i}>
+        <StandardCard
+          title={feature.title}
+          content={Parser(feature.content)}
+          key={i}
+        >
           <SupervisedUserCircle className="fancy-card-icon" fontSize="large" />
         </StandardCard>
       ))}
@@ -51,7 +56,7 @@ const Content = () => (
         tag={Formatter.tagFromTitle(Data.where.sectionTitle)}
       >
         <ContentSectionRL textAlign="left">
-          {Data.where.description}
+          {Parser(Data.where.description)}
         </ContentSectionRL>
         <Grid container direction="row">
           {Data.where.browsers.map((browser, i) => (
@@ -102,7 +107,7 @@ const Content = () => (
       {Data.reviews.data.map((review, i) => (
         <ReviewPanel
           title={review.title}
-          review={review.review}
+          review={Parser(review.review)}
           username={review.username}
           key={i}
         />
@@ -130,7 +135,7 @@ const Content = () => (
         title={Data.contactUs.sectionTitle}
         tag={Formatter.tagFromTitle(Data.contactUs.sectionTitle)}
       >
-        {Data.contactUs.data.description}
+        {Parser(Data.contactUs.data.description)}
         <CustomButton
           text={Data.contactUs.data.textButton}
           color1={Const.TITLE_COLOR}

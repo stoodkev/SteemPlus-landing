@@ -5,6 +5,7 @@
   "dependencies": {
     "@material-ui/core": "^3.2.2",
     "@material-ui/icons": "^3.0.1",
+    "html-react-parser": "^0.4.7",
     "react": "^16.5.2",
     "react-anchor-link-smooth-scroll": "^1.0.11",
     "react-countup": "^4.0.0-alpha.6",

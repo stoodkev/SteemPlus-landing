@@ -18,7 +18,7 @@ class Spp extends Component {
   }
 
   componentDidMount() {
-    fetch("http://steem-plus-api-test.herokuapp.com/spp-stats", {
+    fetch("https://steem-plus-api-test.herokuapp.com/spp-stats", {
       method: "GET",
       headers: {
         "Access-Control-Allow-Origin": "*",
