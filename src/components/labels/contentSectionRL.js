@@ -11,7 +11,7 @@ const ContentSectionRL = ({ textAlign, children }) => {
   };
 
   const CustomizedLabel = withStyles(labelStyle)(Typography);
-  return <CustomizedLabel variant="body1">{children}</CustomizedLabel>;
+  return <CustomizedLabel variant="body2">{children}</CustomizedLabel>;
 };
 
 export default ContentSectionRL;

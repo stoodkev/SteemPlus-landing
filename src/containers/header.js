@@ -6,8 +6,8 @@ import "../css/containers/header.css";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import * as Data from "../jsons/data.json";
 import * as Formatter from "../utils/formatter";
-import { NavLink } from "react-router-dom";
 import * as Const from "../utils/const";
+import { connect } from "react-redux";
 
 const anchorStyle = {
   textDecoration: "none",
@@ -25,41 +25,78 @@ const anchorStyle = {
   }
 };
 
-const Header = () => (
-  <div>
-    <AppBar position="sticky" className="navbar">
-      <Toolbar>
-        <Avatar srcSet="/img/logo.png" />
-        <TitleApp variant="title">SteemPlus</TitleApp>
-        <div style={{ width: "100%" }}>
-          {Object.keys(Data.default).map((section, i) => (
-            <AnchorLink
-              href={`#${Formatter.tagFromTitle(
-                Data.default[section].sectionTitle
-              )}`}
-              style={anchorStyle}
-              key={i}
-            >
-              <NavbarButton
-                color1="white"
-                color2={Const.TITLE_COLOR}
-                text={Data.default[section].sectionTitle}
-                float="left"
-              />
-            </AnchorLink>
-          ))}
-          <NavLink to="/spp">
+const getNavItems = (navItems, setPage) => {
+  if (navItems)
+    return Object.keys(navItems).map((section, i) => (
+      <AnchorLink
+        href={`#${Formatter.tagFromTitle(navItems[section].sectionTitle)}`}
+        style={anchorStyle}
+        key={i}
+      >
+        <NavbarButton
+          color1="white"
+          color2={Const.TITLE_COLOR}
+          text={navItems[section].sectionTitle}
+          float="left"
+        />
+      </AnchorLink>
+    ));
+};
+
+const Header = ({ page, setPage }) => {
+  let navItems = null;
+  navItems = Data.default;
+  let isMainPage = page === "main";
+
+  return (
+    <div>
+      <AppBar position="sticky" className="navbar">
+        <Toolbar>
+          <Avatar srcSet="/img/logo.png" />
+          <TitleApp variant="title">SteemPlus</TitleApp>
+          <div style={{ width: "100%" }}>
+            <NavbarButton
+              color1="white"
+              color2={Const.TITLE_COLOR}
+              text="Home"
+              float="left"
+              itemVisible={!isMainPage}
+              onClick={() => setPage("main")}
+            />
+            {getNavItems(navItems, setPage)}
             <NavbarButton
               color1="white"
               color2={Const.TITLE_COLOR}
               text="SPP"
               float="right"
+              onClick={() => {
+                setPage("spp");
+              }}
             />
-          </NavLink>
-        </div>
-      </Toolbar>
-    </AppBar>
-  </div>
-);
+          </div>
+        </Toolbar>
+      </AppBar>
+    </div>
+  );
+};
 
-export default Header;
+const mapStateToProps = state => {
+  return {
+    page: state.nav.page
+  };
+};
+const mapDispatchToProps = dispatch => {
+  return {
+    setPage: page => {
+      dispatch({
+        type: "SET_PAGE",
+        payload: page
+      });
+    }
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Header);

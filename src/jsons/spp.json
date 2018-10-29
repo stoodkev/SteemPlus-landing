@@ -2,5 +2,26 @@
   "whatIsSPP": {
     "sectionTitle": "What are SteemPlus Points",
     "description": "Description SPP"
+  },
+  "stats": {
+    "sectionTitle": "Numbers",
+    "items": [
+      {
+        "name": "SPP Holders",
+        "key": "spp_holders"
+      },
+      {
+        "name": "Total Points",
+        "key": "total_points"
+      },
+      {
+        "name": "Total Points Day",
+        "key": "total_points_day"
+      },
+      {
+        "name": "Total Points Day Exclusive",
+        "key": "total_points_day_exclusive"
+      }
+    ]
   }
 }

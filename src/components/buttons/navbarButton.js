@@ -1,8 +1,16 @@
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
-import { Button } from "@material-ui/core/";
+import { Button, Slide } from "@material-ui/core/";
 
-const NavbarButton = ({ text, color1, color2, href, float }) => {
+const NavbarButton = ({
+  text,
+  color1,
+  color2,
+  href,
+  float,
+  itemVisible,
+  onClick
+}) => {
   const buttonStyle = {
     root: {
       float: float,
@@ -16,7 +24,13 @@ const NavbarButton = ({ text, color1, color2, href, float }) => {
     }
   };
   const CustomizedButton = withStyles(buttonStyle)(Button);
-  return <CustomizedButton href={href}>{text}</CustomizedButton>;
+  return (
+    <Slide direction="up" in={itemVisible}>
+      <CustomizedButton href={href} onClick={onClick}>
+        {text}
+      </CustomizedButton>
+    </Slide>
+  );
 };
 
 export default NavbarButton;

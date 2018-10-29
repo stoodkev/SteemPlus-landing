@@ -3,63 +3,189 @@
     "sectionTitle": "Why SteemPlus ?",
     "data": [
       {
+        "title": "30+ Features",
+        "content": "<ul><li>SteemPlus extension brings over 30 new features to your Steem experience</li><li>Available on Steemit and Busy</li><li>Many more features on our TODO list!</li></ul><a href='#features'>Browse Features...</a>"
+      },
+      {
         "title": "SteemPlus Points",
-        "content": "<b>SteemPlus point</b> are , consectetur adipiscing elit. Mauris tincidunt leo ut nisl aliquam fringilla. Mauris ultrices justo sit amet velit semper commodo. Donec molestie odio nec felis lobortis, really useful and allows you to get upvotes!"
+        "content": "<ul><li>Use third-party <strong>Steem Apps</strong> and earn <strong>SteemPlus Points (SPP)</strong>.</li><li>SPP grant you a share of @steem-plus <strong>daily upvotes</strong></li><li>Redeem for <strong>premium features</strong></li></ul>.<a href='/spp'>Learn more about SPP...</a>"
       },
       {
-        "title": "Why 2",
-        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt leo ut nisl aliquam fringilla. Mauris ultrices justo sit amet velit semper commodo. Donec molestie odio nec felis lobortis, vitae malesuada erat cursus. Duis mollis urna eu metus pulvinar convallis."
-      },
-      {
-        "title": "Why 3",
-        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt leo ut nisl aliquam fringilla. Mauris ultrices justo sit amet velit semper commodo. Donec molestie odio nec felis lobortis, vitae malesuada erat cursus. Duis mollis urna eu metus pulvinar convallis."
+        "title": "For the community",
+        "content": "<ul><li>Opensource</li><li>Developement funded by upvotes from @utopian-io, @adsactly and the community</li><li>Over 3,500 daily users</li><li>Emphasis on developing features request by the community</li></ul>"
       }
     ]
   },
   "features": {
-    "sectionTitle": "Awesome Features",
+    "sectionTitle": "Features",
     "data": [
       {
-        "title": "Feature 1",
-        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt leo ut nisl aliquam fringilla. Mauris ultrices justo sit amet velit semper commodo. Donec molestie odio nec felis lobortis, vitae malesuada erat cursus. Duis mollis urna eu metus pulvinar convallis."
+        "title": "Voting value slider ",
+        "content": "How much is your upvote/flag worth?",
+        "platforms": ["steemit", "busy"],
+        "url": "https://steemit.com/steemdev/@steem-plus/steemplus-2-5-integration-of-steemit-more-info-features"
       },
       {
-        "title": "Feature 2",
-        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt leo ut nisl aliquam fringilla. Mauris ultrices justo sit amet velit semper commodo. Donec molestie odio nec felis lobortis, vitae malesuada erat cursus. Duis mollis urna eu metus pulvinar convallis."
+        "title": "Delegation",
+        "content": "Delegate your Steem Power in an instant!",
+        "platforms": ["steemit", "busy"],
+        "url": "https://steemit.com/utopian-io/@stoodkev/steemplus-delegation-details"
       },
       {
-        "title": "Feature 3",
-        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt leo ut nisl aliquam fringilla. Mauris ultrices justo sit amet velit semper commodo. Donec molestie odio nec felis lobortis, vitae malesuada erat cursus. Duis mollis urna eu metus pulvinar convallis."
+        "title": "Account value",
+        "content": "Get your real account value based on current Bittrex STEEM and SBD prices.",
+        "platforms": ["steemit", "busy"],
+        "url": "https://steemit.com/utopian-io/@steem-plus/steemplus-2-1-account-value-detail-50-steem-bounty"
       },
       {
-        "title": "Feature 4",
-        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt leo ut nisl aliquam fringilla. Mauris ultrices justo sit amet velit semper commodo. Donec molestie odio nec felis lobortis, vitae malesuada erat cursus. Duis mollis urna eu metus pulvinar convallis."
+        "title": "Feed+",
+        "content": "Filter and sort your feed to find the content you like!",
+        "platforms": ["steemit", "busy"],
+        "url": "https://steemit.com/utopian-io/@stoodkev/steemplus-2-17-5-feed-on-busy"
       },
       {
-        "title": "Feature 5",
-        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt leo ut nisl aliquam fringilla. Mauris ultrices justo sit amet velit semper commodo. Donec molestie odio nec felis lobortis, vitae malesuada erat cursus. Duis mollis urna eu metus pulvinar convallis."
+        "title": "Beneficiaries",
+        "content": "Share your rewards by setting other users as beneficiaries. @steemplus-pay will be set as a 5% beneficiary and you will earm SPP.",
+        "platforms": ["steemit"],
+        "url": "https://steemit.com/utopian-io/@steem-plus/steemplus-1-7-share-your-rewards-with-your-friends-beneficiaries-ideal-for-the-steemfest"
       },
       {
-        "title": "Feature 6",
-        "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt leo ut nisl aliquam fringilla. Mauris ultrices justo sit amet velit semper commodo. Donec molestie odio nec felis lobortis, vitae malesuada erat cursus. Duis mollis urna eu metus pulvinar convallis."
+        "title": "Mentions",
+        "content": "See who mentionned you and where.",
+        "platforms": ["steemit", "busy"],
+        "url": "https://steemit.com/utopian-io/@stoodkev/steemplus-2-17-9-vote-and-mentions-tabs"
+      },
+      {
+        "title": "Vote Value",
+        "content": "See the SBD value of each received vote.",
+        "platforms": ["steemit"],
+        "url": "https://steemit.com/steemdev/@steem-plus/steemplus-2-5-integration-of-steemit-more-info-features"
+      },
+      {
+        "title": "Signature",
+        "content": "Your posts and comments signatures are just one click away.",
+        "platforms": ["steemit", "busy"],
+        "url": "https://steemit.com/utopian-io/@steem-plus/steemplus-2-15-signatures"
+      },
+      {
+        "title": "Resteems indicator",
+        "content": "See how many resteems you ve got and from whom.",
+        "platforms": ["steemit"],
+        "url": "https://steemit.com/utopian-io/@steem-plus/2-16-resteem-indicators"
+      },
+      {
+        "title": "VM and RC popup",
+        "content": "Get your Voting Mana and Resource Credits percentage, and their recharge time.",
+        "platforms": ["steemit"],
+        "url": "https://steemit.com/steemplus/@steem-plus/welcome-to-hf20-get-your-voting-mana-and-rc-mana-from-steemplus"
+      },
+      {
+        "title": "Utopian Contributions",
+        "content": "Post Utopian contributions directly from Steemit. Earn bigger votes and SPP.",
+        "platforms": ["steemit"],
+        "url": "https://steemit.com/utopian-io/@steem-plus/steemplus-220-utopian--steemplus-partnership--bigger-upvotes"
+      },
+      {
+        "title": "DTube upload",
+        "content": "Upload your DTube videos directly from Steemit and earn SPP.",
+        "platforms": ["steemit"],
+        "url": "https://steemit.com/utopian-io/@steem-plus/steemplus-221-earn-more-by-posting-to-dtube-via-steemplus"
+      },
+      {
+        "title": "Buy Steem Monsters packs",
+        "content": "Buy Steem Monsters starter and booster packs directly from your Steemit profile and earn SPP.",
+        "platforms": ["steemit"],
+        "url": "https://steemit.com/utopian-io/@steem-plus/steemplus-31--buy-your-steem-monsters-packs-from-steemplus-and-earn-steemplus-points-spp"
+      },
+      {
+        "title": "Tokens Wallet",
+        "content": "View your tokens directly from your Steemit wallet (currently show SPP only)",
+        "platforms": ["steemit"],
+        "url": "https://steemit.com/utopian-io/@steem-plus/steemplus-30--the-steemplus-points-are-here-"
+      },
+      {
+        "title": "Steem Monsters Market",
+        "content": "Buy cards from Steem Monsters Marmet buy batches and earn SPP.",
+        "platforms": ["steemmonsters"],
+        "url": "https://steemit.com/utopian-io/@steem-plus/steemplus-35--buy-cards-by-batch-on-steem-monsters-and-earn-spp"
+      },
+      {
+        "title": "Badges",
+        "content": "Plankton or Whale? These cool profile badges will let you know!",
+        "platforms": ["steemit", "busy"],
+        "url": "https://steemit.com/utopian-io/@stoodkev/more-ranks-on-steemplus-to-track-your-progression"
+      },
+      {
+        "title": "Steem Price",
+        "content": "Get STEEM and SBD price on Bittrex directly from your user dropdown.",
+        "platforms": ["steemit"],
+        "url": "https://steemit.com/utopian-io/@steem-plus/steemplus-1-10-showing-steem-sbd-steem-usd-and-sbd-usd-market-price"
+      },
+      {
+        "title": "Enhanced wallet",
+        "content": "Filter your wallet to find what you re looking for!",
+        "platforms": ["steemit"],
+        "url": "https://steemit.com/utopian-io/@stoodkev/steemplus-wallet-changes-and-more"
+      },
+      {
+        "title": "Witness information",
+        "content": "Get all the information you'll ever need about witnesses, including incoming and outgoing votes.",
+        "platforms": ["steemit", "busy"],
+        "url": "https://steemit.com/utopian-io/@steem-plus/steemplus-2-17-7-witnesses-on-busy"
+      },
+      {
+        "title": "Rewards",
+        "content": "Get pending and claimed rewards information.",
+        "platforms": ["steemit", "busy"],
+        "url": "https://steemit.com/utopian-io/@steem-plus/steemplus-2-17-8-rewards-and-links-tabs-on-busy"
+      },
+      {
+        "title": "Votes Tab",
+        "content": "See all incoming and outgoing votes.",
+        "platforms": ["steemit", "busy"],
+        "url": "https://steemit.com/utopian-io/@stoodkev/steemplus-2-17-9-vote-and-mentions-tabs"
+      },
+      {
+        "title": "Histogram",
+        "content": "View an history of all your posts",
+        "platforms": ["steemit"],
+        "url": "https://steemit.com/steemdev/@steem-plus/steemplus-2-5-integration-of-steemit-more-info-features"
+      },
+      {
+        "title": "GIF ",
+        "content": "Pick and insert GIFs as you go!",
+        "platforms": ["steemit"],
+        "url": "https://steemit.com/steemdev/@steem-plus/steemplus-2-5-integration-of-steemit-more-info-features"
+      },
+      {
+        "title": "Favorites",
+        "content": "Set your favorites and get a direct link to their latest publications!",
+        "platforms": ["steemit"],
+        "url": "https://steemit.com/utopian-io/@steem-plus/steemplus-2-6-favorite-users"
+      },
+      {
+        "title": "More",
+        "content": "Download and try it out to find all our features ;)",
+        "platforms": ["steemit", "busy", "steemmonsters"],
+        "url": ""
       }
     ]
   },
   "where": {
-    "sectionTitle": "Where is it available ?",
-    "description": "SteemPlus is available on several browser : Chrome, Opera and Firefox",
+    "sectionTitle": "Download",
+    "description": "SteemPlus is available natively on Chrome and Firefox, and through the `Install Chrome Extensions` plugin on Opera:",
     "browsers": [
       {
         "name": "Chrome",
         "url": "https://chrome.google.com/webstore/detail/steemplus/mjbkjgcplmaneajhcbegoffkedeankaj"
       },
       {
-        "name": "Opera",
-        "url": "https://github.com/stoodkev/SteemPlus/blob/master/README.md#on-opera"
-      },
-      {
         "name": "Firefox",
         "url": "https://addons.mozilla.org/en-US/firefox/addon/steem-plus/"
+      },
+      {
+        "name": "Opera",
+        "url": "https://github.com/stoodkev/SteemPlus/blob/master/README.md#on-opera"
       }
     ]
   },
@@ -67,19 +193,24 @@
     "sectionTitle": "Reviews",
     "data": [
       {
-        "title": "Awesome",
-        "review": "This is a fucking awesome app! Thank you!",
+        "title": "Must have",
+        "review": "SteemPlus is a must have google chrome extension that makes Steeming easier and better.  Know prices, buy Steem Monster cards, know your current mana, set beneficiaries, have an off the shelf footer.  It's a great tool that augments your Steem experience.",
+        "username": "aggroed"
+      },
+      {
+        "title": "Comfortable",
+        "review": "Using steemit without steemplus is like swimming in a dress. Sure, I can do it if I have no choice, but it's uncomfortable and why would I want to?",
+        "username": "techslut"
+      },
+      {
+        "title": "Genius",
+        "review": "Who's the genius who invented this?",
         "username": "stoodkev"
       },
       {
-        "title": "Awesome",
-        "review": "This is a fucking awesome app! Thank you!",
-        "username": "stoodkev"
-      },
-      {
-        "title": "Awesome",
-        "review": "This is a fucking awesome app! Thank you!",
-        "username": "stoodkev"
+        "title": "Gay",
+        "review": "Im so gay",
+        "username": "cedricguillas"
       }
     ]
   },
@@ -87,7 +218,7 @@
     "sectionTitle": "Screenshots"
   },
   "members": {
-    "sectionTitle": "Our Team",
+    "sectionTitle": "Team",
     "data": [
       {
         "name": "Quentin",
@@ -98,13 +229,18 @@
         "name": "Cedric",
         "position": "Developer",
         "username": "cedricguillas"
+      },
+      {
+        "name": "Fabi",
+        "position": "Designer",
+        "username": "fabiyamada"
       }
     ]
   },
   "contactUs": {
     "sectionTitle": "Contact Us",
     "data": {
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a sapien at purus pulvinar ultrices at vel urna. Nulla vel pulvinar nibh. Vivamus consequat consequat purus, ac consectetur nisi tempor lobortis. Maecenas eget elit ut orci semper pharetra eu sed ligula. Donec non augue mauris. Mauris quis euismod nunc. Quisque metus erat, hendrerit eget consequat non, lobortis a massa. Sed felis leo, tempor eget ultricies eget, iaculis quis dolor. Integer ullamcorper velit ut ante pretium maximus. Pellentesque ligula est, commodo ac justo vitae, mollis aliquam urna.",
+      "description": "You need more information, or perhaps want to share your suggestions or get some assistance?<br><br>Simply contact us on Discord!",
       "textButton": "Contact Us",
       "url": "https://discord.gg/hhBw3mv"
     }

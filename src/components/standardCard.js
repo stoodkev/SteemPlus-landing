@@ -13,7 +13,7 @@ const StandardCard = ({ title, content, children }) => (
   >
     <Toolbar>
       {children}
-      <Typography variant="title" color="primary">
+      <Typography variant="h6" color="primary">
         {title}
       </Typography>
     </Toolbar>

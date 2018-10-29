@@ -5,7 +5,8 @@ import "../css/containers/App.css";
 import Content from "./content";
 import Banner from "../components/banner";
 import Spp from "./spp";
-import { Switch, Route } from "react-router-dom";
+
+import { connect } from "react-redux";
 
 class App extends Component {
   render() {
@@ -13,14 +14,23 @@ class App extends Component {
       <div className="App">
         <Banner />
         <Header />
-        <Switch>
-          <Route exact path="/" component={Content} />
-          <Route exact path="/spp" component={Spp} />
-        </Switch>
+        {this.props.page === "main" ? <Content /> : <Spp />}
         <Footer />
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    page: state.nav.page
+  };
+};
+const mapDispatchToProps = dispatch => {
+  return {};
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App);

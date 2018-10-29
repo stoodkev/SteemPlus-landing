@@ -5,6 +5,7 @@ import Description from "../components/form/description";
 import * as DataSPP from "../jsons/spp.json";
 import * as Formatter from "../utils/formatter";
 import CountUp from "react-countup";
+import Section from "../containers/sections/section";
 
 class Spp extends Component {
   constructor() {
@@ -48,48 +49,26 @@ class Spp extends Component {
           </Description>
           <Image
             name="SteemPlus Point Information"
-            src="../../img/infogramSPP.png"
+            src="../img/infogramSPP.png"
             maxHeight="36rem"
           />
         </SectionLeftRight>
-        <div>
-          SPP Holders{" "}
-          <CountUp
-            end={parseFloat(this.state.spp_holders)}
-            start={0}
-            duration={5}
-            delay={2}
-          />
-        </div>
-        <div>
-          Total points{" "}
-          <CountUp
-            end={parseFloat(this.state.total_points)}
-            start={0}
-            duration={5}
-            delay={2}
-            redraw
-          />
-        </div>
-        <div>
-          Total points day{" "}
-          <CountUp
-            end={parseFloat(this.state.total_points_day)}
-            start={0}
-            duration={5}
-            delay={2}
-          />
-        </div>
-        <div>
-          Total points day exclusive{" "}
-          <CountUp
-            end={parseFloat(this.state.total_points_day_exclusive)}
-            start={0}
-            duration={5}
-            delay={2}
-          />
-          {}
-        </div>
+        <Section
+          title={DataSPP.stats.sectionTitle}
+          tag={Formatter.tagFromTitle(DataSPP.stats.sectionTitle)}
+        >
+          {DataSPP.stats.items.map((item, i) => (
+            <div key={i}>
+              {item.name}
+              <CountUp
+                end={parseFloat(this.state[`${item.key}`])}
+                start={0}
+                duration={5}
+                delay={2}
+              />
+            </div>
+          ))}
+        </Section>
       </div>
     );
   }
