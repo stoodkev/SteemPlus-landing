@@ -11,12 +11,16 @@ const NavbarButton = ({
   itemVisible,
   onClick
 }) => {
+  console.log(text, itemVisible ? "block !important" : "none !important");
   const buttonStyle = {
     root: {
+      transition: "1s",
+      WebkitTransition: "1s" /* Safari 3.1 to 6.0 */,
       float: float,
       border: "none",
       backgroundColor: color1,
       color: color2,
+      display: itemVisible ? "block !important" : "none !important",
       "&:hover": {
         backgroundColor: color2,
         color: color1

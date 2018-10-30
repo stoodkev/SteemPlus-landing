@@ -1,35 +1,29 @@
 import React from "react";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel } from "react-responsive-carousel";
+import AliceCarousel from "react-alice-carousel";
+import "react-alice-carousel/lib/alice-carousel.css";
 import { Grid } from "@material-ui/core";
 
-const CustomCarousel = ({
-  type,
-  showArrows,
-  autoPlay,
-  axis,
-  dynamicHeight,
-  selectedItem,
-  children
-}) => (
+const CustomCarousel = ({ nbElem, autoPlay, selectedItem, children }) => (
   <Grid item xs={12} sm={6}>
-    <Carousel
-      selectedItem={selectedItem}
-      emulateTouch
-      infiniteLoop
+    <AliceCarousel
+      dotsDisabled={true}
       autoPlay={autoPlay}
-      showIndicators={false}
-      stopOnHover
-      showStatus={false}
-      showArrows={showArrows}
-      showThumbs={false}
-      axis={axis}
-      useKeyboardArrows={false}
-      className={type}
-      dynamicHeight={dynamicHeight}
+      stopAutoPlayOnHover={true}
+      duration={500}
+      infinite={true}
+      autoPlayInterval={1000}
+      startIndex={selectedItem}
+      responsive={{
+        0: {
+          items: 1
+        },
+        1024: {
+          items: { nbElem }
+        }
+      }}
     >
       {children}
-    </Carousel>
+    </AliceCarousel>
   </Grid>
 );
 

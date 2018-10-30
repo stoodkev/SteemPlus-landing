@@ -25,7 +25,7 @@ const anchorStyle = {
   }
 };
 
-const getNavItems = navItems => {
+const getNavItems = (navItems, isMainPage) => {
   if (navItems)
     return Object.keys(navItems).map((section, i) => (
       <AnchorLink
@@ -38,6 +38,7 @@ const getNavItems = navItems => {
           color2={Const.TITLE_COLOR}
           text={navItems[section].sectionTitle}
           float="left"
+          itemVisible={isMainPage === true}
         />
       </AnchorLink>
     ));
@@ -60,15 +61,16 @@ const Header = ({ page, setPage }) => {
               color2={Const.TITLE_COLOR}
               text="Home"
               float="left"
-              itemVisible={!isMainPage}
+              itemVisible={isMainPage === false}
               onClick={() => setPage("main")}
             />
-            {getNavItems(navItems, setPage)}
+            {getNavItems(navItems, isMainPage)}
             <NavbarButton
               color1="white"
               color2={Const.TITLE_COLOR}
               text="SPP"
               float="right"
+              itemVisible={isMainPage === true}
               onClick={() => {
                 setPage("spp");
               }}

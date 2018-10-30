@@ -12,7 +12,6 @@ import CustomButtonIcon from "../components/buttons/customButtonIcon";
 import ContentSectionRL from "../components/labels/contentSectionRL";
 import WordArt from "../components/wordart";
 import { Grid } from "@material-ui/core";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 import CustomCarousel from "../components/carousel/customCarousel";
 import { SupervisedUserCircle, SaveAlt } from "@material-ui/icons";
 import * as Data from "../jsons/data.json";
@@ -54,13 +53,7 @@ const Content = ({ activeFeature }) => (
       tag={Formatter.tagFromTitle(Data.features.sectionTitle)}
     >
       <WordArt url={"//cdn.wordart.com/json/09lx5f9a154k"} />
-      <CustomCarousel
-        autoPlay={true}
-        showArrows={true}
-        axis="horizontal"
-        type="presentation-mode"
-        selectedItem={activeFeature}
-      >
+      <CustomCarousel autoPlay={false} selectedItem={activeFeature} nbElem={1}>
         {Data.features.data.map((feature, i) => (
           <div key={i} className="my-slide secondary complex">
             <h2>
@@ -123,7 +116,7 @@ const Content = ({ activeFeature }) => (
       title={Data.screenshots.sectionTitle}
       tag={Formatter.tagFromTitle(Data.screenshots.sectionTitle)}
     >
-      <CustomCarousel autoPlay={true} showArrows={false} axis="horizontal">
+      <CustomCarousel autoPlay={true} nbElem={1}>
         <div>
           <img src="../../img/screenshots/intro.jpg" alt="Intro" />
         </div>
@@ -148,7 +141,7 @@ const Content = ({ activeFeature }) => (
       title={Data.reviews.sectionTitle}
       tag={Formatter.tagFromTitle(Data.reviews.sectionTitle)}
     >
-      <CustomCarousel type="reviews" autoPlay={true}>
+      <CustomCarousel className="reviews" autoPlay={true} nbElem={3}>
         {Arrays.shuffle(Data.reviews.data).map((review, i) => (
           <ReviewPanel
             title={review.title}
