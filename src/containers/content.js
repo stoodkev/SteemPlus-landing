@@ -71,12 +71,14 @@ const Content = ({ activeFeature }) => (
             </h2>
             <h3>{feature.content}</h3>
             <a
-              href={feature.url}
-              target="_blank"
+              href={feature.url === "" ? "#download" : feature.url}
+              target={feature.url === "" ? "" : "_blank"}
               rel="noopener noreferrer"
               style={linkStyle}
             >
-              For more details, visit our blog
+              {feature.url === ""
+                ? "Download here"
+                : "For more details, visit our blog"}
             </a>
           </div>
         ))}
