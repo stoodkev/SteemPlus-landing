@@ -1,0 +1,15 @@
+.section > h1 {
+  color: #3c4a97;
+}
+
+.section {
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+@media only screen and (max-width: 600px) {
+  .section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
