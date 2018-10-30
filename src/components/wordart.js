@@ -1,8 +1,9 @@
 import React from "react";
 import * as Data from "../jsons/data.json";
+import { Grid } from "@material-ui/core";
 import { connect } from "react-redux";
 
-const style = { height: "36rem", width: "36rem" };
+const style = { height: "auto", width: "100%" };
 
 const onClick = setActiveFeature => {
   setTimeout(() => {
@@ -21,12 +22,14 @@ const onClick = setActiveFeature => {
 };
 
 const WordArt = ({ url, setActiveFeature }) => (
-  <div
-    style={style}
-    data-wordart-src={url}
-    data-wordart-show-attribution
-    onClick={() => onClick(setActiveFeature)}
-  />
+  <Grid item xs={12} sm={6}>
+    <div
+      style={style}
+      data-wordart-src={url}
+      data-wordart-show-attribution
+      onClick={() => onClick(setActiveFeature)}
+    />
+  </Grid>
 );
 const mapStateToProps = state => {
   return {
