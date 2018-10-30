@@ -21,11 +21,19 @@ const ArrowButton = withStyles(buttonStyle)(Button);
 
 class CustomCarousel extends React.Component {
   constructor(props) {
-    super();
+    super(props);
+    console.log(props);
     this.nbElem = props.nbElem;
     this.autoPlay = props.autoPlay;
     this.selectedItem = props.selectedItem;
     this.sizeElement = props.sizeElement;
+    this.state = { selectedFeature: props.selectedItem };
+    console.log(this.selectedItem);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.selectedItem !== this.props.selectedItem)
+      this.setState({ selectedFeature: this.props.selectedItem });
   }
 
   render() {
@@ -49,7 +57,7 @@ class CustomCarousel extends React.Component {
               duration={500}
               infinite={true}
               autoPlayInterval={5000}
-              startIndex={this.selectedItem}
+              startIndex={this.state.selectedFeature}
               responsive={{
                 0: {
                   items: 1
