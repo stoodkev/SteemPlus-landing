@@ -4,15 +4,30 @@
     "data": [
       {
         "title": "30+ Features",
-        "content": "<ul><li>SteemPlus extension brings over 30 new features to your Steem experience</li><li>Available on Steemit and Busy</li><li>Many more features on our TODO list!</li></ul><a href='#features'>Browse Features...</a>"
+        "content": "<ul><li>SteemPlus extension brings over 30 new features to your Steem experience</li><li>Available on Steemit and Busy</li><li>Many more features on our TODO list!</li></ul>",
+        "link": {
+          "type": "anchor",
+          "to": "features",
+          "text": "Browse features..."
+        }
       },
       {
         "title": "SteemPlus Points",
-        "content": "<ul><li>Use third-party <strong>Steem Apps</strong> and earn <strong>SteemPlus Points (SPP)</strong>.</li><li>SPP grant you a share of @steem-plus <strong>daily upvotes</strong></li><li>Redeem for <strong>premium features</strong></li></ul>.<a href='/spp'>Learn more about SPP...</a>"
+        "content": "<ul><li>Use third-party <strong>Steem Apps</strong> and earn <strong>SteemPlus Points (SPP)</strong>.</li><li>SPP grant you a share of @steem-plus <strong>daily upvotes</strong></li><li>Redeem for <strong>premium features</strong></li></ul>.",
+        "link": {
+          "type": "internal",
+          "to": "spp",
+          "text": "Learn more about SPP..."
+        }
       },
       {
         "title": "For the community",
-        "content": "<ul><li>Opensource</li><li>Developement funded by upvotes from @utopian-io, @adsactly and the community</li><li>Over 3,500 daily users</li><li>Emphasis on developing features request by the community</li></ul>"
+        "content": "<ul><li>Opensource</li><li>Developement funded by upvotes from @utopian-io, @adsactly and the community</li><li>Over 3,500 daily users</li><li>Emphasis on developing features request by the community</li></ul>",
+        "link": {
+          "type": "external",
+          "to": "https://github.com/stoodkev/SteemPlus",
+          "text": "See the code on Github..."
+        }
       }
     ]
   },
@@ -20,7 +35,7 @@
     "sectionTitle": "Features",
     "data": [
       {
-        "title": "Voting value slider ",
+        "title": "Voting value slider",
         "content": "How much is your upvote/flag worth?",
         "platforms": ["steemit", "busy"],
         "url": "https://steemit.com/steemdev/@steem-plus/steemplus-2-5-integration-of-steemit-more-info-features"
@@ -80,25 +95,25 @@
         "url": "https://steemit.com/steemplus/@steem-plus/welcome-to-hf20-get-your-voting-mana-and-rc-mana-from-steemplus"
       },
       {
-        "title": "Utopian Contributions",
+        "title": "Utopian",
         "content": "Post Utopian contributions directly from Steemit. Earn bigger votes and SPP.",
         "platforms": ["steemit"],
         "url": "https://steemit.com/utopian-io/@steem-plus/steemplus-220-utopian--steemplus-partnership--bigger-upvotes"
       },
       {
-        "title": "DTube upload",
+        "title": "DTube",
         "content": "Upload your DTube videos directly from Steemit and earn SPP.",
         "platforms": ["steemit"],
         "url": "https://steemit.com/utopian-io/@steem-plus/steemplus-221-earn-more-by-posting-to-dtube-via-steemplus"
       },
       {
-        "title": "Buy Steem Monsters packs",
+        "title": "Steem Monsters packs",
         "content": "Buy Steem Monsters starter and booster packs directly from your Steemit profile and earn SPP.",
         "platforms": ["steemit"],
         "url": "https://steemit.com/utopian-io/@steem-plus/steemplus-31--buy-your-steem-monsters-packs-from-steemplus-and-earn-steemplus-points-spp"
       },
       {
-        "title": "Tokens Wallet",
+        "title": "Tokens",
         "content": "View your tokens directly from your Steemit wallet (currently show SPP only)",
         "platforms": ["steemit"],
         "url": "https://steemit.com/utopian-io/@steem-plus/steemplus-30--the-steemplus-points-are-here-"
@@ -122,13 +137,13 @@
         "url": "https://steemit.com/utopian-io/@steem-plus/steemplus-1-10-showing-steem-sbd-steem-usd-and-sbd-usd-market-price"
       },
       {
-        "title": "Enhanced wallet",
+        "title": "Wallet",
         "content": "Filter your wallet to find what you re looking for!",
         "platforms": ["steemit"],
         "url": "https://steemit.com/utopian-io/@stoodkev/steemplus-wallet-changes-and-more"
       },
       {
-        "title": "Witness information",
+        "title": "Witness",
         "content": "Get all the information you'll ever need about witnesses, including incoming and outgoing votes.",
         "platforms": ["steemit", "busy"],
         "url": "https://steemit.com/utopian-io/@steem-plus/steemplus-2-17-7-witnesses-on-busy"
@@ -140,7 +155,7 @@
         "url": "https://steemit.com/utopian-io/@steem-plus/steemplus-2-17-8-rewards-and-links-tabs-on-busy"
       },
       {
-        "title": "Votes Tab",
+        "title": "Votes",
         "content": "See all incoming and outgoing votes.",
         "platforms": ["steemit", "busy"],
         "url": "https://steemit.com/utopian-io/@stoodkev/steemplus-2-17-9-vote-and-mentions-tabs"
@@ -208,9 +223,14 @@
         "username": "stoodkev"
       },
       {
-        "title": "Gay",
-        "review": "Im so gay",
+        "title": "Essential",
+        "review": "SteemPlus makes Steemit so much easier to use. Can't imagin using Steemit without SteemPlus",
         "username": "cedricguillas"
+      },
+      {
+        "title": "Awesome",
+        "review": "SteemPlus is an awesome collection of features that I could not miss anymore!",
+        "username": "reggaemuffin"
       }
     ]
   },
