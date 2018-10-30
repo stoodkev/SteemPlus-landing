@@ -7,7 +7,8 @@ const style = {
 
 const Footer = () => (
   <div className="footer" style={style}>
-    © 2018 Cedric Guillas and Quentin Correa
+    © 2018 SteemPlus <br />
+    Powered by Utopian and Adsactly
   </div>
 );
 
