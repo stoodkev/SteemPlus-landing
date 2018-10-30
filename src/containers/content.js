@@ -1,6 +1,5 @@
 import React from "react";
 import Section from "./sections/section";
-import SectionLeftRight from "./sections/sectionLeftRight";
 import CarouselSection from "./sections/carouselSection";
 import FancyCard from "../components/fancyCard";
 import MemberPanel from "../components/memberPanel";
@@ -141,7 +140,7 @@ const Content = ({ activeFeature }) => (
       title={Data.reviews.sectionTitle}
       tag={Formatter.tagFromTitle(Data.reviews.sectionTitle)}
     >
-      <CustomCarousel className="reviews" autoPlay={true} nbElem={3}>
+      <CustomCarousel className="reviews" autoPlay={false} nbElem={3}>
         {Arrays.shuffle(Data.reviews.data).map((review, i) => (
           <ReviewPanel
             title={review.title}

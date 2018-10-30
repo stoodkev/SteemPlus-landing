@@ -11,11 +11,14 @@ const CustomCarousel = ({ nbElem, autoPlay, selectedItem, children }) => (
       stopAutoPlayOnHover={true}
       duration={500}
       infinite={true}
-      autoPlayInterval={1000}
+      autoPlayInterval={5000}
       startIndex={selectedItem}
       responsive={{
         0: {
           items: 1
+        },
+        200: {
+          items: { nbElem }
         },
         1024: {
           items: { nbElem }
