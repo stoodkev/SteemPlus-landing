@@ -22,13 +22,11 @@ const ArrowButton = withStyles(buttonStyle)(Button);
 class CustomCarousel extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props);
     this.nbElem = props.nbElem;
     this.autoPlay = props.autoPlay;
     this.selectedItem = props.selectedItem;
     this.sizeElement = props.sizeElement;
     this.state = { selectedFeature: props.selectedItem };
-    console.log(this.selectedItem);
   }
 
   componentDidUpdate(prevProps) {

@@ -81,9 +81,7 @@ const Content = ({ activeFeature }) => (
               rel="noopener noreferrer"
               style={linkStyle}
             >
-              {feature.url === ""
-                ? "Download here"
-                : "For more details, visit our blog"}
+              {feature.url === "" ? "Download here" : "Read the article"}
             </a>
           </div>
         ))}
