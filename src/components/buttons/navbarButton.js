@@ -1,6 +1,6 @@
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
-import { Button, Slide } from "@material-ui/core/";
+import { Button } from "@material-ui/core/";
 
 const NavbarButton = ({
   text,
@@ -25,11 +25,9 @@ const NavbarButton = ({
   };
   const CustomizedButton = withStyles(buttonStyle)(Button);
   return (
-    <Slide direction="up" in={itemVisible}>
-      <CustomizedButton href={href} onClick={onClick}>
-        {text}
-      </CustomizedButton>
-    </Slide>
+    <CustomizedButton href={href} onClick={onClick}>
+      {text}
+    </CustomizedButton>
   );
 };
 

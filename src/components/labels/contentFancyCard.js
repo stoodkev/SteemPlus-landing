@@ -5,7 +5,8 @@ const ContentFancyCard = withStyles({
   root: {
     marginTop: "0.75rem",
     color: "darkgrey",
-    fontSize: "1rem"
+    fontSize: "1rem",
+    textAlign: "left"
   }
 })(Typography);
 

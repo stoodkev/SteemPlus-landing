@@ -12,3 +12,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.wordart-attribution,
+#word-art-context-menu {
+  visibility: hidden;
+}

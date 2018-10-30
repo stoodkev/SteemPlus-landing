@@ -25,7 +25,7 @@ const anchorStyle = {
   }
 };
 
-const getNavItems = (navItems, setPage) => {
+const getNavItems = navItems => {
   if (navItems)
     return Object.keys(navItems).map((section, i) => (
       <AnchorLink

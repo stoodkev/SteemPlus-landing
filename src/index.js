@@ -17,17 +17,22 @@ WebFont.load({
 
 const navReducer = (
   state = {
-    page: "main"
+    page: "main",
+    activeFeature: 0
   },
   action
 ) => {
-  console.log(state);
-  console.log(action);
   switch (action.type) {
     case "SET_PAGE":
       state = {
         ...state,
         page: action.payload
+      };
+      break;
+    case "SET_ACTIVE_FEATURE":
+      state = {
+        ...state,
+        activeFeature: action.payload
       };
       break;
     default:
