@@ -151,7 +151,7 @@ const Content = ({ activeFeature }) => (
         className="reviews"
         autoPlay={false}
         nbElem={3}
-        sizeElement={8}
+        sizeElement={10}
       >
         {Arrays.shuffle(Data.reviews.data).map((review, i) => (
           <ReviewPanel

@@ -30,7 +30,7 @@ class CustomCarousel extends React.Component {
 
   render() {
     return (
-      <Grid item xs={12} sm={12} md={6} lg={this.sizeElement}>
+      <Grid item xs={12} sm={12} md={10} lg={this.sizeElement}>
         <Grid container direction="row" justify="center" alignItems="center">
           <Grid key={`prev`} xs={1} item>
             <ArrowButton
@@ -55,7 +55,7 @@ class CustomCarousel extends React.Component {
                   items: 1
                 },
                 600: {
-                  items: this.nbElem
+                  items: this.nbElem - 1
                 },
                 1024: {
                   items: this.nbElem
