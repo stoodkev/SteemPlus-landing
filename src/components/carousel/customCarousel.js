@@ -12,7 +12,7 @@ const CustomCarousel = ({
   selectedItem,
   children
 }) => (
-  <Grid item xs={6}>
+  <Grid item xs={12} sm={6}>
     <Carousel
       selectedItem={selectedItem}
       emulateTouch

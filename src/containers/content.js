@@ -90,10 +90,10 @@ const Content = ({ activeFeature }) => (
         ))}
       </CustomCarousel>
     </Section>
-    <SectionLeftRight
-      direction="row-reverse"
+    <Section
       background1={Const.BACKGROUND_SECTION}
       background2={Const.BACKGROUND_SECTION2}
+      noSeparator
     >
       <Description
         title={Data.where.sectionTitle}
@@ -118,7 +118,7 @@ const Content = ({ activeFeature }) => (
         </Grid>
       </Description>
       <Image src="../../img/steemplus.png" />
-    </SectionLeftRight>
+    </Section>
     <CarouselSection
       title={Data.screenshots.sectionTitle}
       tag={Formatter.tagFromTitle(Data.screenshots.sectionTitle)}
@@ -172,16 +172,17 @@ const Content = ({ activeFeature }) => (
         />
       ))}
     </Section>
-    <SectionLeftRight
-      direction="row"
+    <Section
       background1={Const.BACKGROUND_SECTION2}
       background2={Const.BACKGROUND_SECTION}
+      noSeparator
     >
       <Description
         title={Data.contactUs.sectionTitle}
         tag={Formatter.tagFromTitle(Data.contactUs.sectionTitle)}
       >
         {Parser(Data.contactUs.data.description)}
+        <br />
         <CustomButton
           text={Data.contactUs.data.textButton}
           color1={Const.TITLE_COLOR}
@@ -191,7 +192,7 @@ const Content = ({ activeFeature }) => (
         />
       </Description>
       <Image src="../../img/steemplus.png" />
-    </SectionLeftRight>
+    </Section>
   </div>
 );
 

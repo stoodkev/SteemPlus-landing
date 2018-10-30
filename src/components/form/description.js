@@ -9,13 +9,17 @@ const styleTitle = {
   color: "#3c4a97"
 };
 
+const styleContent = {
+  textAlign: "left"
+};
+
 const Description = ({ children, title, tag }) => (
   <Grid
     item
     xs={12}
     sm={6}
-    md={4}
-    lg={4}
+    md={6}
+    lg={6}
     container
     direction="column"
     justify="flex-start"
@@ -26,7 +30,7 @@ const Description = ({ children, title, tag }) => (
       {title}
     </span>
     <Separator position="flex-start" />
-    {children}
+    <div style={styleContent}>{children}</div>
   </Grid>
 );
 
