@@ -52,7 +52,12 @@ const Content = ({ activeFeature }) => (
       tag={Formatter.tagFromTitle(Data.features.sectionTitle)}
     >
       <WordArt url={"//cdn.wordart.com/json/09lx5f9a154k"} />
-      <CustomCarousel autoPlay={false} selectedItem={activeFeature} nbElem={1}>
+      <CustomCarousel
+        autoPlay={false}
+        selectedItem={activeFeature}
+        nbElem={1}
+        sizeElement={6}
+      >
         {Data.features.data.map((feature, i) => (
           <div key={i} className="my-slide secondary complex">
             <h2>
@@ -117,7 +122,7 @@ const Content = ({ activeFeature }) => (
       title={Data.screenshots.sectionTitle}
       tag={Formatter.tagFromTitle(Data.screenshots.sectionTitle)}
     >
-      <CustomCarousel autoPlay={true} nbElem={1}>
+      <CustomCarousel autoPlay={true} nbElem={1} sizeElement={6}>
         <div>
           <img src="../../img/screenshots/intro.jpg" alt="Intro" />
         </div>
@@ -142,7 +147,12 @@ const Content = ({ activeFeature }) => (
       title={Data.reviews.sectionTitle}
       tag={Formatter.tagFromTitle(Data.reviews.sectionTitle)}
     >
-      <CustomCarousel className="reviews" autoPlay={false} nbElem={3}>
+      <CustomCarousel
+        className="reviews"
+        autoPlay={false}
+        nbElem={3}
+        sizeElement={8}
+      >
         {Arrays.shuffle(Data.reviews.data).map((review, i) => (
           <ReviewPanel
             title={review.title}
