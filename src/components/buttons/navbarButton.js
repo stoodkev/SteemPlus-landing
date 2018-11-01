@@ -9,11 +9,13 @@ const NavbarButton = ({
   href,
   float,
   itemVisible,
-  onClick
+  onClick,
+  large,
+  children
 }) => {
-  console.log(text, itemVisible ? "block !important" : "none !important");
   const buttonStyle = {
     root: {
+      fontSize: large ? "large" : "inherit",
       transition: "1s",
       WebkitTransition: "1s" /* Safari 3.1 to 6.0 */,
       float: float,
@@ -30,6 +32,7 @@ const NavbarButton = ({
   const CustomizedButton = withStyles(buttonStyle)(Button);
   return (
     <CustomizedButton href={href} onClick={onClick}>
+      {children}
       {text}
     </CustomizedButton>
   );

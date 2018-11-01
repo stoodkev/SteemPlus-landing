@@ -4,7 +4,6 @@ import "./css/index.css";
 import App from "./containers/App";
 import * as serviceWorker from "./serviceWorker";
 import WebFont from "webfontloader";
-import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import logger from "redux-logger";
@@ -49,9 +48,7 @@ const store = createStore(
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <App />
   </Provider>,
   document.getElementById("root")
 );
