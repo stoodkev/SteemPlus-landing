@@ -40,7 +40,7 @@ const MemberPanel = ({ name, position, username }) => (
     <img
       style={imgStyle}
       className="imgMember"
-      src={`../../img/teamMembers/${username}.png`}
+      src={`public/img/teamMembers/${username}.png`}
       alt={name}
     />
 

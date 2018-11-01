@@ -17,7 +17,8 @@ WebFont.load({
 const navReducer = (
   state = {
     page: "main",
-    activeFeature: 0
+    activeFeature: 0,
+    subMenu: "why_steemplus_?"
   },
   action
 ) => {
@@ -32,6 +33,12 @@ const navReducer = (
       state = {
         ...state,
         activeFeature: action.payload
+      };
+      break;
+    case "SET_SUB_MENU":
+      state = {
+        ...state,
+        subMenu: action.payload
       };
       break;
     default:

@@ -1,27 +1,39 @@
 const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
 
-const DIST_DIR = path.resolve(__dirname, "dist");
-const SRC_DIR = path.resolve(__dirname, "src");
+const outputDirectory = "dist";
 
-const config = {
-  entry: `${SRC_DIR}/index.js`,
+module.exports = {
+  entry: "./src/index.js",
   output: {
-    path: `${DIST_DIR}/app`,
-    filename: "bundle.js",
-    publicPath: "/public/"
+    path: path.join(__dirname, outputDirectory),
+    filename: "bundle.js"
   },
-  modules: {
-    loaders: [
+  module: {
+    rules: [
       {
-        test: /\.js?/,
-        include: SRC_DIR,
-        loader: "babel_loader",
-        query: {
-          presets: ["react", "es2015", "stage-2"]
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader"
         }
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"]
+      },
+      {
+        test: /\.(jpg|png|woff|woff2|eot|ttf|svg)$/,
+        loader: "url-loader?limit=100000"
       }
     ]
-  }
+  },
+  plugins: [
+    new CleanWebpackPlugin([outputDirectory]),
+    new HtmlWebpackPlugin({
+      template: "./public/index.html",
+      favicon: "./public/favicon.ico"
+    })
+  ]
 };
-
-module.export = config;

@@ -1,7 +1,7 @@
 import React from "react";
+import { Toolbar, Avatar, Grid } from "@material-ui/core/";
 import NavbarButton from "../components/buttons/navbarButton";
 import TitleApp from "../components/labels/titleApp";
-import { Toolbar, Avatar, Grid } from "@material-ui/core/";
 import "../css/containers/header.css";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import * as Data from "../jsons/data.json";
@@ -34,10 +34,11 @@ const styleNavBar = {
     "0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12)"
 };
 
-const getNavItems = (navItems, isMainPage) => {
-  if (isMainPage)
+const getNavItems = (navItems, isMainPage, setSubMenu, subMenu) => {
+  console.log(subMenu);
+  if (isMainPage) {
     return Object.keys(navItems).map((section, i) => (
-      <Grid item xs={12} sm={12} md={12} lg={"auto"} key={i}>
+      <Grid item xs={12} sm={12} md={12} lg="auto" key={i}>
         <AnchorLink
           href={`#${Formatter.tagFromTitle(navItems[section].sectionTitle)}`}
           style={anchorStyle}
@@ -48,35 +49,36 @@ const getNavItems = (navItems, isMainPage) => {
             text={navItems[section].sectionTitle}
             float="left"
             itemVisible={isMainPage === true}
+            active={
+              Formatter.tagFromTitle(navItems[section].sectionTitle) === subMenu
+            }
+            onClick={() =>
+              setSubMenu(
+                `${Formatter.tagFromTitle(navItems[section].sectionTitle)}`
+              )
+            }
           />
         </AnchorLink>
       </Grid>
     ));
+  }
 };
 
-const Header = ({ page, setPage }) => {
+const Header = ({ page, setPage, setSubMenu, subMenu }) => {
   let navItems = null;
   navItems = Data.default;
-  let isMainPage = page === "main";
+  const isMainPage = page === "main";
 
   return (
     <div style={styleNavBar}>
       <ResponsiveMenu
         menuOpenButton={
-          <NavbarButton
-            color1="white"
-            color2={Const.TITLE_COLOR}
-            itemVisible={true}
-          >
+          <NavbarButton color1="white" color2={Const.TITLE_COLOR} itemVisible>
             <Dehaze />
           </NavbarButton>
         }
         menuCloseButton={
-          <NavbarButton
-            color1={Const.TITLE_COLOR}
-            color2="white"
-            itemVisible={true}
-          >
+          <NavbarButton color1={Const.TITLE_COLOR} color2="white" itemVisible>
             <Dehaze />
           </NavbarButton>
         }
@@ -90,33 +92,39 @@ const Header = ({ page, setPage }) => {
             justify="flex-start"
             alignItems="center"
           >
-            <Grid item xs={12} sm={12} md={12} lg={"auto"}>
+            <Grid item xs={12} sm={12} md={12} lg="auto">
               <Toolbar>
-                <Avatar srcSet="/img/logo.png" />
+                <Avatar srcSet="public/img/logo.png" />
                 <TitleApp variant="title">SteemPlus</TitleApp>
               </Toolbar>
             </Grid>
-            <Grid item xs={12} sm={12} md={12} lg={"auto"}>
+            <Grid item xs={12} sm={12} md={12} lg="auto">
               <NavbarButton
                 color1="white"
                 color2={Const.TITLE_COLOR}
                 text="Home"
                 float="left"
-                itemVisible={true}
-                large={true}
-                onClick={() => setPage("main")}
+                itemVisible
+                large
+                active={isMainPage === true}
+                onClick={() => {
+                  setPage("main");
+                  setSubMenu("why-steemplus-?");
+                }}
               />
             </Grid>
-            {getNavItems(navItems, isMainPage)}
-            <Grid item xs={12} sm={12} md={12} lg={"auto"}>
+            {getNavItems(navItems, isMainPage, setSubMenu, subMenu)}
+            <Grid item xs={12} sm={12} md={12} lg="auto">
               <NavbarButton
                 color1="white"
                 color2={Const.TITLE_COLOR}
                 text="SPP"
-                itemVisible={true}
-                large={true}
+                itemVisible
+                large
+                active={isMainPage === false}
                 onClick={() => {
                   setPage("spp");
+                  setSubMenu("spp");
                 }}
               />
             </Grid>
@@ -127,21 +135,23 @@ const Header = ({ page, setPage }) => {
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    page: state.nav.page
-  };
-};
-const mapDispatchToProps = dispatch => {
-  return {
-    setPage: page => {
-      dispatch({
-        type: "SET_PAGE",
-        payload: page
-      });
-    }
-  };
-};
+const mapStateToProps = state => ({
+  page: state.nav.page
+});
+const mapDispatchToProps = dispatch => ({
+  setPage: page => {
+    dispatch({
+      type: "SET_PAGE",
+      payload: page
+    });
+  },
+  setSubMenu: subMenu => {
+    dispatch({
+      type: "SET_SUB_MENU",
+      payload: subMenu
+    });
+  }
+});
 
 export default connect(
   mapStateToProps,

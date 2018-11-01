@@ -65,7 +65,7 @@ const Content = ({ activeFeature }) => (
               {feature.platforms.map((p, i) => (
                 <img
                   key={i}
-                  src={`../../img/platforms/${p}.png`}
+                  src={`public/img/platforms/${p}.png`}
                   alt={p}
                   style={{
                     height: "2rem",
@@ -114,7 +114,7 @@ const Content = ({ activeFeature }) => (
           ))}
         </Grid>
       </Description>
-      <Image src="../../img/steemplus.png" />
+      <Image src="public/img/steemplus.png" />
     </Section>
     <CarouselSection
       title={Data.screenshots.sectionTitle}
@@ -122,22 +122,22 @@ const Content = ({ activeFeature }) => (
     >
       <CustomCarousel autoPlay={true} nbElem={1} sizeElement={6}>
         <div>
-          <img src="../../img/screenshots/intro.jpg" alt="Intro" />
+          <img src="public/img/screenshots/intro.jpg" alt="Intro" />
         </div>
         <div>
-          <img src="../../img/screenshots/feedplus.jpg" alt="Feed +" />
+          <img src="public/img/screenshots/feedplus.jpg" alt="Feed +" />
         </div>
         <div>
-          <img src="../../img/screenshots/ranks.jpg" alt="Ranks" />
+          <img src="public/img/screenshots/ranks.jpg" alt="Ranks" />
         </div>
         <div>
           <img
-            src="../../img/screenshots/valueDelegation.jpg"
+            src="public/img/screenshots/valueDelegation.jpg"
             alt="Value and Delegations"
           />
         </div>
         <div className="test">
-          <img src="../../img/screenshots/shortcuts.jpg" alt="ShortCuts" />
+          <img src="public/img/screenshots/shortcuts.jpg" alt="ShortCuts" />
         </div>
       </CustomCarousel>
     </CarouselSection>
@@ -193,7 +193,7 @@ const Content = ({ activeFeature }) => (
           href={Data.contactUs.data.url}
         />
       </Description>
-      <Image src="../../img/steemplus.png" />
+      <Image src="public/img/steemplus.png" />
     </Section>
   </div>
 );

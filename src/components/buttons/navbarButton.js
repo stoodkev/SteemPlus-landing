@@ -11,6 +11,7 @@ const NavbarButton = ({
   itemVisible,
   onClick,
   large,
+  active,
   children
 }) => {
   const buttonStyle = {
@@ -22,6 +23,7 @@ const NavbarButton = ({
       border: "none",
       backgroundColor: color1,
       color: color2,
+      fontWeight: active ? "bold" : "inherit",
       display: itemVisible ? "block !important" : "none !important",
       "&:hover": {
         backgroundColor: color2,
