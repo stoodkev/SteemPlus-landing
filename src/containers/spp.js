@@ -49,7 +49,7 @@ class Spp extends Component {
           </Description>
           <Image
             name="SteemPlus Point Information"
-            src="../img/infogramSPP.png"
+            src="public/img/infogramSPP.png"
             maxHeight="36rem"
           />
         </SectionLeftRight>

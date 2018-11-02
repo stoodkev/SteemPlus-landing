@@ -94,7 +94,7 @@ const Header = ({ page, setPage, setSubMenu, subMenu }) => {
           >
             <Grid item xs={12} sm={12} md={12} lg="auto">
               <Toolbar>
-                <Avatar srcSet="public/img/logo.png" />
+                <Avatar srcSet="../public/img/logo.png" />
                 <TitleApp variant="title">SteemPlus</TitleApp>
               </Toolbar>
             </Grid>
