@@ -204,6 +204,9 @@
       }
     ]
   },
+  "screenshots": {
+    "sectionTitle": "Screenshots"
+  },
   "reviews": {
     "sectionTitle": "Reviews",
     "data": [
@@ -223,9 +226,6 @@
         "username": "reggaemuffin"
       }
     ]
-  },
-  "screenshots": {
-    "sectionTitle": "Screenshots"
   },
   "members": {
     "sectionTitle": "Team",
