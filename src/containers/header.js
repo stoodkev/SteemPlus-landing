@@ -35,7 +35,6 @@ const styleNavBar = {
 };
 
 const getNavItems = (navItems, isMainPage, setSubMenu, subMenu) => {
-  console.log(subMenu);
   if (isMainPage) {
     return Object.keys(navItems).map((section, i) => (
       <Grid item xs={12} sm={12} md={12} lg="auto" key={i}>
@@ -136,7 +135,8 @@ const Header = ({ page, setPage, setSubMenu, subMenu }) => {
 };
 
 const mapStateToProps = state => ({
-  page: state.nav.page
+  page: state.nav.page,
+  subMenu: state.nav.subMenu
 });
 const mapDispatchToProps = dispatch => ({
   setPage: page => {

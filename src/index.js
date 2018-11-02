@@ -18,7 +18,7 @@ const navReducer = (
   state = {
     page: "main",
     activeFeature: 0,
-    subMenu: "why_steemplus_?"
+    subMenu: "why-steemplus-?"
   },
   action
 ) => {
