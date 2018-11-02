@@ -5,6 +5,7 @@ import TitleApp from "../components/labels/titleApp";
 import "../css/containers/header.css";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import * as Data from "../jsons/data.json";
+import * as SPPData from "../jsons/spp.json";
 import * as Formatter from "../utils/formatter";
 import * as Const from "../utils/const";
 import { connect } from "react-redux";
@@ -18,7 +19,7 @@ const anchorStyle = {
   fontSize: "0.875rem",
   fontWeight: "500",
   fontFamily: "Roboto",
-  padding: "0.5rem",
+  padding: "0.25rem",
   background: "white",
   "&:hover": {
     color: "blue",
@@ -50,8 +51,8 @@ const styleNavBarSticky = {
     "0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12)"
 };
 
-const getNavItems = (navItems, isMainPage, setSubMenu, activeSubElement) => {
-  if (isMainPage) {
+const getHomeSubMenu = (navItems, activePage, setSubMenu, activeSubElement) => {
+  if (activePage === "main") {
     return Object.keys(navItems).map((section, i) => (
       <Grid item xs={12} sm={12} md={12} lg="auto" key={i}>
         <AnchorLink
@@ -64,7 +65,38 @@ const getNavItems = (navItems, isMainPage, setSubMenu, activeSubElement) => {
             color2={Const.TITLE_COLOR}
             text={navItems[section].sectionTitle}
             float="left"
-            itemVisible={isMainPage === true}
+            itemVisible={activePage === "main"}
+            active={
+              Formatter.tagFromTitle(navItems[section].sectionTitle) ===
+              activeSubElement
+            }
+            onClick={() =>
+              setSubMenu(
+                `${Formatter.tagFromTitle(navItems[section].sectionTitle)}`
+              )
+            }
+          />
+        </AnchorLink>
+      </Grid>
+    ));
+  }
+};
+
+const getSppSubMenu = (navItems, activePage, setSubMenu, activeSubElement) => {
+  if (activePage === "spp") {
+    return Object.keys(navItems).map((section, i) => (
+      <Grid item xs={12} sm={12} md={12} lg="auto" key={i}>
+        <AnchorLink
+          offset={() => 100}
+          href={`#${Formatter.tagFromTitle(navItems[section].sectionTitle)}`}
+          style={anchorStyle}
+        >
+          <NavbarButton
+            color1="white"
+            color2={Const.TITLE_COLOR}
+            text={navItems[section].sectionTitle}
+            float="left"
+            itemVisible={activePage === "spp"}
             active={
               Formatter.tagFromTitle(navItems[section].sectionTitle) ===
               activeSubElement
@@ -84,13 +116,14 @@ const getNavItems = (navItems, isMainPage, setSubMenu, activeSubElement) => {
 class Header extends React.Component {
   constructor(props) {
     super(props);
-    this.navItems = Data.default;
     this.page = props.page;
     this.setPage = props.setPage;
     this.setSubMenu = props.setSubMenu;
     this.subMenu = props.subMenu;
 
     this.isMainPage = this.page === "main";
+    this.navItems = Data.default;
+    this.sppNavItems = SPPData.default;
 
     this.state = {
       activePage: this.page,
@@ -102,6 +135,10 @@ class Header extends React.Component {
   }
 
   handleScroll() {
+    let currentItems;
+    if (this.state.activePage === "main") currentItems = this.navItems;
+    else if (this.state.activePage === "spp") currentItems = this.sppNavItems;
+
     const banner = document.getElementById("banner");
     const sticky = banner.height;
 
@@ -111,32 +148,26 @@ class Header extends React.Component {
       this.setState({ sticky: false });
     }
 
-    let keys = Object.keys(this.navItems);
+    let keys = Object.keys(currentItems);
     let minDiff = window.pageYOffset;
     let currentSection = "";
+    console.log(currentItems);
     for (let i = keys.length - 1; i >= 0; i--) {
       const htmlItem = document.getElementById(
-        `${Formatter.tagFromTitle(this.navItems[keys[i]].sectionTitle)}`
+        `${Formatter.tagFromTitle(currentItems[keys[i]].sectionTitle)}`
       );
       const offset = htmlItem.offsetTop;
       const diff = Math.abs(window.pageYOffset - offset);
       if (minDiff > diff) {
         minDiff = diff;
         currentSection = Formatter.tagFromTitle(
-          this.navItems[keys[i]].sectionTitle
+          currentItems[keys[i]].sectionTitle
         );
       }
-      console.log(
-        window.pageYOffset,
-        offset,
-        this.navItems[keys[i]].sectionTitle
-      );
     }
-    console.log("------------------");
     this.setState({
       activeSubElement: currentSection
     });
-    console.log(this.state);
   }
 
   componentDidUpdate(prevProps) {
@@ -198,9 +229,9 @@ class Header extends React.Component {
                   }}
                 />
               </Grid>
-              {getNavItems(
+              {getHomeSubMenu(
                 this.navItems,
-                this.isMainPage,
+                this.state.activePage,
                 this.setSubMenu,
                 this.state.activeSubElement
               )}
@@ -214,10 +245,16 @@ class Header extends React.Component {
                   active={this.state.activePage === "spp"}
                   onClick={() => {
                     this.setPage("spp");
-                    this.setSubMenu("spp");
+                    this.setSubMenu("what-are-steemplus-points");
                   }}
                 />
               </Grid>
+              {getSppSubMenu(
+                this.sppNavItems,
+                this.state.activePage,
+                this.setSubMenu,
+                this.state.activeSubElement
+              )}
             </Grid>
           }
         />
