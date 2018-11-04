@@ -8,7 +8,7 @@ const Banner = () => (
   <img
     id="banner"
     style={style}
-    src="https://steemitimages.com/DQmP8oZ98eiio8eNb9aKWjq2eYvjxzN91Dy8iNjJkwTnHVn/image.png?fbclid=IwAR1cuh0ukaW6cbmI8novmZ0c1XfJwYOBZmj3Y5RWOtQuVtdrp1WHwMPUUgE"
+    src="public/img/banner.png"
     alt="Banner"
   />
 );

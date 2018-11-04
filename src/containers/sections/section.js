@@ -1,7 +1,7 @@
 import React from "react";
 import { Grid } from "@material-ui/core/";
 import "../../css/containers/section.css";
-import Separator from "../../components/separator";
+import * as Const from "../../utils/const";
 
 const Section = ({
   title,
@@ -11,14 +11,19 @@ const Section = ({
   noSeparator,
   children
 }) => {
+  const titleStyle = {
+    color: Const.TITLE_COLOR,
+    textTransform: "uppercase"
+  };
   const style = {
     backgroundImage: `linear-gradient(to right, ${background1}, ${background2})`
   };
 
   return (
     <div className="section" style={style}>
-      <h1 id={tag}>{title}</h1>
-      {noSeparator ? "" : <Separator position="center" />}
+      <h1 id={tag} style={titleStyle}>
+        {title}
+      </h1>
       <Grid
         container
         direction="row"

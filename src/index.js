@@ -10,7 +10,7 @@ import logger from "redux-logger";
 
 WebFont.load({
   google: {
-    families: ["Satisfy", "cursive"]
+    families: ["Roboto:300"]
   }
 });
 

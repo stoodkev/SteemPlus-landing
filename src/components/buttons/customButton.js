@@ -5,10 +5,11 @@ import { Button } from "@material-ui/core/";
 const CustomButton = ({ text, color1, color2, marginTop, href }) => {
   const buttonStyle = {
     root: {
+      fontSize: "1.25rem",
       marginTop: marginTop,
       backgroundColor: color1,
       color: color2,
-      borderRadius: "0 10px 10px 10px",
+      borderRadius: "30px",
       "&:hover": {
         backgroundColor: color2,
         color: color1

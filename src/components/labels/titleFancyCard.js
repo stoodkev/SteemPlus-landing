@@ -5,8 +5,9 @@ import * as Const from "../../utils/const";
 const TitleFancyCard = withStyles({
   root: {
     color: Const.CARD_TITLE_COLOR,
-    fontSize: "large",
-    fontWeight: "bold"
+    fontSize: "1.25rem",
+    fontFamily: "Roboto, sans-serif",
+    textTransform: "uppercase"
   }
 })(Typography);
 

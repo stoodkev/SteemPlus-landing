@@ -4,29 +4,32 @@
     "data": [
       {
         "title": "30+ Features",
-        "content": "<ul><li>SteemPlus extension brings over 30 new features to your Steem experience</li><li>Available on Steemit and Busy</li><li>Many more features on our TODO list!</li></ul>",
+        "icon": "icon_features.svg",
+        "content": "<p>SteemPlus extension brings over 30 new features to your Steem experience</p><p>Available on Steemit and Busy</p><p>Many more features on our TODO list!</p>",
         "link": {
           "type": "anchor",
           "to": "features",
-          "text": "Browse features..."
+          "text": "Browse features"
         }
       },
       {
         "title": "SteemPlus Points",
-        "content": "<ul><li>Use third-party <strong>Steem Apps</strong> and earn <strong>SteemPlus Points (SPP)</strong>.</li><li>SPP grant you a share of @steem-plus <strong>daily upvotes</strong></li><li>Redeem for <strong>premium features</strong></li></ul>.",
+        "icon": "icon_points.svg",
+        "content": "<p>Use third-party <strong>Steem Apps</strong> and earn <strong>SteemPlus Points (SPP)</strong>.</p><p>SPP grant you a share of @steem-plus <strong>daily upvotes</strong></p><p>Redeem for <strong>premium features</strong></p>.",
         "link": {
           "type": "internal",
           "to": "spp",
-          "text": "Learn more about SPP..."
+          "text": "Learn more about SPP"
         }
       },
       {
         "title": "For the community",
-        "content": "<ul><li>Opensource</li><li>Developement funded by upvotes from @utopian-io, @adsactly and the community</li><li>Over 3,500 daily users</li><li>Emphasis on developing features request by the community</li></ul>",
+        "icon": "icon_community.svg",
+        "content": "<p>Opensource</p><p>Developement funded by upvotes from @utopian-io, @adsactly and the community</p><p>Over 3,500 daily users</p><p>Emphasis on developing features request by the community</p>",
         "link": {
           "type": "external",
           "to": "https://github.com/stoodkev/SteemPlus",
-          "text": "See the code on Github..."
+          "text": "See the code on Github"
         }
       }
     ]

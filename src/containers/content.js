@@ -7,12 +7,10 @@ import ReviewPanel from "../components/reviews/reviewPanel";
 import Description from "../components/form/description";
 import Image from "../components/image";
 import CustomButton from "../components/buttons/customButton";
-import CustomButtonIcon from "../components/buttons/customButtonIcon";
 import ContentSectionRL from "../components/labels/contentSectionRL";
 import WordArt from "../components/wordart";
 import { Grid } from "@material-ui/core";
 import CustomCarousel from "../components/carousel/customCarousel";
-import { SupervisedUserCircle, SaveAlt } from "@material-ui/icons";
 import * as Data from "../jsons/data.json";
 import * as Formatter from "../utils/formatter";
 import * as Arrays from "../utils/arrays";
@@ -41,10 +39,9 @@ const Content = ({ activeFeature }) => (
           title={why.title}
           content={Parser(why.content)}
           link={why.link}
+          icon={why.icon}
           key={i}
-        >
-          <SupervisedUserCircle className="fancy-card-icon" fontSize="large" />
-        </FancyCard>
+        />
       ))}
     </Section>
     <Section
@@ -101,16 +98,14 @@ const Content = ({ activeFeature }) => (
         </ContentSectionRL>
         <Grid container direction="row">
           {Data.where.browsers.map((browser, i) => (
-            <CustomButtonIcon
+            <CustomButton
               text={browser.name}
               href={browser.url}
-              color1="black"
+              color1={Const.COLOR_BUTTON}
               color2="white"
               margin={"1rem"}
               key={i}
-            >
-              <SaveAlt className="button-icon" fontSize="small" />
-            </CustomButtonIcon>
+            />
           ))}
         </Grid>
       </Description>

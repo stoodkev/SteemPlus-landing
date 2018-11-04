@@ -1,8 +1,17 @@
 import React from "react";
-import { Card, CardContent, Grid, CardActions } from "@material-ui/core/";
+import {
+  Card,
+  CardContent,
+  Grid,
+  CardActions,
+  Toolbar
+} from "@material-ui/core/";
 import TitleFancyCard from "../components/labels/titleFancyCard";
 import "../css/components/fancyCard.css";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import CustomButton from "../components/buttons/customButton";
+import * as Const from "../utils/const";
+import { withStyles } from "@material-ui/core/styles";
 
 import { connect } from "react-redux";
 
@@ -17,7 +26,6 @@ const linkStyle = {
 };
 
 const styleCardAction = {
-  textAlign: "right",
   display: "inline-block",
   marginBottom: "2rem",
   width: "100%"
@@ -25,23 +33,45 @@ const styleCardAction = {
 
 const styleContent = {
   marginTop: "0.75rem",
-  color: "darkgrey",
+  color: "#21496C",
   fontSize: "1rem",
   textAlign: "left"
 };
+
+const styleIcon = {
+  width: "2rem",
+  height: "2rem",
+  marginRight: "0.5rem"
+};
+
+const styleToobar = {
+  root: {
+    paddingLeft: "0px"
+  }
+};
+
+const CustomToolbar = withStyles(styleToobar)(Toolbar);
 
 const createLink = (link, setPage) => {
   switch (link.type) {
     case "anchor":
       return (
         <AnchorLink style={linkStyle} href={`#${link.to}`}>
-          {link.text}
+          <CustomButton
+            text={link.text}
+            color1={Const.TITLE_COLOR}
+            color2="white"
+          />
         </AnchorLink>
       );
     case "internal":
       return (
         <span style={linkStyle} onClick={() => setPage(link.to)} href="">
-          {link.text}
+          <CustomButton
+            text={link.text}
+            color1={Const.TITLE_COLOR}
+            color2="white"
+          />
         </span>
       );
     case "external":
@@ -52,7 +82,11 @@ const createLink = (link, setPage) => {
           href={link.to}
           style={linkStyle}
         >
-          {link.text}
+          <CustomButton
+            text={link.text}
+            color1={Const.TITLE_COLOR}
+            color2="white"
+          />
         </a>
       );
     default:
@@ -60,7 +94,7 @@ const createLink = (link, setPage) => {
   }
 };
 
-const FancyCard = ({ title, content, children, link, setPage }) => (
+const FancyCard = ({ title, content, icon, link, setPage }) => (
   <Grid item xs={12} sm={6} md={4} lg={3}>
     <Card
       classes={{
@@ -68,8 +102,14 @@ const FancyCard = ({ title, content, children, link, setPage }) => (
       }}
     >
       <CardContent className="fancy-card-content">
-        {children}
-        <TitleFancyCard>{title}</TitleFancyCard>
+        <TitleFancyCard>
+          <CustomToolbar>
+            <img style={styleIcon} src={`../public/img/${icon}`} alt={icon} />
+            <TitleFancyCard variant="title" color="primary">
+              {title}
+            </TitleFancyCard>
+          </CustomToolbar>
+        </TitleFancyCard>
         <span style={styleContent}>{content}</span>
       </CardContent>
       <CardActions style={styleCardAction}>
