@@ -1,14 +1,14 @@
 import React from "react";
 import Section from "./sections/section";
+import ImageSection from "./sections/imageSection";
 import CarouselSection from "./sections/carouselSection";
 import FancyCard from "../components/fancyCard";
 import MemberPanel from "../components/memberPanel";
 import ReviewPanel from "../components/reviews/reviewPanel";
 import Description from "../components/form/description";
+import ContentDownload from "../components/labels/contentDownload";
 import Image from "../components/image";
 import CustomButton from "../components/buttons/customButton";
-import ContentSectionRL from "../components/labels/contentSectionRL";
-import WordArt from "../components/wordart";
 import { Grid } from "@material-ui/core";
 import CustomCarousel from "../components/carousel/customCarousel";
 import * as Data from "../jsons/data.json";
@@ -28,6 +28,22 @@ const linkStyle = {
   }
 };
 
+const styleFeatureItem = {
+  background: Const.BACKGROUND_FEATURE_COLOR,
+  zIndex: 1,
+  padding: "1.5rem",
+  borderRadius: "33px",
+  marginTop: "1.5rem",
+  fontFamily: "Roboto, sans-serif",
+  color: "white"
+};
+
+const styleIconBrowser = {
+  width: "3rem",
+  height: "3rem",
+  marginBottom: "1rem"
+};
+
 const Content = ({ activeFeature }) => (
   <div>
     <Section
@@ -44,21 +60,27 @@ const Content = ({ activeFeature }) => (
         />
       ))}
     </Section>
-    <Section
+    <ImageSection
       title={Data.features.sectionTitle}
       tag={Formatter.tagFromTitle(Data.features.sectionTitle)}
+      src={"bg_features.png"}
+      justify={"flex-start"}
     >
-      <WordArt url={"//cdn.wordart.com/json/09lx5f9a154k"} />
       <CustomCarousel
         autoPlay={false}
+        background={Const.BACKGROUND_FEATURE_COLOR}
         selectedItem={activeFeature}
         nbElem={1}
         sizeElement={6}
       >
         {Data.features.data.map((feature, i) => (
-          <div key={i} className="my-slide secondary complex">
+          <div
+            key={i}
+            className="my-slide secondary complex"
+            style={styleFeatureItem}
+          >
             <h2>
-              {`#${i + 1}/${Data.features.data.length} : ${feature.title}`}
+              {feature.title}
               {feature.platforms.map((p, i) => (
                 <img
                   key={i}
@@ -73,43 +95,52 @@ const Content = ({ activeFeature }) => (
             </h2>
             <h3>{feature.content}</h3>
             <a
-              href={feature.url === "" ? "#download" : feature.url}
-              target={feature.url === "" ? "" : "_blank"}
               rel="noopener noreferrer"
-              style={linkStyle}
+              target="_blank"
+              href={feature.url}
+              style={{ textDecoration: "none" }}
             >
-              {feature.url === "" ? "Download here" : "Read the article"}
+              <CustomButton
+                text="Read Article"
+                color1={Const.TITLE_COLOR}
+                color2="white"
+              />
             </a>
           </div>
         ))}
       </CustomCarousel>
-    </Section>
+    </ImageSection>
     <Section
-      background1={Const.BACKGROUND_SECTION}
-      background2={Const.BACKGROUND_SECTION2}
-      noSeparator
+      title={Data.where.sectionTitle}
+      tag={Formatter.tagFromTitle(Data.where.sectionTitle)}
     >
-      <Description
-        title={Data.where.sectionTitle}
-        tag={Formatter.tagFromTitle(Data.where.sectionTitle)}
-      >
-        <ContentSectionRL textAlign="left">
-          {Parser(Data.where.description)}
-        </ContentSectionRL>
-        <Grid container direction="row">
-          {Data.where.browsers.map((browser, i) => (
-            <CustomButton
-              text={browser.name}
-              href={browser.url}
-              color1={Const.COLOR_BUTTON}
-              color2="white"
-              margin={"1rem"}
-              key={i}
-            />
-          ))}
-        </Grid>
-      </Description>
-      <Image src="public/img/steemplus.png" />
+      <ContentDownload>{Parser(Data.where.description)}</ContentDownload>
+      <Grid container direction="row">
+        {Data.where.browsers.map((browser, i) => (
+          <Grid item xs={12} sm={12} md={4} lg={4}>
+            <Grid
+              container
+              direction="column"
+              justify="center"
+              alignItems="center"
+            >
+              <img
+                src={`public/img/browsers/${browser.icon}.svg`}
+                alt={browser.name}
+                style={styleIconBrowser}
+              />
+              <CustomButton
+                text={browser.name}
+                href={browser.url}
+                color1={Const.COLOR_BUTTON}
+                color2="white"
+                margin={"1rem"}
+                key={i}
+              />
+            </Grid>
+          </Grid>
+        ))}
+      </Grid>
     </Section>
     <CarouselSection
       title={Data.screenshots.sectionTitle}

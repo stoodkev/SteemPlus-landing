@@ -191,18 +191,21 @@
   },
   "where": {
     "sectionTitle": "Download",
-    "description": "SteemPlus is available natively on Chrome and Firefox, and through the `Install Chrome Extensions` plugin on Opera:",
+    "description": "Steem-Plus is available natively on Chrome and Firefox. It’s also available on Opera via the `Install Chrome Extensions` plugin. What are you waiting for? You are only minutes away from getting more out of your Steem experience!",
     "browsers": [
       {
         "name": "Chrome",
+        "icon": "chrome",
         "url": "https://chrome.google.com/webstore/detail/steemplus/mjbkjgcplmaneajhcbegoffkedeankaj"
       },
       {
         "name": "Firefox",
+        "icon": "firefox",
         "url": "https://addons.mozilla.org/en-US/firefox/addon/steem-plus/"
       },
       {
         "name": "Opera",
+        "icon": "opera",
         "url": "https://github.com/stoodkev/SteemPlus/blob/master/README.md#on-opera"
       }
     ]
