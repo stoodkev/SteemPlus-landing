@@ -6,7 +6,11 @@ import * as Const from "../../utils/const";
 const ImageSection = ({ title, tag, src, children, justify }) => {
   const titleStyle = {
     color: Const.TITLE_COLOR,
-    textTransform: "uppercase"
+    textTransform: "uppercase",
+    fontSize: "2rem",
+    fontFamily: "Montserrat",
+    fontWeight: "600",
+    margin: "0px"
   };
   const styleImage = {
     backgroundImage: `url(public/img/${src})`
@@ -18,9 +22,9 @@ const ImageSection = ({ title, tag, src, children, justify }) => {
 
   return (
     <div className="section" style={style}>
-      <h1 id={tag} style={titleStyle}>
+      <p id={tag} style={titleStyle}>
         {title}
-      </h1>
+      </p>
       <Grid
         container
         direction="row"

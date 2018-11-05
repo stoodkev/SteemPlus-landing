@@ -8,14 +8,18 @@ const style = {
 
 const titleStyle = {
   color: Const.TITLE_COLOR,
-  textTransform: "uppercase"
+  textTransform: "uppercase",
+  fontSize: "2rem",
+  fontFamily: "Montserrat",
+  fontWeight: "600",
+  margin: "0px"
 };
 
 const CarouselSection = ({ title, tag, children }) => (
   <div className="section carousel-section" style={style}>
-    <h1 id={tag} style={titleStyle}>
+    <p id={tag} style={titleStyle}>
       {title}
-    </h1>
+    </p>
     <Grid container direction="row" justify="center" alignItems="center">
       {children}
     </Grid>

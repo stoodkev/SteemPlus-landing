@@ -261,9 +261,10 @@
   "contactUs": {
     "sectionTitle": "Contact Us",
     "data": {
-      "description": "You need more information, or perhaps want to share your suggestions or get some assistance?<br><br>Simply contact us on Discord!",
-      "textButton": "Contact Us",
-      "url": "https://discord.gg/hhBw3mv"
+      "description": "You need more information, or perhaps want to share your suggestions or get some assistance ?",
+      "textButton": "Discord",
+      "url": "https://discord.gg/hhBw3mv",
+      "icon": "discord.svg"
     }
   }
 }

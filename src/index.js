@@ -10,7 +10,7 @@ import logger from "redux-logger";
 
 WebFont.load({
   google: {
-    families: ["Roboto:300"]
+    families: ["Roboto:300", "Montserrat"]
   }
 });
 

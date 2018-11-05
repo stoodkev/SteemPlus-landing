@@ -16,3 +16,7 @@ export const COLOR_POSITION_MEMBER = "#21496C";
 export const COLOR_USERNAME_MEMBER = "#5C9DD5";
 
 export const COLOR_TEXT_FOOTER = "#21496C";
+
+export const COLOR_TEXT_CONTACT = "#FFFFFF";
+
+export const BACKGROUND_CONTACT_SECTION = "#21496C";

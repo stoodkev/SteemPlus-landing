@@ -5,10 +5,9 @@ import CarouselSection from "./sections/carouselSection";
 import FancyCard from "../components/fancyCard";
 import MemberPanel from "../components/memberPanel";
 import ReviewPanel from "../components/reviews/reviewPanel";
-import Description from "../components/form/description";
 import ContentDownload from "../components/labels/contentDownload";
-import Image from "../components/image";
 import CustomButton from "../components/buttons/customButton";
+import CustomButtonIcon from "../components/buttons/customButtonIcon";
 import { Grid } from "@material-ui/core";
 import CustomCarousel from "../components/carousel/customCarousel";
 import * as Data from "../jsons/data.json";
@@ -42,6 +41,10 @@ const styleIconBrowser = {
   width: "3rem",
   height: "3rem",
   marginBottom: "1rem"
+};
+
+const styleContactUsText = {
+  color: Const.COLOR_TEXT_CONTACT
 };
 
 const Content = ({ activeFeature }) => (
@@ -201,25 +204,24 @@ const Content = ({ activeFeature }) => (
       ))}
     </Section>
     <Section
-      background1={Const.BACKGROUND_SECTION2}
-      background2={Const.BACKGROUND_SECTION}
-      noSeparator
+      title={Data.contactUs.sectionTitle}
+      tag={Formatter.tagFromTitle(Data.contactUs.sectionTitle)}
+      background={Const.BACKGROUND_CONTACT_SECTION}
+      padding="2rem"
+      direction="column"
+      marginBottom="0"
     >
-      <Description
-        title={Data.contactUs.sectionTitle}
-        tag={Formatter.tagFromTitle(Data.contactUs.sectionTitle)}
-      >
+      <p style={styleContactUsText}>
         {Parser(Data.contactUs.data.description)}
-        <br />
-        <CustomButton
-          text={Data.contactUs.data.textButton}
-          color1={Const.TITLE_COLOR}
-          color2="white"
-          marginTop={"1rem"}
-          href={Data.contactUs.data.url}
-        />
-      </Description>
-      <Image src="public/img/steemplus.png" />
+      </p>
+      <CustomButtonIcon
+        text={Data.contactUs.data.textButton}
+        color1={Const.TITLE_COLOR}
+        color2="white"
+        marginTop={"1rem"}
+        href={Data.contactUs.data.url}
+        icon={Data.contactUs.data.icon}
+      />
     </Section>
   </div>
 );
