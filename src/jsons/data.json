@@ -238,18 +238,23 @@
     "data": [
       {
         "name": "Quentin",
-        "position": "CEO-Founder",
+        "position": "CEO / Founder",
         "username": "stoodkev"
       },
       {
         "name": "Cedric",
-        "position": "Developer",
+        "position": "Development",
         "username": "cedricguillas"
       },
       {
         "name": "Fabi",
-        "position": "Designer",
+        "position": "Design",
         "username": "fabiyamada"
+      },
+      {
+        "name": "Nate",
+        "position": "Creative Advisor",
+        "username": "nateaguila"
       }
     ]
   },

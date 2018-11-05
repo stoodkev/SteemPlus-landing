@@ -146,7 +146,7 @@ const Content = ({ activeFeature }) => (
       title={Data.screenshots.sectionTitle}
       tag={Formatter.tagFromTitle(Data.screenshots.sectionTitle)}
     >
-      <CustomCarousel autoPlay={true} nbElem={1} sizeElement={6}>
+      <CustomCarousel autoPlay={true} nbElem={1} sizeElement={10}>
         <div>
           <img src="public/img/screenshots/intro.jpg" alt="Intro" />
         </div>

@@ -10,3 +10,7 @@ export const BACKGROUND_SECTION = "#5e9bff";
 export const BACKGROUND_SECTION2 = "#ffffff";
 
 export const COLOR_TEXT_DESC = "#21496C";
+
+export const COLOR_NAME_MEMBER = "#21496C";
+export const COLOR_POSITION_MEMBER = "#21496C";
+export const COLOR_USERNAME_MEMBER = "#5C9DD5";

@@ -3,20 +3,14 @@ import { Grid } from "@material-ui/core/";
 import "../../css/containers/section.css";
 import * as Const from "../../utils/const";
 
-const Section = ({
-  title,
-  tag,
-  background1,
-  background2,
-  noSeparator,
-  children
-}) => {
+const Section = ({ title, tag, background1, background2, children }) => {
   const titleStyle = {
     color: Const.TITLE_COLOR,
     textTransform: "uppercase"
   };
   const style = {
-    backgroundImage: `linear-gradient(to right, ${background1}, ${background2})`
+    backgroundImage: `linear-gradient(to right, ${background1}, ${background2})`,
+    marginBottom: "3.5rem"
   };
 
   return (

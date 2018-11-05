@@ -8,12 +8,16 @@ const ImageSection = ({ title, tag, src, children, justify }) => {
     color: Const.TITLE_COLOR,
     textTransform: "uppercase"
   };
-  const style = {
+  const styleImage = {
     backgroundImage: `url(public/img/${src})`
   };
 
+  const style = {
+    marginBottom: "3.5rem"
+  };
+
   return (
-    <div className="section">
+    <div className="section" style={style}>
       <h1 id={tag} style={titleStyle}>
         {title}
       </h1>
@@ -23,7 +27,7 @@ const ImageSection = ({ title, tag, src, children, justify }) => {
         justify={justify || "space-evenly"}
         alignItems="center"
         spacing={24}
-        style={style}
+        style={styleImage}
       >
         {children}
       </Grid>
