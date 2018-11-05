@@ -14,3 +14,5 @@ export const COLOR_TEXT_DESC = "#21496C";
 export const COLOR_NAME_MEMBER = "#21496C";
 export const COLOR_POSITION_MEMBER = "#21496C";
 export const COLOR_USERNAME_MEMBER = "#5C9DD5";
+
+export const COLOR_TEXT_FOOTER = "#21496C";
