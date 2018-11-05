@@ -12,7 +12,8 @@ const titleStyle = {
   fontSize: "2rem",
   fontFamily: "Montserrat",
   fontWeight: "600",
-  margin: "0px"
+  margin: "0px",
+  marginBottom: "3.5rem"
 };
 
 const CarouselSection = ({ title, tag, children }) => (

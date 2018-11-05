@@ -3,8 +3,9 @@ import { withStyles } from "@material-ui/core/styles";
 
 const ImageReview = withStyles({
   root: {
-    width: "8rem",
-    height: "8rem"
+    width: "3rem",
+    height: "3rem",
+    marginRight: "0.5rem"
   }
 })(Avatar);
 

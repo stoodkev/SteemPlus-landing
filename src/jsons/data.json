@@ -40,151 +40,151 @@
       {
         "title": "Voting value slider",
         "content": "How much is your upvote/flag worth?",
-        "platforms": ["steemit", "busy"],
+        "platforms": ["steemit.svg", "busy.svg"],
         "url": "https://steemit.com/steemdev/@steem-plus/steemplus-2-5-integration-of-steemit-more-info-features"
       },
       {
         "title": "Delegation",
         "content": "Delegate your Steem Power in an instant!",
-        "platforms": ["steemit", "busy"],
+        "platforms": ["steemit.svg", "busy.svg"],
         "url": "https://steemit.com/utopian-io/@stoodkev/steemplus-delegation-details"
       },
       {
         "title": "Account value",
         "content": "Get your real account value based on current Bittrex STEEM and SBD prices.",
-        "platforms": ["steemit", "busy"],
+        "platforms": ["steemit.svg", "busy.svg"],
         "url": "https://steemit.com/utopian-io/@steem-plus/steemplus-2-1-account-value-detail-50-steem-bounty"
       },
       {
         "title": "Feed+",
         "content": "Filter and sort your feed to find the content you like!",
-        "platforms": ["steemit", "busy"],
+        "platforms": ["steemit.svg", "busy.svg"],
         "url": "https://steemit.com/utopian-io/@stoodkev/steemplus-2-17-5-feed-on-busy"
       },
       {
         "title": "Beneficiaries",
         "content": "Share your rewards by setting other users as beneficiaries. @steemplus-pay will be set as a 5% beneficiary and you will earm SPP.",
-        "platforms": ["steemit"],
+        "platforms": ["steemit.svg"],
         "url": "https://steemit.com/utopian-io/@steem-plus/steemplus-1-7-share-your-rewards-with-your-friends-beneficiaries-ideal-for-the-steemfest"
       },
       {
         "title": "Mentions",
         "content": "See who mentionned you and where.",
-        "platforms": ["steemit", "busy"],
+        "platforms": ["steemit.svg", "busy.svg"],
         "url": "https://steemit.com/utopian-io/@stoodkev/steemplus-2-17-9-vote-and-mentions-tabs"
       },
       {
         "title": "Vote Value",
         "content": "See the SBD value of each received vote.",
-        "platforms": ["steemit"],
+        "platforms": ["steemit.svg"],
         "url": "https://steemit.com/steemdev/@steem-plus/steemplus-2-5-integration-of-steemit-more-info-features"
       },
       {
         "title": "Signature",
         "content": "Your posts and comments signatures are just one click away.",
-        "platforms": ["steemit", "busy"],
+        "platforms": ["steemit.svg", "busy.svg"],
         "url": "https://steemit.com/utopian-io/@steem-plus/steemplus-2-15-signatures"
       },
       {
         "title": "Resteems indicator",
         "content": "See how many resteems you ve got and from whom.",
-        "platforms": ["steemit"],
+        "platforms": ["steemit.svg"],
         "url": "https://steemit.com/utopian-io/@steem-plus/2-16-resteem-indicators"
       },
       {
         "title": "VM and RC popup",
         "content": "Get your Voting Mana and Resource Credits percentage, and their recharge time.",
-        "platforms": ["steemit"],
+        "platforms": ["steemit.svg"],
         "url": "https://steemit.com/steemplus/@steem-plus/welcome-to-hf20-get-your-voting-mana-and-rc-mana-from-steemplus"
       },
       {
         "title": "Utopian",
         "content": "Post Utopian contributions directly from Steemit. Earn bigger votes and SPP.",
-        "platforms": ["steemit"],
+        "platforms": ["steemit.svg"],
         "url": "https://steemit.com/utopian-io/@steem-plus/steemplus-220-utopian--steemplus-partnership--bigger-upvotes"
       },
       {
         "title": "DTube",
         "content": "Upload your DTube videos directly from Steemit and earn SPP.",
-        "platforms": ["steemit"],
+        "platforms": ["steemit.svg"],
         "url": "https://steemit.com/utopian-io/@steem-plus/steemplus-221-earn-more-by-posting-to-dtube-via-steemplus"
       },
       {
         "title": "Steem Monsters packs",
         "content": "Buy Steem Monsters starter and booster packs directly from your Steemit profile and earn SPP.",
-        "platforms": ["steemit"],
+        "platforms": ["steemit.svg"],
         "url": "https://steemit.com/utopian-io/@steem-plus/steemplus-31--buy-your-steem-monsters-packs-from-steemplus-and-earn-steemplus-points-spp"
       },
       {
         "title": "Tokens",
         "content": "View your tokens directly from your Steemit wallet (currently show SPP only)",
-        "platforms": ["steemit"],
+        "platforms": ["steemit.svg"],
         "url": "https://steemit.com/utopian-io/@steem-plus/steemplus-30--the-steemplus-points-are-here-"
       },
       {
         "title": "Steem Monsters Market",
         "content": "Buy cards from Steem Monsters Marmet buy batches and earn SPP.",
-        "platforms": ["steemmonsters"],
+        "platforms": ["steemmonsters.png"],
         "url": "https://steemit.com/utopian-io/@steem-plus/steemplus-35--buy-cards-by-batch-on-steem-monsters-and-earn-spp"
       },
       {
         "title": "Badges",
         "content": "Plankton or Whale? These cool profile badges will let you know!",
-        "platforms": ["steemit", "busy"],
+        "platforms": ["steemit.svg", "busy.svg"],
         "url": "https://steemit.com/utopian-io/@stoodkev/more-ranks-on-steemplus-to-track-your-progression"
       },
       {
         "title": "Steem Price",
         "content": "Get STEEM and SBD price on Bittrex directly from your user dropdown.",
-        "platforms": ["steemit"],
+        "platforms": ["steemit.svg"],
         "url": "https://steemit.com/utopian-io/@steem-plus/steemplus-1-10-showing-steem-sbd-steem-usd-and-sbd-usd-market-price"
       },
       {
         "title": "Wallet",
         "content": "Filter your wallet to find what you re looking for!",
-        "platforms": ["steemit"],
+        "platforms": ["steemit.svg"],
         "url": "https://steemit.com/utopian-io/@stoodkev/steemplus-wallet-changes-and-more"
       },
       {
         "title": "Witness",
         "content": "Get all the information you'll ever need about witnesses, including incoming and outgoing votes.",
-        "platforms": ["steemit", "busy"],
+        "platforms": ["steemit.svg", "busy.svg"],
         "url": "https://steemit.com/utopian-io/@steem-plus/steemplus-2-17-7-witnesses-on-busy"
       },
       {
         "title": "Rewards",
         "content": "Get pending and claimed rewards information.",
-        "platforms": ["steemit", "busy"],
+        "platforms": ["steemit.svg", "busy.svg"],
         "url": "https://steemit.com/utopian-io/@steem-plus/steemplus-2-17-8-rewards-and-links-tabs-on-busy"
       },
       {
         "title": "Votes",
         "content": "See all incoming and outgoing votes.",
-        "platforms": ["steemit", "busy"],
+        "platforms": ["steemit.svg", "busy.svg"],
         "url": "https://steemit.com/utopian-io/@stoodkev/steemplus-2-17-9-vote-and-mentions-tabs"
       },
       {
         "title": "Histogram",
         "content": "View an history of all your posts",
-        "platforms": ["steemit"],
+        "platforms": ["steemit.svg"],
         "url": "https://steemit.com/steemdev/@steem-plus/steemplus-2-5-integration-of-steemit-more-info-features"
       },
       {
         "title": "GIF ",
         "content": "Pick and insert GIFs as you go!",
-        "platforms": ["steemit"],
+        "platforms": ["steemit.svg"],
         "url": "https://steemit.com/steemdev/@steem-plus/steemplus-2-5-integration-of-steemit-more-info-features"
       },
       {
         "title": "Favorites",
         "content": "Set your favorites and get a direct link to their latest publications!",
-        "platforms": ["steemit"],
+        "platforms": ["steemit.svg"],
         "url": "https://steemit.com/utopian-io/@steem-plus/steemplus-2-6-favorite-users"
       },
       {
         "title": "More",
         "content": "Download and try it out to find all our features ;)",
-        "platforms": ["steemit", "busy", "steemmonsters"],
+        "platforms": ["steemit.svg", "busy.svg", "steemmonsters.png"],
         "url": ""
       }
     ]

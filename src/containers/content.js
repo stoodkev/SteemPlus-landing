@@ -47,6 +47,12 @@ const styleContactUsText = {
   color: Const.COLOR_TEXT_CONTACT
 };
 
+const styleIconPlatform = {
+  marginLeft: "0.5rem",
+  height: "1.5rem",
+  width: "1.5rem"
+};
+
 const Content = ({ activeFeature }) => (
   <div>
     <Section
@@ -87,12 +93,9 @@ const Content = ({ activeFeature }) => (
               {feature.platforms.map((p, i) => (
                 <img
                   key={i}
-                  src={`public/img/platforms/${p}.png`}
+                  src={`public/img/platforms/${p}`}
                   alt={p}
-                  style={{
-                    height: "2rem",
-                    width: "2rem"
-                  }}
+                  style={styleIconPlatform}
                 />
               ))}
             </h2>
@@ -117,7 +120,7 @@ const Content = ({ activeFeature }) => (
       title={Data.where.sectionTitle}
       tag={Formatter.tagFromTitle(Data.where.sectionTitle)}
     >
-      <ContentDownload>{Parser(Data.where.description)}</ContentDownload>
+      <ContentDownload contentDownload={Parser(Data.where.description)} />
       <Grid container direction="row">
         {Data.where.browsers.map((browser, i) => (
           <Grid item xs={12} sm={12} md={4} lg={4}>
@@ -178,7 +181,7 @@ const Content = ({ activeFeature }) => (
         className="reviews"
         autoPlay={false}
         nbElem={3}
-        sizeElement={10}
+        sizeElement={12}
       >
         {Arrays.shuffle(Data.reviews.data).map((review, i) => (
           <ReviewPanel

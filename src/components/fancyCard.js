@@ -7,7 +7,6 @@ import {
   Toolbar
 } from "@material-ui/core/";
 import TitleFancyCard from "../components/labels/titleFancyCard";
-import "../css/components/fancyCard.css";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import CustomButton from "../components/buttons/customButton";
 import * as Const from "../utils/const";
@@ -32,10 +31,13 @@ const styleCardAction = {
 };
 
 const styleContent = {
-  marginTop: "0.75rem",
-  color: "#21496C",
-  fontSize: "1rem",
-  textAlign: "left"
+  root: {
+    marginTop: "0.75rem",
+    color: "#21496C",
+    fontSize: "1rem",
+    textAlign: "left",
+    minHeight: "16rem"
+  }
 };
 
 const styleIcon = {
@@ -50,7 +52,18 @@ const styleToobar = {
   }
 };
 
+const style = {
+  root: {
+    borderRadius: "33px",
+    backgroundImage: "linear-gradient(137deg, #ddefff, #ffffff)",
+    boxShadow: "6px 6px 8px rgba(0, 0, 0, 0.28)"
+  }
+};
+
+const CustomCard = withStyles(style)(Card);
+
 const CustomToolbar = withStyles(styleToobar)(Toolbar);
+const CustomCardContent = withStyles(styleContent)(CardContent);
 
 const createLink = (link, setPage) => {
   switch (link.type) {
@@ -96,12 +109,12 @@ const createLink = (link, setPage) => {
 
 const FancyCard = ({ title, content, icon, link, setPage }) => (
   <Grid item xs={12} sm={6} md={4} lg={3}>
-    <Card
+    <CustomCard
       classes={{
         root: `fancy-card card-${title}`
       }}
     >
-      <CardContent className="fancy-card-content">
+      <CustomCardContent className="fancy-card-content">
         <TitleFancyCard>
           <CustomToolbar>
             <img style={styleIcon} src={`../public/img/${icon}`} alt={icon} />
@@ -111,11 +124,11 @@ const FancyCard = ({ title, content, icon, link, setPage }) => (
           </CustomToolbar>
         </TitleFancyCard>
         <span style={styleContent}>{content}</span>
-      </CardContent>
+      </CustomCardContent>
       <CardActions style={styleCardAction}>
         {createLink(link, setPage)}
       </CardActions>
-    </Card>
+    </CustomCard>
   </Grid>
 );
 
