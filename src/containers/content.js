@@ -129,6 +129,7 @@ const Content = ({ activeFeature }) => (
               direction="column"
               justify="center"
               alignItems="center"
+              className="browser-item"
             >
               <img
                 src={`public/img/browsers/${browser.icon}.svg`}

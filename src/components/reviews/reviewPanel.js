@@ -53,7 +53,8 @@ const styleContent = {
 
 const styleIcon = {
   width: "4rem",
-  height: "4rem"
+  height: "4rem",
+  marginBottom: "2rem"
 };
 
 const CustomCard = withStyles(style)(Card);

@@ -36,7 +36,7 @@ const styleContent = {
     color: "#21496C",
     fontSize: "1rem",
     textAlign: "left",
-    minHeight: "16rem"
+    minHeight: "18rem"
   }
 };
 

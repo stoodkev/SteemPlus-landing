@@ -1,4 +1,24 @@
 {
+  "stats": {
+    "items": [
+      {
+        "name": "SPP Holders",
+        "key": "spp_holders"
+      },
+      {
+        "name": "Total Points",
+        "key": "total_points"
+      },
+      {
+        "name": "Total Points Day",
+        "key": "total_points_day"
+      },
+      {
+        "name": "Steemplus Steem Power",
+        "key": "steemplus_sp"
+      }
+    ]
+  },
   "whatIsSPP": {
     "sectionTitle": "What are SteemPlus Points",
     "description": "SteemPlus Points (SPP) are non tradable utility tokens, you can see them as a fidelity points. You get a portion of @steem-plus daily upvotes and redeem them for premium features (coming soon).",
@@ -74,26 +94,5 @@
   "premium": {
     "sectionTitle": "Premium Features",
     "description": "Coming Soon..."
-  },
-  "stats": {
-    "sectionTitle": "Statistics",
-    "items": [
-      {
-        "name": "SPP Holders",
-        "key": "spp_holders"
-      },
-      {
-        "name": "Total Points",
-        "key": "total_points"
-      },
-      {
-        "name": "Total Points Day",
-        "key": "total_points_day"
-      },
-      {
-        "name": "Steemplus Steem Power",
-        "key": "steemplus_sp"
-      }
-    ]
   }
 }

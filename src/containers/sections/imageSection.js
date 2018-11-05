@@ -14,7 +14,9 @@ const ImageSection = ({ title, tag, src, children, justify }) => {
     marginBottom: "3.5rem"
   };
   const styleImage = {
-    backgroundImage: `url(public/img/${src})`
+    backgroundImage: `url(public/img/${src})`,
+    backgroundSize: "cover",
+    minHeight: "30rem"
   };
 
   const style = {
