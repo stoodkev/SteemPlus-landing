@@ -3,26 +3,33 @@
     "items": [
       {
         "name": "SPP Holders",
-        "key": "spp_holders"
+        "key": "spp_holders",
+        "icon": "holders"
       },
       {
         "name": "Total Points",
-        "key": "total_points"
+        "key": "total_points",
+        "icon": "total"
       },
       {
         "name": "Total Points Day",
-        "key": "total_points_day"
+        "key": "total_points_day",
+        "icon": "spp_day"
       },
       {
         "name": "Steemplus Steem Power",
-        "key": "steemplus_sp"
+        "key": "steemplus_sp",
+        "icon": "sp"
       }
     ]
   },
   "whatIsSPP": {
     "sectionTitle": "What are SteemPlus Points",
-    "description": "SteemPlus Points (SPP) are non tradable utility tokens, you can see them as a fidelity points. You get a portion of @steem-plus daily upvotes and redeem them for premium features (coming soon).",
-    "howToEarn": [
+    "description": "SteemPlus Points (SPP) are non tradable utility tokens, you can see them as a fidelity points. You get a portion of @steem-plus daily upvotes and redeem them for premium features (coming soon)."
+  },
+  "howToEarn": {
+    "sectionTitle": "How to earn SPP",
+    "ways": [
       {
         "title": "Boost a post with Minnowbooster using SteemPlus",
         "description": "Use the 'Boost' Button on the bottom of the article to buy votes on MinnowBooster.",
@@ -90,9 +97,5 @@
         "formula": "Get 5 SPP for every 1 SBD spent."
       }
     ]
-  },
-  "premium": {
-    "sectionTitle": "Premium Features",
-    "description": "Coming Soon..."
   }
 }

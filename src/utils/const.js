@@ -20,3 +20,7 @@ export const COLOR_TEXT_FOOTER = "#21496C";
 export const COLOR_TEXT_CONTACT = "#FFFFFF";
 
 export const BACKGROUND_CONTACT_SECTION = "#21496C";
+
+export const BACKGROUND_WAY_SPP = "#D3EBFF";
+export const COLOR_TITLE_WAY_SPP = "#21496C";
+export const COLOR_TEXT_WAY_SPP = "#21496C";

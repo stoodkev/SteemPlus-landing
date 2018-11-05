@@ -84,32 +84,34 @@ const getHomeSubMenu = (navItems, activePage, setSubMenu, activeSubElement) => {
 
 const getSppSubMenu = (navItems, activePage, setSubMenu, activeSubElement) => {
   if (activePage === "spp") {
-    return Object.keys(navItems).map((section, i) => (
-      <Grid item xs={12} sm={12} md={12} lg="auto" key={i}>
-        <AnchorLink
-          offset={() => 100}
-          href={`#${Formatter.tagFromTitle(navItems[section].sectionTitle)}`}
-          style={anchorStyle}
-        >
-          <NavbarButton
-            color1="white"
-            color2={Const.TITLE_COLOR}
-            text={navItems[section].sectionTitle}
-            float="left"
-            itemVisible={activePage === "spp"}
-            active={
-              Formatter.tagFromTitle(navItems[section].sectionTitle) ===
-              activeSubElement
-            }
-            onClick={() =>
-              setSubMenu(
-                `${Formatter.tagFromTitle(navItems[section].sectionTitle)}`
-              )
-            }
-          />
-        </AnchorLink>
-      </Grid>
-    ));
+    return Object.keys(navItems)
+      .filter(k => navItems[k].sectionTitle !== undefined)
+      .map((section, i) => (
+        <Grid item xs={12} sm={12} md={12} lg="auto" key={i}>
+          <AnchorLink
+            offset={() => 100}
+            href={`#${Formatter.tagFromTitle(navItems[section].sectionTitle)}`}
+            style={anchorStyle}
+          >
+            <NavbarButton
+              color1="white"
+              color2={Const.TITLE_COLOR}
+              text={navItems[section].sectionTitle}
+              float="left"
+              itemVisible={activePage === "spp"}
+              active={
+                Formatter.tagFromTitle(navItems[section].sectionTitle) ===
+                activeSubElement
+              }
+              onClick={() =>
+                setSubMenu(
+                  `${Formatter.tagFromTitle(navItems[section].sectionTitle)}`
+                )
+              }
+            />
+          </AnchorLink>
+        </Grid>
+      ));
   }
 };
 
@@ -148,7 +150,9 @@ class Header extends React.Component {
       this.setState({ sticky: false });
     }
 
-    let keys = Object.keys(currentItems);
+    let keys = Object.keys(currentItems).filter(
+      k => currentItems[k].sectionTitle !== undefined
+    );
     let minDiff = window.pageYOffset;
     let currentSection = "";
     console.log(currentItems);

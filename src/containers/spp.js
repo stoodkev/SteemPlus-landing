@@ -1,12 +1,15 @@
 import React, { Component } from "react";
-import Image from "../components/image";
-import Description from "../components/form/description";
+import { Toolbar, Grid } from "@material-ui/core/";
+import { withStyles } from "@material-ui/core/styles";
 import * as DataSPP from "../jsons/spp.json";
 import * as Formatter from "../utils/formatter";
 import CountUp from "react-countup";
 import Section from "../containers/sections/section";
+import FancySection from "../containers/sections/fancySection";
 import * as Const from "../utils/const";
-import CustomCarousel from "../components/carousel/customCarousel";
+import ContentDescription from "../components/labels/contentDescription"
+
+import CustomButton from "../components/buttons/customButton";
 
 const linkStyle = {
   textDecoration: "none",
@@ -19,25 +22,53 @@ const linkStyle = {
 };
 
 const styleWayToEarn = {
-  textAlign: "left"
+  background: Const.BACKGROUND_WAY_SPP,
+  padding: "1rem",
+  borderRadius: "33px"
 };
 const styleCaptionHowToEarn = {
-  textAlign: "left",
   fontWeight: "bold",
   fontSize: "20px",
-  color: Const.TITLE_COLOR
+  color: Const.COLOR_TITLE_WAY_SPP
 };
 const styleTitleHowToEarn = {
   fontWeight: "bold",
-  color: Const.TITLE_COLOR,
+  color: Const.COLOR_TITLE_WAY_SPP,
   marginBottom: "1rem"
 };
 const styleFormulaHowToEarn = {
-  marginBottom: "1rem"
+  marginBottom: "1rem",
+  color: Const.COLOR_TEXT_WAY_SPP
 };
 const styleDescHowToEarn = {
-  marginBottom: "1rem"
+  marginBottom: "1rem",
+  color: Const.COLOR_TEXT_WAY_SPP
 };
+
+const styleIcon = {
+  marginRight: "0.5rem",
+  height: "1.5rem",
+  width: "1.5rem"
+};
+
+const styleToolbar = {
+  root: {
+    paddingLeft: "0px"
+  }
+};
+
+const styleNumber = {
+  fontSize: "3.5rem",
+  fontFamily: "Roboto",
+  color: "#5C9DD5"
+};
+
+const styleTitleStat = {
+  color: "#21496C",
+  fontSize: "1.25rem"
+};
+
+const CustomToolbar = withStyles(styleToolbar)(Toolbar);
 
 class Spp extends Component {
   constructor() {
@@ -84,23 +115,47 @@ class Spp extends Component {
   render() {
     return (
       <div className="Spp">
+        <FancySection>
+          {DataSPP.stats.items.map((item, i) => (
+            <Grid item xs={12} sm={12} md={6} lg={3} key={i}>
+              <CountUp
+                end={parseFloat(this.state[`${item.key}`])}
+                start={0}
+                duration={2}
+                delay={1}
+                separator=","
+                style={styleNumber}
+              />
+
+              <CustomToolbar>
+                <img
+                  src={`public/img/spp/stats/${item.icon}.svg`}
+                  alt={item.key}
+                  style={styleIcon}
+                />
+                <p style={styleTitleStat}>{item.name}</p>
+              </CustomToolbar>
+            </Grid>
+          ))}
+        </FancySection>
         <Section
           direction="row"
           background="white"
           title={DataSPP.whatIsSPP.sectionTitle}
           tag={Formatter.tagFromTitle(DataSPP.whatIsSPP.sectionTitle)}
         >
-          {DataSPP.whatIsSPP.description}
-          <CustomCarousel autoPlay={true} nbElem={1} sizeElement={6}>
-            {DataSPP.whatIsSPP.howToEarn.map((way, i) => (
-              <div
-                key={i}
-                className="my-slide secondary complex slide-text"
-                style={styleWayToEarn}
-              >
-                <p style={styleCaptionHowToEarn}>{`#${i + 1}/${
-                  DataSPP.whatIsSPP.howToEarn.length
-                } : ${way.title}`}</p>
+          <ContentDescription content={DataSPP.whatIsSPP.description} />
+        </Section>
+        <Section
+          title={DataSPP.howToEarn.sectionTitle}
+          tag={Formatter.tagFromTitle(DataSPP.howToEarn.sectionTitle)}
+        >
+          {DataSPP.howToEarn.ways.map((way, i) => (
+            <Grid item xs={12} key={i}>
+              <div style={styleWayToEarn}>
+                <p style={styleCaptionHowToEarn}>{`#${i + 1} : ${
+                  way.title
+                }`}</p>
                 <div>
                   <h4 style={styleTitleHowToEarn}>
                     How to get it ?<br />
@@ -124,47 +179,15 @@ class Spp extends Component {
                     rel="noopener noreferrer"
                     style={linkStyle}
                   >
-                    <label>Read the article</label>
+                    <CustomButton
+                      text="Read the article"
+                      color1={Const.TITLE_COLOR}
+                      color2="white"
+                    />
                   </a>
                 </div>
               </div>
-            ))}
-          </CustomCarousel>
-          <Image
-            name="SteemPlus Point Information"
-            src="public/img/infogramSPP.png"
-            maxHeight="36rem"
-          />
-        </Section>
-        <Section
-          background1={Const.BACKGROUND_SECTION}
-          background2={Const.BACKGROUND_SECTION2}
-          noSeparator
-        >
-          <Description
-            title={DataSPP.premium.sectionTitle}
-            tag={Formatter.tagFromTitle(DataSPP.premium.sectionTitle)}
-          >
-            {DataSPP.premium.description}
-          </Description>
-          <Image src="public/img/comingSoon.png" />
-        </Section>
-        <Section
-          title={DataSPP.stats.sectionTitle}
-          tag={Formatter.tagFromTitle(DataSPP.stats.sectionTitle)}
-        >
-          {DataSPP.stats.items.map((item, i) => (
-            <div key={i}>
-              {item.name}
-              <br />
-              <CountUp
-                end={parseFloat(this.state[`${item.key}`])}
-                start={0}
-                duration={2}
-                delay={2}
-                separator=","
-              />
-            </div>
+            </Grid>
           ))}
         </Section>
       </div>

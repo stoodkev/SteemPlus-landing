@@ -5,7 +5,7 @@ import CarouselSection from "./sections/carouselSection";
 import FancyCard from "../components/fancyCard";
 import MemberPanel from "../components/memberPanel";
 import ReviewPanel from "../components/reviews/reviewPanel";
-import ContentDownload from "../components/labels/contentDownload";
+import ContentDescription from "../components/labels/contentDescription";
 import CustomButton from "../components/buttons/customButton";
 import CustomButtonIcon from "../components/buttons/customButtonIcon";
 import { Grid } from "@material-ui/core";
@@ -16,16 +16,6 @@ import * as Arrays from "../utils/arrays";
 import * as Const from "../utils/const";
 import Parser from "html-react-parser";
 import { connect } from "react-redux";
-
-const linkStyle = {
-  textDecoration: "none",
-  color: "#3c4a97",
-  cursor: "pointer",
-  fontWeight: "500",
-  "&:hover": {
-    textDecoration: "underline !important"
-  }
-};
 
 const styleFeatureItem = {
   background: Const.BACKGROUND_FEATURE_COLOR,
@@ -120,7 +110,7 @@ const Content = ({ activeFeature }) => (
       title={Data.where.sectionTitle}
       tag={Formatter.tagFromTitle(Data.where.sectionTitle)}
     >
-      <ContentDownload contentDownload={Parser(Data.where.description)} />
+      <ContentDescription content={Parser(Data.where.description)} />
       <Grid container direction="row">
         {Data.where.browsers.map((browser, i) => (
           <Grid item xs={12} sm={12} md={4} lg={4}>

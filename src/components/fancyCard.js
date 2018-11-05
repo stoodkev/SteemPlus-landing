@@ -46,7 +46,7 @@ const styleIcon = {
   marginRight: "0.5rem"
 };
 
-const styleToobar = {
+const styleToolbar = {
   root: {
     paddingLeft: "0px"
   }
@@ -62,7 +62,7 @@ const style = {
 
 const CustomCard = withStyles(style)(Card);
 
-const CustomToolbar = withStyles(styleToobar)(Toolbar);
+const CustomToolbar = withStyles(styleToolbar)(Toolbar);
 const CustomCardContent = withStyles(styleContent)(CardContent);
 
 const createLink = (link, setPage) => {

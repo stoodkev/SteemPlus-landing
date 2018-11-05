@@ -8,8 +8,6 @@ const style = {
   textAlign: "left"
 };
 
-const ContentDownload = ({ contentDownload }) => (
-  <p style={style}>{contentDownload}</p>
-);
+const ContentDescription = ({ content }) => <p style={style}>{content}</p>;
 
-export default ContentDownload;
+export default ContentDescription;
