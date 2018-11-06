@@ -45,7 +45,7 @@ const styleContent = {
     color: "#21496C",
     fontSize: "1rem",
     textAlign: "left",
-    minHeight: "14rem",
+    minHeight: "17rem",
     fontFamily: "Roboto",
     fontStyle: "italic"
   }
