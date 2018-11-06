@@ -143,24 +143,41 @@ const Content = ({ activeFeature }) => (
       title={Data.screenshots.sectionTitle}
       tag={Formatter.tagFromTitle(Data.screenshots.sectionTitle)}
     >
-      <CustomCarousel autoPlay={true} nbElem={1} sizeElement={10}>
+      <CustomCarousel autoPlay={true} nbElem={1} sizeElement={12}>
         <div>
-          <img src="public/img/screenshots/intro.jpg" alt="Intro" />
-        </div>
-        <div>
-          <img src="public/img/screenshots/feedplus.jpg" alt="Feed +" />
-        </div>
-        <div>
-          <img src="public/img/screenshots/ranks.jpg" alt="Ranks" />
+          <img
+            width="100%"
+            src="public/img/screenshots/intro.jpg"
+            alt="Intro"
+          />
         </div>
         <div>
           <img
+            width="100%"
+            src="public/img/screenshots/feedplus.jpg"
+            alt="Feed +"
+          />
+        </div>
+        <div>
+          <img
+            width="100%"
+            src="public/img/screenshots/ranks.jpg"
+            alt="Ranks"
+          />
+        </div>
+        <div>
+          <img
+            width="100%"
             src="public/img/screenshots/valueDelegation.jpg"
             alt="Value and Delegations"
           />
         </div>
         <div className="test">
-          <img src="public/img/screenshots/shortcuts.jpg" alt="ShortCuts" />
+          <img
+            width="100%"
+            src="public/img/screenshots/shortcuts.jpg"
+            alt="ShortCuts"
+          />
         </div>
       </CustomCarousel>
     </CarouselSection>
@@ -208,13 +225,11 @@ const Content = ({ activeFeature }) => (
       <p style={styleContactUsText}>
         {Parser(Data.contactUs.data.description)}
       </p>
-      <CustomButtonIcon
+      <CustomButton
         text={Data.contactUs.data.textButton}
         color1={Const.TITLE_COLOR}
         color2="white"
-        marginTop={"1rem"}
         href={Data.contactUs.data.url}
-        icon={Data.contactUs.data.icon}
       />
     </Section>
   </div>

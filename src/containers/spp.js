@@ -7,8 +7,8 @@ import CountUp from "react-countup";
 import Section from "../containers/sections/section";
 import FancySection from "../containers/sections/fancySection";
 import * as Const from "../utils/const";
-import ContentDescription from "../components/labels/contentDescription"
-
+import ContentDescription from "../components/labels/contentDescription";
+import CircularProgress from "@material-ui/core/CircularProgress";
 import CustomButton from "../components/buttons/customButton";
 
 const linkStyle = {
@@ -24,7 +24,8 @@ const linkStyle = {
 const styleWayToEarn = {
   background: Const.BACKGROUND_WAY_SPP,
   padding: "1rem",
-  borderRadius: "33px"
+  borderRadius: "33px",
+  textAlign: "left"
 };
 const styleCaptionHowToEarn = {
   fontWeight: "bold",
@@ -60,7 +61,33 @@ const styleToolbar = {
 const styleNumber = {
   fontSize: "3.5rem",
   fontFamily: "Roboto",
-  color: "#5C9DD5"
+  color: Const.COLOR_STATS
+};
+
+const styleCircularProgress = {
+  root: {
+    color: Const.COLOR_STATS
+  }
+};
+
+const CustomCircularProgress = withStyles(styleCircularProgress)(
+  CircularProgress
+);
+
+const getCount = count => {
+  if (count === 0) {
+    return <CustomCircularProgress />;
+  } else {
+    return (
+      <CountUp
+        end={count}
+        start={0}
+        duration={2}
+        separator=","
+        style={styleNumber}
+      />
+    );
+  }
 };
 
 const styleTitleStat = {
@@ -118,15 +145,7 @@ class Spp extends Component {
         <FancySection>
           {DataSPP.stats.items.map((item, i) => (
             <Grid item xs={12} sm={12} md={6} lg={3} key={i}>
-              <CountUp
-                end={parseFloat(this.state[`${item.key}`])}
-                start={0}
-                duration={2}
-                delay={1}
-                separator=","
-                style={styleNumber}
-              />
-
+              {getCount(parseFloat(this.state[`${item.key}`]))}
               <CustomToolbar>
                 <img
                   src={`public/img/spp/stats/${item.icon}.svg`}
@@ -156,36 +175,30 @@ class Spp extends Component {
                 <p style={styleCaptionHowToEarn}>{`#${i + 1} : ${
                   way.title
                 }`}</p>
-                <div>
-                  <h4 style={styleTitleHowToEarn}>
-                    How to get it ?<br />
-                  </h4>
-                  <p style={styleDescHowToEarn}>
-                    {way.description}
-                    <br />
-                  </p>
+                <p style={styleDescHowToEarn}>
+                  {way.description}
+                  <br />
+                </p>
 
-                  <h4 style={styleTitleHowToEarn}>
-                    How much ?<br />
-                  </h4>
-                  <p style={styleFormulaHowToEarn}>
-                    {way.formula}
-                    <br />
-                  </p>
+                <p style={styleFormulaHowToEarn}>
+                  <span style={styleTitleHowToEarn}>Reward : </span>
+                  {way.formula}
+                  <br />
+                </p>
 
-                  <a
-                    href={`https://steemit.com/${way.description_post}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={linkStyle}
-                  >
-                    <CustomButton
-                      text="Read the article"
-                      color1={Const.TITLE_COLOR}
-                      color2="white"
-                    />
-                  </a>
-                </div>
+                <a
+                  href={`https://steemit.com/${way.description_post}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={linkStyle}
+                >
+                  <CustomButton
+                    text="Read the article"
+                    color1={Const.COLOR_BUTTON}
+                    color2="white"
+                    marginBottom="1.5rem"
+                  />
+                </a>
               </div>
             </Grid>
           ))}

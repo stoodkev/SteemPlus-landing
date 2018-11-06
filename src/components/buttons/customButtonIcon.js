@@ -20,7 +20,10 @@ const CustomButtonIcon = ({ text, color1, color2, marginTop, icon, href }) => {
   const styleIcon = {
     height: "2rem",
     width: "2rem",
-    marginRight: "0.5rem"
+    marginRight: "0.5rem",
+    "&:hover": {
+      filter: "invert(.5) sepia(2) saturate(5) hue-rotate(175deg)"
+    }
   };
 
   const CustomizedButton = withStyles(buttonStyle)(Button);

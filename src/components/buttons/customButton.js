@@ -2,11 +2,19 @@ import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import { Button } from "@material-ui/core/";
 
-const CustomButton = ({ text, color1, color2, marginTop, href }) => {
+const CustomButton = ({
+  text,
+  color1,
+  color2,
+  marginTop,
+  marginBottom,
+  href
+}) => {
   const buttonStyle = {
     root: {
       fontSize: "1.25rem",
       marginTop: marginTop,
+      marginBottom: marginBottom,
       backgroundColor: color1,
       color: color2,
       borderRadius: "30px",
