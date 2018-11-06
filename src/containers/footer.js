@@ -4,16 +4,16 @@ import * as Const from "../utils/const";
 const style = {
   backgroundImage: `url(public/img/footer.png)`,
   backgroundSize: "cover",
-  minHeight: "12rem",
+  minHeight: "6rem",
   textAlign: "left",
   paddingLeft: "10%",
-  paddingBottom: "1rem"
+  paddingBottom: "1rem",
+  display: "flex"
 };
 
 const styleText = {
   color: Const.COLOR_TEXT_FOOTER,
-  marginTop: 0,
-  paddingTop: "10%"
+  marginTop: "auto"
 };
 
 const Footer = () => (
