@@ -66,7 +66,7 @@ const Content = ({ activeFeature }) => (
       justify={"flex-start"}
     >
       <CustomCarousel
-        autoPlay={false}
+        autoPlay={true}
         background={Const.BACKGROUND_FEATURE_COLOR}
         selectedItem={activeFeature}
         nbElem={1}
@@ -187,7 +187,7 @@ const Content = ({ activeFeature }) => (
     >
       <CustomCarousel
         className="reviews"
-        autoPlay={false}
+        autoPlay={true}
         nbElem={3}
         sizeElement={12}
       >
