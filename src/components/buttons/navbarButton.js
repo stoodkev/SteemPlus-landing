@@ -12,7 +12,8 @@ const NavbarButton = ({
   onClick,
   large,
   active,
-  children
+  children,
+  id
 }) => {
   const buttonStyle = {
     root: {
@@ -33,7 +34,7 @@ const NavbarButton = ({
   };
   const CustomizedButton = withStyles(buttonStyle)(Button);
   return (
-    <CustomizedButton href={href} onClick={onClick}>
+    <CustomizedButton id={id} href={href} onClick={onClick}>
       {children}
       {text}
     </CustomizedButton>

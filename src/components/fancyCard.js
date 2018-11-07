@@ -56,7 +56,9 @@ const style = {
   root: {
     borderRadius: "33px",
     backgroundImage: "linear-gradient(137deg, #ddefff, #ffffff)",
-    boxShadow: "6px 6px 8px rgba(0, 0, 0, 0.28)"
+    boxShadow: "6px 6px 8px rgba(0, 0, 0, 0.28)",
+    paddingLeft: "1rem",
+    paddingRight: "1rem",
   }
 };
 

@@ -51,6 +51,11 @@ const styleNavBarSticky = {
     "0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12)"
 };
 
+const closeMenu = () => {
+  console.log(document.getElementById("close-menu-button"));
+  document.getElementById("close-menu-button").click();
+};
+
 const getHomeSubMenu = (navItems, activePage, setSubMenu, activeSubElement) => {
   if (activePage === "main") {
     return Object.keys(navItems).map((section, i) => (
@@ -70,11 +75,12 @@ const getHomeSubMenu = (navItems, activePage, setSubMenu, activeSubElement) => {
               Formatter.tagFromTitle(navItems[section].sectionTitle) ===
               activeSubElement
             }
-            onClick={() =>
+            onClick={() => {
               setSubMenu(
                 `${Formatter.tagFromTitle(navItems[section].sectionTitle)}`
-              )
-            }
+              );
+              closeMenu();
+            }}
           />
         </AnchorLink>
       </Grid>
@@ -103,11 +109,12 @@ const getSppSubMenu = (navItems, activePage, setSubMenu, activeSubElement) => {
                 Formatter.tagFromTitle(navItems[section].sectionTitle) ===
                 activeSubElement
               }
-              onClick={() =>
+              onClick={() => {
                 setSubMenu(
                   `${Formatter.tagFromTitle(navItems[section].sectionTitle)}`
-                )
-              }
+                );
+                closeMenu();
+              }}
             />
           </AnchorLink>
         </Grid>
@@ -198,7 +205,12 @@ class Header extends React.Component {
             </NavbarButton>
           }
           menuCloseButton={
-            <NavbarButton color1={Const.TITLE_COLOR} color2="white" itemVisible>
+            <NavbarButton
+              id="close-menu-button"
+              color1={Const.TITLE_COLOR}
+              color2="white"
+              itemVisible
+            >
               <Dehaze />
             </NavbarButton>
           }
@@ -230,6 +242,7 @@ class Header extends React.Component {
                   onClick={() => {
                     this.setPage("main");
                     this.setSubMenu("why-steemplus-?");
+                    closeMenu();
                   }}
                 />
               </Grid>
@@ -237,7 +250,8 @@ class Header extends React.Component {
                 this.navItems,
                 this.state.activePage,
                 this.setSubMenu,
-                this.state.activeSubElement
+                this.state.activeSubElement,
+                this.closeMenuButton
               )}
               <Grid item xs={12} sm={12} md={12} lg="auto">
                 <NavbarButton
@@ -250,6 +264,7 @@ class Header extends React.Component {
                   onClick={() => {
                     this.setPage("spp");
                     this.setSubMenu("what-are-steemplus-points");
+                    closeMenu();
                   }}
                 />
               </Grid>
@@ -257,7 +272,8 @@ class Header extends React.Component {
                 this.sppNavItems,
                 this.state.activePage,
                 this.setSubMenu,
-                this.state.activeSubElement
+                this.state.activeSubElement,
+                this.closeMenuButton
               )}
             </Grid>
           }

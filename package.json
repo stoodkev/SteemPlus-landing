@@ -24,6 +24,7 @@
   },
   "scripts": {
     "dev": "webpack-dev-server --mode development --open --hot",
+    "mobile": "webpack-dev-server --mode development --open --hot --host 0.0.0.0 --disable-host-check",
     "start": "node server.js",
     "heroku-postbuild": "webpack -p"
   },

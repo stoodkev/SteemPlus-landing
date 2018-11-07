@@ -4,7 +4,8 @@ export const SEPARATOR_COLOR = "#6F7DCA";
 
 export const COLOR_BUTTON = "#5C9DD5";
 
-export const BACKGROUND_FEATURE_COLOR = "#21496ccc";
+export const BACKGROUND_FEATURE_COLOR = "#21496c";
+export const BACKGROUND_FEATURE_COLOR_OPACITY = "#21496ccc";
 
 export const BACKGROUND_SECTION = "#5e9bff";
 export const BACKGROUND_SECTION2 = "#ffffff";

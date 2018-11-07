@@ -10,6 +10,7 @@ import * as Const from "../utils/const";
 import ContentDescription from "../components/labels/contentDescription";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import CustomButton from "../components/buttons/customButton";
+import Parser from "html-react-parser";
 
 const linkStyle = {
   textDecoration: "none",
@@ -163,7 +164,7 @@ class Spp extends Component {
           title={DataSPP.whatIsSPP.sectionTitle}
           tag={Formatter.tagFromTitle(DataSPP.whatIsSPP.sectionTitle)}
         >
-          <ContentDescription content={DataSPP.whatIsSPP.description} />
+          <ContentDescription content={Parser(DataSPP.whatIsSPP.description)} />
         </Section>
         <Section
           title={DataSPP.howToEarn.sectionTitle}
@@ -176,13 +177,13 @@ class Spp extends Component {
                   way.title
                 }`}</p>
                 <p style={styleDescHowToEarn}>
-                  {way.description}
+                  {Parser(way.description)}
                   <br />
                 </p>
 
                 <p style={styleFormulaHowToEarn}>
                   <span style={styleTitleHowToEarn}>Reward : </span>
-                  {way.formula}
+                  {Parser(way.formula)}
                   <br />
                 </p>
 

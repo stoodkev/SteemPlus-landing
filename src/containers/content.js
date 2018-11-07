@@ -7,7 +7,6 @@ import MemberPanel from "../components/memberPanel";
 import ReviewPanel from "../components/reviews/reviewPanel";
 import ContentDescription from "../components/labels/contentDescription";
 import CustomButton from "../components/buttons/customButton";
-import CustomButtonIcon from "../components/buttons/customButtonIcon";
 import { Grid } from "@material-ui/core";
 import CustomCarousel from "../components/carousel/customCarousel";
 import * as Data from "../jsons/data.json";
@@ -19,6 +18,7 @@ import { connect } from "react-redux";
 
 const styleFeatureItem = {
   background: Const.BACKGROUND_FEATURE_COLOR,
+  backgroundColor: Const.BACKGROUND_FEATURE_COLOR_OPACITY,
   zIndex: 1,
   padding: "1.5rem",
   borderRadius: "33px",
@@ -113,7 +113,7 @@ const Content = ({ activeFeature }) => (
       <ContentDescription content={Parser(Data.where.description)} />
       <Grid container direction="row">
         {Data.where.browsers.map((browser, i) => (
-          <Grid item xs={12} sm={12} md={4} lg={4}>
+          <Grid item xs={12} sm={12} md={4} lg={4} key={i}>
             <Grid
               container
               direction="column"
@@ -132,7 +132,6 @@ const Content = ({ activeFeature }) => (
                 color1={Const.COLOR_BUTTON}
                 color2="white"
                 margin={"1rem"}
-                key={i}
               />
             </Grid>
           </Grid>
