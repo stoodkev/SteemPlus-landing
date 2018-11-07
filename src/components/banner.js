@@ -5,12 +5,7 @@ const style = {
 };
 
 const Banner = () => (
-  <img
-    id="banner"
-    style={style}
-    src="public/img/banner.png"
-    alt="Banner"
-  />
+  <img id="banner" style={style} src="public/img/banner.jpg" alt="Banner" />
 );
 
 export default Banner;
