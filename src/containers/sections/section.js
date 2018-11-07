@@ -3,7 +3,14 @@ import { Grid } from "@material-ui/core/";
 import "../../css/containers/section.css";
 import * as Const from "../../utils/const";
 
-const Section = ({ title, tag, background, direction, children }) => {
+const Section = ({
+  title,
+  tag,
+  background,
+  direction,
+  children,
+  marginBottom
+}) => {
   const titleStyle = {
     color: Const.TITLE_COLOR,
     textTransform: "uppercase",
@@ -15,7 +22,7 @@ const Section = ({ title, tag, background, direction, children }) => {
   };
   const style = {
     background: background,
-    marginBottom: "3.5rem",
+    marginBottom: marginBottom || "3.5rem",
     padding: "2.5rem"
   };
 

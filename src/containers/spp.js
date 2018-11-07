@@ -160,11 +160,16 @@ class Spp extends Component {
         </FancySection>
         <Section
           direction="row"
-          background="white"
           title={DataSPP.whatIsSPP.sectionTitle}
           tag={Formatter.tagFromTitle(DataSPP.whatIsSPP.sectionTitle)}
+          marginBottom={"0"}
         >
-          <ContentDescription content={Parser(DataSPP.whatIsSPP.description)} />
+          <Grid item xs={12} sm={12} md={6} lg={8}>
+            <ContentDescription
+              content={Parser(DataSPP.whatIsSPP.description)}
+              align="center"
+            />
+          </Grid>
         </Section>
         <Section
           title={DataSPP.howToEarn.sectionTitle}

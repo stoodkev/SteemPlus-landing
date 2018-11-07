@@ -52,8 +52,8 @@ const styleNavBarSticky = {
 };
 
 const closeMenu = () => {
-  console.log(document.getElementById("close-menu-button"));
-  document.getElementById("close-menu-button").click();
+  const closeMenuButton = document.getElementById("close-menu-button");
+  if (closeMenuButton !== null) closeMenuButton.click();
 };
 
 const getHomeSubMenu = (navItems, activePage, setSubMenu, activeSubElement) => {
