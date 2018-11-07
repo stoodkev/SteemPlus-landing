@@ -209,6 +209,7 @@ const Content = ({ activeFeature }) => (
           name={members.name}
           position={members.position}
           username={members.username}
+          link={members.link || false}
           key={i}
         />
       ))}

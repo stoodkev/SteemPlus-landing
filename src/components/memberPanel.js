@@ -31,7 +31,7 @@ const positionStyle = {
   color: Const.COLOR_POSITION_MEMBER
 };
 
-const MemberPanel = ({ name, position, username }) => (
+const MemberPanel = ({ name, position, username, link }) => (
   <Grid
     style={style}
     className="memberPanel"
@@ -61,7 +61,17 @@ const MemberPanel = ({ name, position, username }) => (
     >
       @{username}
     </a>
-    <span style={positionStyle}>{position}</span>
+    {link === false ? (
+      <span style={positionStyle}>{position}</span>
+    ) : (
+      <a
+        rel="noopener noreferrer"
+        target="_blank"
+        href="https://steemconnect.com/sign/account-witness-vote?witness=stoodkev&approve=1"
+      >
+        <span style={positionStyle}>{position}</span>
+      </a>
+    )}
   </Grid>
 );
 
