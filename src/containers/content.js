@@ -17,8 +17,8 @@ import Parser from "html-react-parser";
 import { connect } from "react-redux";
 
 const styleFeatureItem = {
-  background: Const.BACKGROUND_FEATURE_COLOR,
-  backgroundColor: Const.BACKGROUND_FEATURE_COLOR_OPACITY,
+  backgroundColor: "rgba(33, 73, 108, 0.8)",
+  background: Const.BACKGROUND_FEATURE_COLOR_OPACITY,
   zIndex: 1,
   padding: "1.5rem",
   borderRadius: "33px",
