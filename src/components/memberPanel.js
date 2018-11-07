@@ -1,6 +1,7 @@
 import React from "react";
 import { Grid } from "@material-ui/core/";
 import * as Const from "../utils/const";
+import Parser from "html-react-parser";
 
 const style = {};
 const imgStyle = {
@@ -31,7 +32,7 @@ const positionStyle = {
   color: Const.COLOR_POSITION_MEMBER
 };
 
-const MemberPanel = ({ name, position, username, link }) => (
+const MemberPanel = ({ name, position, username }) => (
   <Grid
     style={style}
     className="memberPanel"
@@ -61,17 +62,7 @@ const MemberPanel = ({ name, position, username, link }) => (
     >
       @{username}
     </a>
-    {link === false ? (
-      <span style={positionStyle}>{position}</span>
-    ) : (
-      <a
-        rel="noopener noreferrer"
-        target="_blank"
-        href="https://steemconnect.com/sign/account-witness-vote?witness=stoodkev&approve=1"
-      >
-        <span style={positionStyle}>{position}</span>
-      </a>
-    )}
+    <span style={positionStyle}>{Parser(position)}</span>
   </Grid>
 );
 

@@ -110,10 +110,12 @@ const Content = ({ activeFeature }) => (
       title={Data.where.sectionTitle}
       tag={Formatter.tagFromTitle(Data.where.sectionTitle)}
     >
-      <ContentDescription content={Parser(Data.where.description)} />
-      <Grid container direction="row">
+      <Grid item xs={12} sm={12} md={6} lg={8}>
+        <ContentDescription content={Parser(Data.where.description)} />
+      </Grid>
+      <Grid container direction="row" justify="center" alignItems="center">
         {Data.where.browsers.map((browser, i) => (
-          <Grid item xs={12} sm={12} md={4} lg={4} key={i}>
+          <Grid item xs={12} sm={12} md={3} lg={3} key={i}>
             <Grid
               container
               direction="column"
@@ -192,7 +194,6 @@ const Content = ({ activeFeature }) => (
       >
         {Arrays.shuffle(Data.reviews.data).map((review, i) => (
           <ReviewPanel
-            title={review.title}
             review={Parser(review.review)}
             username={review.username}
             key={i}
@@ -209,7 +210,6 @@ const Content = ({ activeFeature }) => (
           name={members.name}
           position={members.position}
           username={members.username}
-          link={members.link || false}
           key={i}
         />
       ))}

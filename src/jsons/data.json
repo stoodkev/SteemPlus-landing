@@ -191,7 +191,7 @@
   },
   "where": {
     "sectionTitle": "Download",
-    "description": "SteemPlus is available natively on Chrome and Firefox. It’s also available on Opera via the `Install Chrome Extensions` plugin. What are you waiting for? You are only minutes away from getting more out of your Steem experience!",
+    "description": "SteemPlus is available natively on Chrome and Firefox. It’s also available on Opera via the `Install Chrome Extensions` plugin. <br />What are you waiting for? You are only minutes away from getting more out of your Steem experience!",
     "browsers": [
       {
         "name": "Chrome",
@@ -243,9 +243,8 @@
     "data": [
       {
         "name": "Quentin",
-        "position": "Founder / Witness",
-        "username": "stoodkev",
-        "link": "https://steemconnect.com/sign/account-witness-vote?witness=stoodkev&approve=1"
+        "position": "Founder / <a style='text-decoration: none; color: #21496C;' href='https://steemconnect.com/sign/account-witness-vote?witness=stoodkev&approve=1'><b>Witness</b></a>",
+        "username": "stoodkev"
       },
       {
         "name": "Cedric",

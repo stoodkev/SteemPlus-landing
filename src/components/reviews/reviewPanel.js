@@ -23,13 +23,13 @@ const usernameStyle = {
 const styleToobar = {
   root: {
     justifyContent: "center",
-    paddingLeft: "0px"
+    paddingLeft: "0px",
+    paddingRight: "0px"
   }
 };
 
 const style = {
   root: {
-    marginTop: "2.5rem",
     marginLeft: "1rem",
     marginRight: "1rem",
     marginBottom: "1rem",
@@ -62,7 +62,7 @@ const CustomCard = withStyles(style)(Card);
 const CustomToolbar = withStyles(styleToobar)(Toolbar);
 const CustomCardContent = withStyles(styleContent)(CardContent);
 
-const ReviewPanel = ({ username, name, title, review }) => (
+const ReviewPanel = ({ username, review }) => (
   <Grid
     style={style}
     className="reviewPanel"
@@ -77,11 +77,7 @@ const ReviewPanel = ({ username, name, title, review }) => (
     alignItems="center"
     key={`review-${username}`}
   >
-    <CustomCard
-      classes={{
-        root: `fancy-card card-${title}`
-      }}
-    >
+    <CustomCard>
       <CustomCardContent className="fancy-card-content">
         <CustomToolbar>
           <img
