@@ -25,7 +25,7 @@
       {
         "title": "For the community",
         "icon": "icon_community.svg",
-        "content": "<p>Opensource</p><p>Developement funded by upvotes from @utopian-io, @adsactly and the community</p><p>Over 3,500 daily users</p><p>Emphasis on developing features request by the community</p>",
+        "content": "<p>Opensource</p><p>Developement funded by upvotes from @utopian-io, @adsactly and the community</p><p>Over 3,500 daily users</p><p>Emphasis on developing features requested by the community</p>",
         "link": {
           "type": "external",
           "to": "https://github.com/stoodkev/SteemPlus",
@@ -191,7 +191,7 @@
   },
   "where": {
     "sectionTitle": "Download",
-    "description": "Steem-Plus is available natively on Chrome and Firefox. It’s also available on Opera via the `Install Chrome Extensions` plugin. What are you waiting for? You are only minutes away from getting more out of your Steem experience!",
+    "description": "SteemPlus is available natively on Chrome and Firefox. It’s also available on Opera via the `Install Chrome Extensions` plugin. What are you waiting for? You are only minutes away from getting more out of your Steem experience!",
     "browsers": [
       {
         "name": "Chrome",
@@ -243,7 +243,7 @@
     "data": [
       {
         "name": "Quentin",
-        "position": "CEO / Founder",
+        "position": "Founder / Witness",
         "username": "stoodkev"
       },
       {

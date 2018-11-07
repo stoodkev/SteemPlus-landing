@@ -12,7 +12,7 @@
         "icon": "total"
       },
       {
-        "name": "Total Points Day",
+        "name": "Total Points Today",
         "key": "total_points_day",
         "icon": "spp_day"
       },
@@ -24,11 +24,11 @@
     ]
   },
   "whatIsSPP": {
-    "sectionTitle": "What are SteemPlus Points",
-    "description": "SteemPlus Points (SPP) are non tradable utility tokens, you can see them as a fidelity points. You get a portion of @steem-plus daily upvotes and redeem them for premium features (coming soon)."
+    "sectionTitle": "What are SteemPlus Points ?",
+    "description": "SteemPlus Points (SPP) are non tradable utility tokens, you can see them as fidelity points. You get a portion of @steem-plus daily upvotes and redeem them for premium features (coming soon)."
   },
   "howToEarn": {
-    "sectionTitle": "How to earn SPP",
+    "sectionTitle": "How to earn SPP ?",
     "ways": [
       {
         "title": "Boost a post with Minnowbooster using SteemPlus",
