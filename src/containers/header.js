@@ -6,6 +6,7 @@ import "../css/containers/header.css";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import * as Data from "../jsons/data.json";
 import * as SPPData from "../jsons/spp.json";
+import * as RankingsData from "../jsons/rankings.json";
 import * as Formatter from "../utils/formatter";
 import * as Const from "../utils/const";
 import { connect } from "react-redux";
@@ -121,6 +122,44 @@ const getSppSubMenu = (navItems, activePage, setSubMenu, activeSubElement) => {
       ));
   }
 };
+const getRankingsSubMenu = (
+  navItems,
+  activePage,
+  setSubMenu,
+  activeSubElement
+) => {
+  if (activePage === "rankings") {
+    return Object.keys(navItems)
+      .filter(k => navItems[k].sectionTitle !== undefined)
+      .map((section, i) => (
+        <Grid item xs={12} sm={12} md={12} lg="auto" key={i}>
+          <AnchorLink
+            offset={() => 100}
+            href={`#${Formatter.tagFromTitle(navItems[section].sectionTitle)}`}
+            style={anchorStyle}
+          >
+            <NavbarButton
+              color1="white"
+              color2={Const.TITLE_COLOR}
+              text={navItems[section].sectionTitle}
+              float="left"
+              itemVisible={activePage === "rankings"}
+              active={
+                Formatter.tagFromTitle(navItems[section].sectionTitle) ===
+                activeSubElement
+              }
+              onClick={() => {
+                setSubMenu(
+                  `${Formatter.tagFromTitle(navItems[section].sectionTitle)}`
+                );
+                closeMenu();
+              }}
+            />
+          </AnchorLink>
+        </Grid>
+      ));
+  }
+};
 
 class Header extends React.Component {
   constructor(props) {
@@ -133,6 +172,7 @@ class Header extends React.Component {
     this.isMainPage = this.page === "main";
     this.navItems = Data.default;
     this.sppNavItems = SPPData.default;
+    this.rankingsNavItems = RankingsData.default;
 
     this.state = {
       activePage: this.page,
@@ -147,6 +187,8 @@ class Header extends React.Component {
     let currentItems;
     if (this.state.activePage === "main") currentItems = this.navItems;
     else if (this.state.activePage === "spp") currentItems = this.sppNavItems;
+    else if (this.state.activePage === "rankings")
+      currentItems = this.rankingsNavItems;
 
     const banner = document.getElementById("banner");
     const sticky = banner.height;
@@ -270,6 +312,28 @@ class Header extends React.Component {
               </Grid>
               {getSppSubMenu(
                 this.sppNavItems,
+                this.state.activePage,
+                this.setSubMenu,
+                this.state.activeSubElement,
+                this.closeMenuButton
+              )}
+              <Grid item xs={12} sm={12} md={12} lg="auto">
+                <NavbarButton
+                  color1="white"
+                  color2={Const.TITLE_COLOR}
+                  text="Rankings"
+                  itemVisible
+                  large
+                  active={this.state.activePage === "rankings"}
+                  onClick={() => {
+                    this.setPage("rankings");
+                    this.setSubMenu("weekly");
+                    closeMenu();
+                  }}
+                />
+              </Grid>
+              {getRankingsSubMenu(
+                this.rankingsNavItems,
                 this.state.activePage,
                 this.setSubMenu,
                 this.state.activeSubElement,

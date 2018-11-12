@@ -16,3 +16,12 @@ code {
 .browser-item {
   margin-top: 1rem;
 }
+
+.-btn {
+  color: #fff !important;
+  background: #5c9dd5 !important;
+}
+.-btn:hover {
+  color: #5c9dd5 !important;
+  background: #fff !important;
+}
