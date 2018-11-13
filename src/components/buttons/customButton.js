@@ -8,10 +8,13 @@ const CustomButton = ({
   color2,
   marginTop,
   marginBottom,
-  href
+  href,
+  onClick
 }) => {
   const buttonStyle = {
     root: {
+      marginLeft: "1rem",
+      marginRight: "1rem",
       fontSize: "1.25rem",
       marginTop: marginTop,
       marginBottom: marginBottom,
@@ -26,7 +29,12 @@ const CustomButton = ({
   };
   const CustomizedButton = withStyles(buttonStyle)(Button);
   return (
-    <CustomizedButton variant="contained" href={href} target="_blank">
+    <CustomizedButton
+      variant="contained"
+      href={href}
+      target="_blank"
+      onClick={onClick}
+    >
       {text}
     </CustomizedButton>
   );

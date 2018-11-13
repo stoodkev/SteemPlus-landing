@@ -204,7 +204,6 @@ class Header extends React.Component {
     );
     let minDiff = window.pageYOffset;
     let currentSection = "";
-    console.log(currentItems);
     for (let i = keys.length - 1; i >= 0; i--) {
       const htmlItem = document.getElementById(
         `${Formatter.tagFromTitle(currentItems[keys[i]].sectionTitle)}`
