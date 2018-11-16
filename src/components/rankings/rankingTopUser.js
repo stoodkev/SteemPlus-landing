@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid } from "@material-ui/core/";
+import { Grid, withStyles } from "@material-ui/core/";
 import * as Const from "../../utils/const";
 import { LooksOne, LooksTwo, Looks3 } from "@material-ui/icons";
 
@@ -25,14 +25,27 @@ const usernameStyle = {
   textDecoration: "none"
 };
 
+const iconStyle = {
+  root: {
+    color: Const.COLOR_BUTTON,
+    width: "2rem",
+    height: "2rem",
+    marginBottom: "1rem"
+  }
+};
+
+const CustomIconTopOne = withStyles(iconStyle)(LooksOne);
+const CustomIconTopTwo = withStyles(iconStyle)(LooksTwo);
+const CustomIconTopThree = withStyles(iconStyle)(Looks3);
+
 const getIcon = position => {
   switch (position) {
     case 1:
-      return <LooksOne />;
+      return <CustomIconTopOne />;
     case 2:
-      return <LooksTwo />;
+      return <CustomIconTopTwo />;
     case 3:
-      return <Looks3 />;
+      return <CustomIconTopThree />;
     default:
       break;
   }

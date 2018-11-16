@@ -3,7 +3,8 @@ import {
   ExpansionPanel,
   ExpansionPanelSummary,
   ExpansionPanelDetails,
-  Grid
+  Grid,
+  TextField
 } from "@material-ui/core/";
 import { withStyles } from "@material-ui/core/styles";
 import CustomButton from "../buttons/customButton";
@@ -11,7 +12,7 @@ import * as Const from "../../utils/const";
 
 const styleExpansionPanel = {
   root: {
-    marginTop: "1rem",
+    marginTop: "2rem",
     border: "none",
     boxShadow:
       "0px 0px 0px 0px rgba(0, 0, 0, 0.2), 0px 0px 0px 0px rgba(0, 0, 0, 0.14), 0px 0px 0px 0px rgba(0, 0, 0, 0.12)",
@@ -66,9 +67,24 @@ const styleHeader = {
 };
 
 const styleCell = {
-  padding: "0.5rem"
+  padding: "0.5rem",
+  width: "33%"
 };
 
+const styleRow = {
+  "&:hover": {
+    backgroundColor: "#5C9DD5"
+  }
+};
+
+const styleInput = {
+  root: {
+    marginBottom: "2rem",
+    width: "100%"
+  }
+};
+
+const CustomInput = withStyles(styleInput)(TextField);
 const CustomExtansionPanel = withStyles(styleExpansionPanel)(ExpansionPanel);
 const CustomExtansionSummaryButton = withStyles(styleExpensionSummaryButton)(
   ExpansionPanelSummary
@@ -84,12 +100,26 @@ class FullRanking extends Component {
   constructor(props) {
     super(props);
     this.data = props.data;
-    this.state = { expanded: false, data: this.data, currentPage: 0 };
+    this.state = {
+      expanded: false,
+      data: this.data,
+      currentPage: 0,
+      displayedData: this.data
+    };
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick = () => {
     this.setState({ expanded: !this.state.expanded });
+  };
+
+  filterTable = event => {
+    console.log(event.target.value);
+    this.setState({
+      displayedData: this.data.filter(item =>
+        item.name.includes(event.target.value)
+      )
+    });
   };
 
   render() {
@@ -106,33 +136,42 @@ class FullRanking extends Component {
               justify="center"
               alignItems="center"
             >
+              <CustomInput
+                id="standard-name"
+                label="Username"
+                value={this.state.name}
+                onChange={this.filterTable}
+              />
               <table style={styleTable}>
                 <thead style={styleHeader}>
                   <tr>
+                    <th>Rank</th>
                     <th>Name</th>
                     <th>SPP</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {getData(this.state.currentPage, this.state.data).map(
-                    (row, index) => (
-                      <tr key={index}>
-                        <td style={styleCell}>
-                          <a
-                            style={styleLink}
-                            href={`https://www.steemit.com/@${row.name}`}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            @{row.name}
-                          </a>
-                        </td>
-                        <td style={styleCell}>
-                          {parseFloat(row.points).toFixed(2)}
-                        </td>
-                      </tr>
-                    )
-                  )}
+                  {getData(
+                    this.state.currentPage,
+                    this.state.displayedData
+                  ).map((row, index) => (
+                    <tr key={index} style={styleRow}>
+                      <td style={styleCell}>{row.rank}</td>
+                      <td style={styleCell}>
+                        <a
+                          style={styleLink}
+                          href={`https://www.steemit.com/@${row.name}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          @{row.name}
+                        </a>
+                      </td>
+                      <td style={styleCell}>
+                        {parseFloat(row.points).toFixed(2)}
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
               <Grid
@@ -153,14 +192,18 @@ class FullRanking extends Component {
                 ) : (
                   ""
                 )}
-                <CustomButton
-                  text=">"
-                  color1={Const.COLOR_BUTTON}
-                  color2="white"
-                  onClick={() =>
-                    this.setState({ currentPage: this.state.currentPage + 1 })
-                  }
-                />
+                {this.state.currentPage < this.state.data.length / 10 - 1 ? (
+                  <CustomButton
+                    text=">"
+                    color1={Const.COLOR_BUTTON}
+                    color2="white"
+                    onClick={() =>
+                      this.setState({ currentPage: this.state.currentPage + 1 })
+                    }
+                  />
+                ) : (
+                  ""
+                )}
               </Grid>
             </Grid>
           </ExpansionPanelDetails>
