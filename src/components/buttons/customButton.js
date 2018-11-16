@@ -2,13 +2,25 @@ import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import { Button } from "@material-ui/core/";
 
-const CustomButton = ({ text, color1, color2, marginTop, href }) => {
+const CustomButton = ({
+  text,
+  color1,
+  color2,
+  marginTop,
+  marginBottom,
+  href,
+  onClick
+}) => {
   const buttonStyle = {
     root: {
+      marginLeft: "1rem",
+      marginRight: "1rem",
+      fontSize: "1.25rem",
       marginTop: marginTop,
+      marginBottom: marginBottom,
       backgroundColor: color1,
       color: color2,
-      borderRadius: "0 10px 10px 10px",
+      borderRadius: "30px",
       "&:hover": {
         backgroundColor: color2,
         color: color1
@@ -17,7 +29,12 @@ const CustomButton = ({ text, color1, color2, marginTop, href }) => {
   };
   const CustomizedButton = withStyles(buttonStyle)(Button);
   return (
-    <CustomizedButton variant="contained" href={href} target="_blank">
+    <CustomizedButton
+      variant="contained"
+      href={href}
+      target="_blank"
+      onClick={onClick}
+    >
       {text}
     </CustomizedButton>
   );

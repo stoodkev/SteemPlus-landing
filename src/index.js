@@ -4,21 +4,21 @@ import "./css/index.css";
 import App from "./containers/App";
 import * as serviceWorker from "./serviceWorker";
 import WebFont from "webfontloader";
-import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import logger from "redux-logger";
 
 WebFont.load({
   google: {
-    families: ["Satisfy", "cursive"]
+    families: ["Roboto:300", "Montserrat"]
   }
 });
 
 const navReducer = (
   state = {
     page: "main",
-    activeFeature: 0
+    activeFeature: 0,
+    subMenu: "why-steemplus-?"
   },
   action
 ) => {
@@ -35,6 +35,12 @@ const navReducer = (
         activeFeature: action.payload
       };
       break;
+    case "SET_SUB_MENU":
+      state = {
+        ...state,
+        subMenu: action.payload
+      };
+      break;
     default:
       break;
   }
@@ -49,9 +55,7 @@ const store = createStore(
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <App />
   </Provider>,
   document.getElementById("root")
 );

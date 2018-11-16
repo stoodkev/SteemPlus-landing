@@ -1,14 +1,26 @@
 import React from "react";
+import * as Const from "../utils/const";
 
 const style = {
-  marginTop: "3rem",
-  marginBottom: "3rem"
+  backgroundImage: `url(public/img/footer.png)`,
+  backgroundSize: "cover",
+  minHeight: "6rem",
+  textAlign: "left",
+  paddingLeft: "10%",
+  paddingBottom: "1rem",
+  display: "flex"
+};
+
+const styleText = {
+  color: Const.COLOR_TEXT_FOOTER,
+  marginTop: "auto"
 };
 
 const Footer = () => (
   <div className="footer" style={style}>
-    © 2018 SteemPlus <br />
-    Powered by Utopian and Adsactly
+    <p style={styleText}>
+      © 2018 Steem-Plus, all rights reserved. Powered by Utopian and Adsactly.
+    </p>
   </div>
 );
 

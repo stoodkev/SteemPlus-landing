@@ -9,7 +9,7 @@ const SectionLeftRight = ({
   background2
 }) => {
   const style = {
-    marginTop: "5rem",
+    marginBottom: "3.5rem",
     backgroundImage: `linear-gradient(to right, ${background1}, ${background2})`,
     padding: "2.5rem 0 2.5rem 0"
   };

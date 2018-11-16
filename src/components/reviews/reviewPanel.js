@@ -1,15 +1,13 @@
 import React from "react";
-import { Grid } from "@material-ui/core/";
-import ImageReview from "../reviews/imageReview";
-
-const style = {};
-
-const titleStyle = {
-  fontFamily: "Satisfy, cursive",
-  color: "darkgrey",
-  fontSize: "1.5rem",
-  marginTop: "0.25rem"
-};
+import {
+  Grid,
+  Card,
+  CardContent,
+  Toolbar,
+  CardActions
+} from "@material-ui/core/";
+import ImageReview from "./imageReview";
+import { withStyles } from "@material-ui/core/styles";
 
 const reviewStyle = {
   fontSize: "1rem"
@@ -22,7 +20,49 @@ const usernameStyle = {
   textDecoration: "none"
 };
 
-const ReviewPanel = ({ username, name, title, review }) => (
+const styleToobar = {
+  root: {
+    justifyContent: "center",
+    paddingLeft: "0px",
+    paddingRight: "0px"
+  }
+};
+
+const style = {
+  root: {
+    marginLeft: "1rem",
+    marginRight: "1rem",
+    marginBottom: "1rem",
+    borderRadius: "33px",
+    backgroundImage: "linear-gradient(137deg, #ddefff, #ffffff)",
+    boxShadow: "6px 6px 8px rgba(0, 0, 0, 0.28)"
+  }
+};
+
+const styleContent = {
+  root: {
+    marginTop: "0.75rem",
+    color: "#21496C",
+    fontSize: "1rem",
+    textAlign: "left",
+    minHeight: "17rem",
+    fontFamily: "Roboto",
+    fontStyle: "italic"
+  }
+};
+
+const styleIcon = {
+  width: "4rem",
+  height: "4rem",
+  marginBottom: "2rem"
+};
+
+const CustomCard = withStyles(style)(Card);
+
+const CustomToolbar = withStyles(styleToobar)(Toolbar);
+const CustomCardContent = withStyles(styleContent)(CardContent);
+
+const ReviewPanel = ({ username, review }) => (
   <Grid
     style={style}
     className="reviewPanel"
@@ -35,23 +75,37 @@ const ReviewPanel = ({ username, name, title, review }) => (
     direction="column"
     justify="space-evenly"
     alignItems="center"
+    key={`review-${username}`}
   >
-    <ImageReview srcSet={`https://steemitimages.com/u/${username}/avatar`} />
-
-    <span style={titleStyle}>"{title}"</span>
-
-    <span style={reviewStyle}>{review}</span>
-
-    <span>
-      <a
-        rel="noopener noreferrer"
-        target="_blank"
-        href={`https://steemit.com/@${username}`}
-        style={usernameStyle}
-      >
-        @{username}
-      </a>
-    </span>
+    <CustomCard>
+      <CustomCardContent className="fancy-card-content">
+        <CustomToolbar>
+          <img
+            style={styleIcon}
+            src={`../public/img/review_quote.svg`}
+            alt=""
+          />
+        </CustomToolbar>
+        <span style={reviewStyle}>{review}</span>
+      </CustomCardContent>
+      <CardActions>
+        <CustomToolbar>
+          <ImageReview
+            srcSet={`https://steemitimages.com/u/${username}/avatar`}
+          />
+          <span>
+            <a
+              rel="noopener noreferrer"
+              target="_blank"
+              href={`https://steemit.com/@${username}`}
+              style={usernameStyle}
+            >
+              @{username}
+            </a>
+          </span>
+        </CustomToolbar>
+      </CardActions>
+    </CustomCard>
   </Grid>
 );
 

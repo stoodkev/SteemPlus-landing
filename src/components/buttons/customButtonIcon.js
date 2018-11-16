@@ -2,31 +2,35 @@ import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import { Button } from "@material-ui/core/";
 
-const CustomButtonIcon = ({ text, color1, color2, margin, children, href }) => {
-  if (margin === undefined) margin = "0";
+const CustomButtonIcon = ({ text, color1, color2, marginTop, icon, href }) => {
   const buttonStyle = {
     root: {
-      margin: margin,
+      fontSize: "1.25rem",
+      marginTop: marginTop,
       backgroundColor: color1,
       color: color2,
-      borderRadius: "0 10px 10px 10px",
+      borderRadius: "30px",
       "&:hover": {
         backgroundColor: color2,
         color: color1
-      },
-      "&:first-child": {
-        marginLeft: 0
-      },
-      "&:last-child": {
-        marginRight: 0
       }
     }
   };
+
+  const styleIcon = {
+    height: "2rem",
+    width: "2rem",
+    marginRight: "0.5rem",
+    "&:hover": {
+      filter: "invert(.5) sepia(2) saturate(5) hue-rotate(175deg)"
+    }
+  };
+
   const CustomizedButton = withStyles(buttonStyle)(Button);
   return (
     <CustomizedButton variant="contained" href={href} target="_blank">
-      {children}
-      {text}
+      <img src={`public/img/${icon}`} alt="" style={styleIcon} />
+      <span>{text}</span>
     </CustomizedButton>
   );
 };

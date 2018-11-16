@@ -1,13 +1,13 @@
 import React from "react";
 import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
-import { Grid, Button } from "@material-ui/core";
+import { Grid, Button, Hidden } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
 import { KeyboardArrowLeft, KeyboardArrowRight } from "@material-ui/icons";
 
 const buttonStyle = {
   root: {
-    background: "transparent",
+    background: "#0000006b",
     border: "none",
     boxShadow: "none",
     color: "lightgrey",
@@ -36,18 +36,20 @@ class CustomCarousel extends React.Component {
 
   render() {
     return (
-      <Grid item xs={12} sm={12} md={10} lg={this.sizeElement}>
+      <Grid item xs={12} sm={10} md={8} lg={this.sizeElement}>
         <Grid container direction="row" justify="center" alignItems="center">
-          <Grid key={`prev`} xs={1} item>
-            <ArrowButton
-              variant="fab"
-              aria-label="Prev"
-              onClick={() => this.Carousel._slidePrev()}
-            >
-              <KeyboardArrowLeft />
-            </ArrowButton>
-          </Grid>
-          <Grid key={`car`} xs={10} item>
+          <Hidden only="xs">
+            <Grid key={`prev`} sm={1} item>
+              <ArrowButton
+                variant="fab"
+                aria-label="Prev"
+                onClick={() => this.Carousel._slidePrev()}
+              >
+                <KeyboardArrowLeft />
+              </ArrowButton>
+            </Grid>
+          </Hidden>
+          <Grid key={`car`} xs={12} md={8} item>
             <AliceCarousel
               dotsDisabled={true}
               autoPlay={this.autoPlay}
@@ -73,15 +75,17 @@ class CustomCarousel extends React.Component {
               {this.props.children}
             </AliceCarousel>
           </Grid>
-          <Grid key={`next`} xs={1} item>
-            <ArrowButton
-              variant="fab"
-              aria-label="Next"
-              onClick={() => this.Carousel._slideNext()}
-            >
-              <KeyboardArrowRight />
-            </ArrowButton>
-          </Grid>
+          <Hidden only="xs">
+            <Grid key={`next`} sm={1} item>
+              <ArrowButton
+                variant="fab"
+                aria-label="Next"
+                onClick={() => this.Carousel._slideNext()}
+              >
+                <KeyboardArrowRight />
+              </ArrowButton>
+            </Grid>
+          </Hidden>
         </Grid>
       </Grid>
     );
