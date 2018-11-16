@@ -100,6 +100,9 @@ class FullRanking extends Component {
   constructor(props) {
     super(props);
     this.data = props.data;
+    this.unit = props.unit;
+    this.keyUsername = props.keyUsername;
+    this.keyValue = props.keyValue;
     this.state = {
       expanded: false,
       data: this.data,
@@ -114,10 +117,9 @@ class FullRanking extends Component {
   };
 
   filterTable = event => {
-    console.log(event.target.value);
     this.setState({
       displayedData: this.data.filter(item =>
-        item.name.includes(event.target.value)
+        item[this.keyUsername].includes(event.target.value)
       )
     });
   };
@@ -147,7 +149,7 @@ class FullRanking extends Component {
                   <tr>
                     <th>Rank</th>
                     <th>Name</th>
-                    <th>SPP</th>
+                    <th>{this.unit}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -160,15 +162,17 @@ class FullRanking extends Component {
                       <td style={styleCell}>
                         <a
                           style={styleLink}
-                          href={`https://www.steemit.com/@${row.name}`}
+                          href={`https://www.steemit.com/@${
+                            row[this.keyUsername]
+                          }`}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          @{row.name}
+                          @{row[this.keyUsername]}
                         </a>
                       </td>
                       <td style={styleCell}>
-                        {parseFloat(row.points).toFixed(2)}
+                        {parseFloat(row[this.keyValue]).toFixed(2)}
                       </td>
                     </tr>
                   ))}

@@ -51,7 +51,7 @@ const getIcon = position => {
   }
 };
 
-const RankingTopUser = ({ position, username, nbPoints }) => (
+const RankingTopUser = ({ position, username, nbPoints, unit }) => (
   <Grid
     item
     xs={12}
@@ -70,7 +70,9 @@ const RankingTopUser = ({ position, username, nbPoints }) => (
       alt={username}
     />
 
-    <span style={nameStyle}>{parseFloat(nbPoints).toFixed(2)} SPP</span>
+    <span style={nameStyle}>
+      {parseFloat(nbPoints).toFixed(2)} {unit}
+    </span>
     <a
       rel="noopener noreferrer"
       target="_blank"

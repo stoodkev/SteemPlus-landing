@@ -57,7 +57,12 @@ class Ranking extends Component {
           {this.state.weekly.length === 0 ? (
             <CustomCircularProgress />
           ) : (
-            <RankingPanel data={this.state.weekly} />
+            <RankingPanel
+              data={this.state.weekly}
+              unit="SPP"
+              keyUsername="name"
+              keyValue="points"
+            />
           )}
         </Section>
         <Section
@@ -68,7 +73,12 @@ class Ranking extends Component {
           {this.state.monthly.length === 0 ? (
             <CustomCircularProgress />
           ) : (
-            <RankingPanel data={this.state.monthly} />
+            <RankingPanel
+              data={this.state.monthly}
+              unit="SPP"
+              keyUsername="name"
+              keyValue="points"
+            />
           )}
         </Section>
         <Section
@@ -79,7 +89,12 @@ class Ranking extends Component {
           {this.state.forever.length === 0 ? (
             <CustomCircularProgress />
           ) : (
-            <RankingPanel data={this.state.forever} />
+            <RankingPanel
+              data={this.state.forever}
+              unit="SPP"
+              keyUsername="name"
+              keyValue="points"
+            />
           )}
         </Section>
         <Section
@@ -90,7 +105,12 @@ class Ranking extends Component {
           {this.state.delegations.length === 0 ? (
             <CustomCircularProgress />
           ) : (
-            <RankingPanel data={this.state.delegations} />
+            <RankingPanel
+              data={this.state.delegations}
+              unit="SP"
+              keyUsername="delegator"
+              keyValue="sp"
+            />
           )}
         </Section>
       </div>
