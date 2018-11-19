@@ -24,7 +24,8 @@ class Ranking extends Component {
       forever: [],
       monthly: [],
       weekly: [],
-      delegations: []
+      delegations: [],
+      endDate: undefined
     };
   }
 
@@ -62,6 +63,7 @@ class Ranking extends Component {
               unit="SPP"
               keyUsername="name"
               keyValue="points"
+              endDate={this.state.endDate}
             />
           )}
         </Section>
