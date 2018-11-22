@@ -83,6 +83,7 @@ const RankingPanel = ({ data, unit, keyUsername, keyValue, endDate }) => (
         unit={unit}
         keyUsername={keyUsername}
         keyValue={keyValue}
+        isWeekly={endDate !== undefined}
       />
     </Grid>
   </Grid>

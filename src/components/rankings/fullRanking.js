@@ -66,11 +66,6 @@ const styleHeader = {
   borderBottom: "1px solid #21496C"
 };
 
-const styleCell = {
-  padding: "0.5rem",
-  width: "33%"
-};
-
 const styleRow = {
   "&:hover": {
     backgroundColor: "#5C9DD5"
@@ -101,6 +96,7 @@ class FullRanking extends Component {
     super(props);
     this.data = props.data;
     this.unit = props.unit;
+    this.isWeekly = props.isWeekly;
     this.keyUsername = props.keyUsername;
     this.keyValue = props.keyValue;
     this.state = {
@@ -110,6 +106,11 @@ class FullRanking extends Component {
       displayedData: this.data
     };
     this.handleClick = this.handleClick.bind(this);
+
+    this.styleCell = {
+      padding: "0.5rem",
+      width: this.isWeekly ? "25%" : "33%"
+    };
   }
 
   handleClick = () => {
@@ -150,6 +151,7 @@ class FullRanking extends Component {
                     <th>Rank</th>
                     <th>Name</th>
                     <th>{this.unit}</th>
+                    {this.isWeekly && <th>Estimated Reward</th>}
                   </tr>
                 </thead>
                 <tbody>
@@ -158,8 +160,8 @@ class FullRanking extends Component {
                     this.state.displayedData
                   ).map((row, index) => (
                     <tr key={index} style={styleRow}>
-                      <td style={styleCell}>{row.rank}</td>
-                      <td style={styleCell}>
+                      <td style={this.styleCell}>{row.rank}</td>
+                      <td style={this.styleCell}>
                         <a
                           style={styleLink}
                           href={`https://www.steemit.com/@${
@@ -171,9 +173,14 @@ class FullRanking extends Component {
                           @{row[this.keyUsername]}
                         </a>
                       </td>
-                      <td style={styleCell}>
+                      <td style={this.styleCell}>
                         {parseFloat(row[this.keyValue]).toFixed(2)}
                       </td>
+                      {this.isWeekly && (
+                        <td style={this.styleCell}>
+                          {parseFloat(row.estimatedReward).toFixed(2)}
+                        </td>
+                      )}
                     </tr>
                   ))}
                 </tbody>
