@@ -1,3 +1,5 @@
+// This file contains all the const we need in the app
+
 export const TITLE_COLOR = "#5C9DD5";
 export const CARD_TITLE_COLOR = "#5C9DD5";
 export const SEPARATOR_COLOR = "#6F7DCA";

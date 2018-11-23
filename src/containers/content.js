@@ -45,6 +45,7 @@ const styleIconPlatform = {
 
 const Content = ({ activeFeature }) => (
   <div>
+    {/* create section why steemplus */}
     <Section
       title={Data.whySteemPlus.sectionTitle}
       tag={Formatter.tagFromTitle(Data.whySteemPlus.sectionTitle)}
@@ -59,6 +60,7 @@ const Content = ({ activeFeature }) => (
         />
       ))}
     </Section>
+    {/* create feature section */}
     <ImageSection
       title={Data.features.sectionTitle}
       tag={Formatter.tagFromTitle(Data.features.sectionTitle)}
@@ -106,6 +108,7 @@ const Content = ({ activeFeature }) => (
         ))}
       </CustomCarousel>
     </ImageSection>
+    {/* create where section */}
     <Section
       title={Data.where.sectionTitle}
       tag={Formatter.tagFromTitle(Data.where.sectionTitle)}
@@ -140,6 +143,7 @@ const Content = ({ activeFeature }) => (
         ))}
       </Grid>
     </Section>
+    {/* create screenshots section */}
     <CarouselSection
       title={Data.screenshots.sectionTitle}
       tag={Formatter.tagFromTitle(Data.screenshots.sectionTitle)}
@@ -182,6 +186,7 @@ const Content = ({ activeFeature }) => (
         </div>
       </CustomCarousel>
     </CarouselSection>
+    {/* create review section */}
     <CarouselSection
       title={Data.reviews.sectionTitle}
       tag={Formatter.tagFromTitle(Data.reviews.sectionTitle)}
@@ -201,6 +206,7 @@ const Content = ({ activeFeature }) => (
         ))}
       </CustomCarousel>
     </CarouselSection>
+    {/* create members section */}
     <Section
       title={Data.members.sectionTitle}
       tag={Formatter.tagFromTitle(Data.members.sectionTitle)}
@@ -234,6 +240,8 @@ const Content = ({ activeFeature }) => (
     </Section>
   </div>
 );
+
+// Setup redux
 
 const mapStateToProps = state => {
   return {

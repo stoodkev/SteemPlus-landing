@@ -8,18 +8,25 @@ import RankingPanel from "../components/rankings/rankingPanel";
 
 import * as RankingsData from "../jsons/rankings.json";
 
+// Inline style for circular progressbar
 const styleCircularProgress = {
   root: {
     color: Const.COLOR_STATS
   }
 };
+
+// Create custom progressbar. Need to use withStyles because progressbar is a Material-UI component.
 const CustomCircularProgress = withStyles(styleCircularProgress)(
   CircularProgress
 );
 
+// Create Ranking component
 class Ranking extends Component {
+  // Constructor
   constructor() {
     super();
+
+    // Create local state
     this.state = {
       forever: [],
       monthly: [],
@@ -29,7 +36,9 @@ class Ranking extends Component {
     };
   }
 
+  // Function executed when component is ready
   componentDidMount() {
+    // Download ranking informatio
     fetch("https://api.steemplus.app/rankings", {
       method: "GET",
       headers: {
@@ -42,11 +51,11 @@ class Ranking extends Component {
         return result.json();
       })
       .then(data => {
+        // Set state
         this.setState(data);
-        console.log(this.state);
       });
   }
-
+  // Render component
   render() {
     return (
       <div className="Ranking">

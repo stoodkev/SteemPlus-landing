@@ -13,6 +13,7 @@ const styleCountdown = {
   marginTop: "-1rem"
 };
 
+// Function used to create the top 3 users for each category
 const getTop = (arrayItems, unit, keyUsername, keyValue) => {
   let top = [];
   for (let i = 0; i < 3; i++) {
@@ -43,6 +44,7 @@ const getTop = (arrayItems, unit, keyUsername, keyValue) => {
   return top;
 };
 
+// Function used to render the countdown until the end of the current week
 const renderer = ({ days, hours, minutes, seconds }) => {
   let daysLabel, hoursLabel, minutesLabel, secondesLabel;
   if (days > 1) daysLabel = `${days} days `;
@@ -67,6 +69,13 @@ const renderer = ({ days, hours, minutes, seconds }) => {
   );
 };
 
+/**
+ * @param data : Data to display
+ * @param unit : could be SP or SPP
+ * @param keyUsername : key for the username in data
+ * @param keyValue : key for the number of points in data
+ * @param endDate : date for the end of the week. Can be undefined
+ */
 const RankingPanel = ({ data, unit, keyUsername, keyValue, endDate }) => (
   <Grid container direction="column" justify="center" alignItems="center">
     {endDate !== undefined && (

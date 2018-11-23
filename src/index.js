@@ -8,12 +8,14 @@ import { Provider } from "react-redux";
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import logger from "redux-logger";
 
+// Font loader
 WebFont.load({
   google: {
     families: ["Roboto:300", "Montserrat"]
   }
 });
 
+// Create reducer for redux
 const navReducer = (
   state = {
     page: "main",
@@ -47,12 +49,14 @@ const navReducer = (
   return state;
 };
 
+// Create store for redux
 const store = createStore(
   combineReducers({ nav: navReducer }),
   {},
   applyMiddleware(logger)
 );
 
+// Render App
 ReactDOM.render(
   <Provider store={store}>
     <App />

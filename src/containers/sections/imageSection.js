@@ -3,6 +3,7 @@ import { Grid } from "@material-ui/core/";
 import "../../css/containers/section.css";
 import * as Const from "../../utils/const";
 
+// Image section is a section with a background image
 const ImageSection = ({ title, tag, src, children, justify }) => {
   const titleStyle = {
     color: Const.TITLE_COLOR,

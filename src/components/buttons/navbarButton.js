@@ -2,6 +2,8 @@ import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import { Button } from "@material-ui/core/";
 
+// Create navbar button
+// onclick method, colors and margin are passed as props
 const NavbarButton = ({
   text,
   color1,

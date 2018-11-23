@@ -85,38 +85,53 @@ const CustomExtansionSummaryButton = withStyles(styleExpensionSummaryButton)(
   ExpansionPanelSummary
 );
 
+// Function used to return the correct data depending on which page user wants to display
 const getData = (currentPage, data) => {
   let start = currentPage * 10;
   let end = (currentPage + 1) * 10 - 1;
   return data.slice(start, end);
 };
 
+// FullRanking is a complex component which will display the complete ranking for each category.
+// It has it's own pagination system.
+// The ranking is hidden by default
 class FullRanking extends Component {
   constructor(props) {
     super(props);
+    // Get props
+    // data represents the full ranking
     this.data = props.data;
+    // Unit could be SPP or SP (for the delegations ranking)
     this.unit = props.unit;
+    // Boolean used for the weekly ranking (has special case)
     this.isWeekly = props.isWeekly;
+    // Key for username
     this.keyUsername = props.keyUsername;
+    // key for nb SPP or SP
     this.keyValue = props.keyValue;
+
+    // Init state
     this.state = {
       expanded: false,
       data: this.data,
       currentPage: 0,
       displayedData: this.data
     };
+    // Bind click
     this.handleClick = this.handleClick.bind(this);
-
+    // Create inline style for cells.
     this.styleCell = {
       padding: "0.5rem",
       width: this.isWeekly ? "25%" : "33%"
     };
   }
 
+  // On click on panel, set state
   handleClick = () => {
     this.setState({ expanded: !this.state.expanded });
   };
 
+  // Function used to filter data base on the input for username
   filterTable = event => {
     this.setState({
       displayedData: this.data.filter(item =>
@@ -125,10 +140,12 @@ class FullRanking extends Component {
     });
   };
 
+  // Render the component
   render() {
     return (
       <Grid item xs={12} sm={12} md={6}>
         <CustomExtansionPanel>
+          {/* Panel can be open or closed, so the text need to change based on local state */}
           <CustomExtansionSummaryButton onClick={() => this.handleClick()}>
             {this.state.expanded ? "Hide Full Ranking" : "Show Full Ranking"}
           </CustomExtansionSummaryButton>

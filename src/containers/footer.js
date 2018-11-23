@@ -1,6 +1,7 @@
 import React from "react";
 import * as Const from "../utils/const";
 
+// Inline footer style
 const style = {
   backgroundImage: `url(public/img/footer.png)`,
   backgroundSize: "cover",
@@ -11,11 +12,13 @@ const style = {
   display: "flex"
 };
 
+// Inline text style
 const styleText = {
   color: Const.COLOR_TEXT_FOOTER,
   marginTop: "auto"
 };
 
+// Create footer
 const Footer = () => (
   <div className="footer" style={style}>
     <p style={styleText}>

@@ -2,6 +2,8 @@ import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import { Button } from "@material-ui/core/";
 
+// Create custom button
+// onclick method, colors and margin are passed as props
 const CustomButtonIcon = ({ text, color1, color2, marginTop, icon, href }) => {
   const buttonStyle = {
     root: {
