@@ -1,3 +1,5 @@
+// This file is the container of the SPP page
+
 import React, { Component } from "react";
 import { Toolbar, Grid } from "@material-ui/core/";
 import { withStyles } from "@material-ui/core/styles";
@@ -12,6 +14,7 @@ import CircularProgress from "@material-ui/core/CircularProgress";
 import CustomButton from "../components/buttons/customButton";
 import Parser from "html-react-parser";
 
+// Inline Style for links
 const linkStyle = {
   textDecoration: "none",
   color: "#3c4a97",
@@ -22,59 +25,72 @@ const linkStyle = {
   }
 };
 
+// Inline style for way to earn element
 const styleWayToEarn = {
   background: Const.BACKGROUND_WAY_SPP,
   padding: "1rem",
   borderRadius: "33px",
   textAlign: "left"
 };
+
+// Inline style for the caption of how to earn
 const styleCaptionHowToEarn = {
   fontWeight: "bold",
   fontSize: "20px",
   color: Const.COLOR_TITLE_WAY_SPP
 };
+// Inline style for the title of how to earn
 const styleTitleHowToEarn = {
   fontWeight: "bold",
   color: Const.COLOR_TITLE_WAY_SPP,
   marginBottom: "1rem"
 };
+// Inline style for the formula of how to earn
 const styleFormulaHowToEarn = {
   marginBottom: "1rem",
   color: Const.COLOR_TEXT_WAY_SPP
 };
+// Inline style for the description of how to earn
 const styleDescHowToEarn = {
   marginBottom: "1rem",
   color: Const.COLOR_TEXT_WAY_SPP
 };
 
+// Inline style for icons
 const styleIcon = {
   marginRight: "0.5rem",
   height: "1.5rem",
   width: "1.5rem"
 };
 
+// Inline style for Material-UI Toolbar component
 const styleToolbar = {
   root: {
     paddingLeft: "0px"
   }
 };
 
+// Inline style for Stats Numbers
 const styleNumber = {
   fontSize: "3.5rem",
   fontFamily: "Roboto",
   color: Const.COLOR_STATS
 };
 
+// Inline style for circular progress bar
 const styleCircularProgress = {
   root: {
     color: Const.COLOR_STATS
   }
 };
 
+// Create a custom progressbar. Need to use withStyles because it is a Material-UI component
 const CustomCircularProgress = withStyles(styleCircularProgress)(
   CircularProgress
 );
 
+// Function used to return the component to display
+// Progressbar if count is still 0, CountUp Component is not
 const getCount = count => {
   if (count === 0) {
     return <CustomCircularProgress />;
@@ -91,16 +107,21 @@ const getCount = count => {
   }
 };
 
+// Inline style for title
 const styleTitleStat = {
   color: "#21496C",
   fontSize: "1.25rem"
 };
 
+// Create a custom Toolbar. Need to use withStyles because it is a Material-UI component
 const CustomToolbar = withStyles(styleToolbar)(Toolbar);
 
+// Create the component
 class Spp extends Component {
+  //Constructor
   constructor() {
     super();
+    // Create local state
     this.state = {
       spp_holders: 0,
       total_points: 0,
@@ -109,7 +130,9 @@ class Spp extends Component {
     };
   }
 
+  // Function executed when component is ready
   componentDidMount() {
+    // Download statistics
     fetch("https://api.steemplus.app/spp-stats", {
       method: "GET",
       headers: {
@@ -122,8 +145,10 @@ class Spp extends Component {
         return result.json();
       })
       .then(data => {
+        // When download is over, set new state. This will refresh the display
         this.setState(data);
       });
+    // Download SteemPlus SP
     fetch("https://api.steemplus.app/sp/steem-plus", {
       method: "GET",
       headers: {
@@ -136,10 +161,11 @@ class Spp extends Component {
         return result.json();
       })
       .then(data => {
+        // When download is over, set new state. This will refresh the display
         this.setState({ steemplus_sp: data.total });
       });
   }
-
+  // Rendering
   render() {
     return (
       <div className="Spp">

@@ -13,6 +13,7 @@ import { connect } from "react-redux";
 import ResponsiveMenu from "react-responsive-navbar";
 import { Dehaze } from "@material-ui/icons";
 
+// Inline style for anchors
 const anchorStyle = {
   textDecoration: "none",
   textTransform: "uppercase",
@@ -29,6 +30,7 @@ const anchorStyle = {
   }
 };
 
+// Inline style for navbar
 const styleNavBar = {
   zIndex: 1,
   background: "white",
@@ -40,6 +42,7 @@ const styleNavBar = {
     "0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12)"
 };
 
+// Inline style for sticky navbar
 const styleNavBarSticky = {
   zIndex: 1,
   position: "fixed",
@@ -52,13 +55,19 @@ const styleNavBarSticky = {
     "0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12)"
 };
 
+// Function use to close menu on click
+// This function is called on click on navItem
 const closeMenu = () => {
+  // Get element
   const closeMenuButton = document.getElementById("close-menu-button");
+  // If it's open close it
   if (closeMenuButton !== null) closeMenuButton.click();
 };
 
+// Create Sub Menu for home. Only appears if Home page is selected
 const getHomeSubMenu = (navItems, activePage, setSubMenu, activeSubElement) => {
   if (activePage === "main") {
+    // Loop on navItems
     return Object.keys(navItems).map((section, i) => (
       <Grid item xs={12} sm={12} md={12} lg="auto" key={i}>
         <AnchorLink
@@ -89,8 +98,17 @@ const getHomeSubMenu = (navItems, activePage, setSubMenu, activeSubElement) => {
   }
 };
 
+// Create Sub Menu for SPP. Only appears if SPP page is selected
+/**
+ *
+ * @param  navItems : list of all the items
+ * @param  activePage : active page
+ * @param setSubMenu : method to set sub menu
+ * @param activeSubElement : active sub element
+ */
 const getSppSubMenu = (navItems, activePage, setSubMenu, activeSubElement) => {
   if (activePage === "spp") {
+    // Loop on navItem
     return Object.keys(navItems)
       .filter(k => navItems[k].sectionTitle !== undefined)
       .map((section, i) => (
@@ -122,6 +140,8 @@ const getSppSubMenu = (navItems, activePage, setSubMenu, activeSubElement) => {
       ));
   }
 };
+
+// Create Ranking sub menu. Only displayed
 const getRankingsSubMenu = (
   navItems,
   activePage,
@@ -161,47 +181,57 @@ const getRankingsSubMenu = (
   }
 };
 
+// Create component Header
 class Header extends React.Component {
   constructor(props) {
     super(props);
+    // Init props
     this.page = props.page;
     this.setPage = props.setPage;
     this.setSubMenu = props.setSubMenu;
     this.subMenu = props.subMenu;
 
     this.isMainPage = this.page === "main";
+    // Get data from Jsons
     this.navItems = Data.default;
     this.sppNavItems = SPPData.default;
     this.rankingsNavItems = RankingsData.default;
 
+    // Set initial local state
     this.state = {
       activePage: this.page,
       activeSubElement: this.subMenu,
       sticky: false
     };
-
+    // Bind handleScroll function
     this.handleScroll = this.handleScroll.bind(this);
   }
 
+  // Function used to handle scroll and change selected item in navbar on scroll
   handleScroll() {
     let currentItems;
+    // Set currentItems
     if (this.state.activePage === "main") currentItems = this.navItems;
     else if (this.state.activePage === "spp") currentItems = this.sppNavItems;
     else if (this.state.activePage === "rankings")
       currentItems = this.rankingsNavItems;
 
+    // Get banner
     const banner = document.getElementById("banner");
     const sticky = banner.height;
 
+    // if offset of the window > banner's height set the banner sticky
     if (window.pageYOffset >= sticky) {
       this.setState({ sticky: true });
     } else {
       this.setState({ sticky: false });
     }
 
+    // Get the titles of every section on the current page
     let keys = Object.keys(currentItems).filter(
       k => currentItems[k].sectionTitle !== undefined
     );
+    // Find the section that is the closest to the top of the page
     let minDiff = window.pageYOffset;
     let currentSection = "";
     for (let i = keys.length - 1; i >= 0; i--) {
@@ -217,22 +247,27 @@ class Header extends React.Component {
         );
       }
     }
+    // Set active section
     this.setState({
       activeSubElement: currentSection
     });
   }
 
+  // When component update
   componentDidUpdate(prevProps) {
+    // If props don't change don't set the state
     if (prevProps.page !== this.props.page)
       this.setState({ activePage: this.props.page });
     if (prevProps.subMenu !== this.props.subMenu)
       this.setState({ activeSubElement: this.props.subMenu });
   }
 
+  // When component is ready add Event Listener on scroll
   componentDidMount() {
     window.addEventListener("scroll", this.handleScroll);
   }
 
+  //Render header
   render() {
     return (
       <div
@@ -346,6 +381,7 @@ class Header extends React.Component {
   }
 }
 
+// Setup redux global state
 const mapStateToProps = state => ({
   page: state.nav.page,
   subMenu: state.nav.subMenu

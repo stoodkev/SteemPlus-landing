@@ -3,6 +3,7 @@ import { Grid } from "@material-ui/core/";
 import "../../css/containers/section.css";
 import * as Const from "../../utils/const";
 
+// Create section
 const Section = ({
   title,
   tag,
@@ -11,6 +12,7 @@ const Section = ({
   children,
   marginBottom
 }) => {
+  // Here we defined inline styles inside the component because we want to use props as attributes
   const titleStyle = {
     color: Const.TITLE_COLOR,
     textTransform: "uppercase",
@@ -26,6 +28,7 @@ const Section = ({
     padding: "2.5rem"
   };
 
+  // Rendering component
   return (
     <div className="section" style={style}>
       <p id={tag} style={titleStyle}>

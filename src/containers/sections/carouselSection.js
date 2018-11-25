@@ -16,6 +16,8 @@ const titleStyle = {
   marginBottom: "3.5rem"
 };
 
+// Create component. Carousel section is a section which contain as main element a carousel
+// Content of the carousel are defined in the children property
 const CarouselSection = ({ title, tag, children }) => (
   <div className="section carousel-section" style={style}>
     <p id={tag} style={titleStyle}>

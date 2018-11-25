@@ -9,8 +9,11 @@ import Spp from "./spp";
 
 import { connect } from "react-redux";
 
+// Create app component
 class App extends Component {
+  // Render component
   render() {
+    // Content depend on page
     let content = null;
     switch (this.props.page) {
       case "main":
@@ -25,6 +28,7 @@ class App extends Component {
       default:
         content = <Content />;
     }
+    // Display app
     return (
       <div className="App">
         <Banner />

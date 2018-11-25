@@ -4,12 +4,15 @@ import * as Const from "../utils/const";
 import Parser from "html-react-parser";
 
 const style = {};
+
+// Inline style for avatar
 const imgStyle = {
   maxHeight: "15rem",
   borderRadius: "0 10px 10px 10px",
   marginBottom: "1rem"
 };
 
+// Inline style for name label
 const nameStyle = {
   fontSize: "1.25rem",
   fontWeight: "600",
@@ -19,6 +22,7 @@ const nameStyle = {
   textTransform: "uppercase"
 };
 
+// Inline style for username label
 const usernameStyle = {
   fontSize: "1.25rem",
   fontWeight: "600",
@@ -26,12 +30,14 @@ const usernameStyle = {
   textDecoration: "none"
 };
 
+// Inline style for position label
 const positionStyle = {
   fontSize: "1rem",
   fontWeight: "300",
   color: Const.COLOR_POSITION_MEMBER
 };
 
+// Create member panel. This component is used to describe members of SteemPlus team
 const MemberPanel = ({ name, position, username }) => (
   <Grid
     style={style}
